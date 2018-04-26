@@ -20,7 +20,7 @@ const settings = {
 const styles = {
   slide1: {
     backgroundImage: `url(${Bridge})`,
-    height: 400,
+    height: 200,
     backgroundColor: 'tomato'
   }
 }
@@ -28,8 +28,8 @@ const styles = {
 export default props => (
   <div>
     <Slider {...settings}>
-      <div style={styles.slide1}><img src={Bridge} alt='' /></div>
-      <div style={styles.slide1}><img src={Pool} alt='' width={window.innerWidth}/></div>
+      {/* <div style={styles.slide1}><img src={Bridge} alt='' width={200}/></div> */}
+      <div style={styles.slide1}><img src={Pool} alt='' width={200}/></div>
       <div>3</div>
     </Slider>
   </div>

@@ -15,13 +15,13 @@ const styles = {
   },
   tabs: {
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 100
+    fontWeight: 600
   }
 }
 export default props => (
   <div style={styles.container}>
     <Segment style={styles.segment}>
-      <Menu inverted secondary pointing>
+      <Menu inverted secondary pointing widths='3'>
         
         
 
@@ -31,11 +31,9 @@ export default props => (
             <span style={styles.tabs}>RESERVATIONS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={this.handleItemClick} >EAT & DRINK</Menu.Item>
-        <Menu.Item name='restaurant' active={false} onClick={this.handleItemClick} >DISCOVER NEW HOPE</Menu.Item>
-        <Menu.Menu position='right'>
-          <Menu.Item name='book now' active={false} onClick={this.handleItemClick} />
-        </Menu.Menu>
+        <Menu.Item name='eat' active={false} link  onClick={props.rest} >EAT & DRINK</Menu.Item>
+        <Menu.Item name='restaurant' active={false} link >DISCOVER</Menu.Item>
+        
       </Menu>
     </Segment>
   </div>

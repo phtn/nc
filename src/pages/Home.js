@@ -6,6 +6,7 @@ import Bridge from '../assets/board/erNH_40.jpg'
 
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
+import Events from '../widgets/Events'
 
 const styles = {
   container: {
@@ -35,12 +36,15 @@ class Home extends Component {
   render(){
     return (
       <div style={styles.container}>
-        <Parallax pages={3} ref='parallax' scrolling={false}>
+        <Parallax pages={3} ref='parallax' scrolling={true}>
 
           <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
-            <Header/>    
+            <Header/>
+            
+            <Events/>
+
             <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
-              <Navbar rooms={()=>this.handleDown(1)}/>
+              <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)}/>
               {/* <Button primary onClick={} style={styles.bonfireButton}>Explore the Hotel</Button> */}
             </Parallax.Layer>
             
