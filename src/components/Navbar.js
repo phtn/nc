@@ -5,7 +5,7 @@ import ActiveComponent from '../observables/Renderer'
 // const comp = new ActiveComponent()
 const styles = {
   container: {
-    backgroundColor: 'rgb(0,0,0,0.5)',
+    // backgroundColor: 'rgb(0,0,0,0.5)',
     
     fontFamily: 'Raleway, sans-serif',
     zIndex: 1

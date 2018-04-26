@@ -17,6 +17,7 @@ const styles = {
   bg: {
     // backgroundColor: '#666',
     backgroundImage: `url(${Bridge})`,
+    backgroundPosition: 'center center'
     // width: window.innerWidth
   },
   bg2: {
