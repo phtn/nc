@@ -11,11 +11,17 @@ const styles = {
     // maxHeight: 500
   },
   button: {
-    margin: 10
+    margin: 20
   },
   bg: {
     backgroundColor: '#666',
     backgroundImage: `url(${Bridge})`
+  },
+  bg2: {
+    backgroundColor: 'teal',
+  },
+  bonfireButton: {
+    marginTop: 400
   }
 }
 
@@ -26,25 +32,24 @@ class Home extends Component {
   render(){
     return (
       <div style={styles.container}>
-        <Parallax pages='3' ref='parallax'>
+        <Parallax pages='3' ref='parallax' scrolling={true}>
 
           <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
             <Header/>    
-            <Parallax.Layer offset={0.90} speed={1} style={{ backgroundColor: 'tomato'}}>
-              <Button primary onClick={()=>this.handleDown(1)} style={styles.button}>Page 2</Button>
+            <Parallax.Layer offset={0.90} speed={1} style={{ backgroundColor: 'rgb(153,27,50)'}}>
+              <Button primary onClick={()=>this.handleDown(1)} style={styles.button}>Explore the Hotel</Button>
             </Parallax.Layer>
-
-            
-            
             
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1} speed={0.5} style={{ backgroundColor: '#be0027', backgroundImage: `url(${Pattern})` }}>
-            <Button primary onClick={()=>this.handleDown(2)}>Page 2</Button>
+          <Parallax.Layer offset={1} speed={0.5} style={styles.bg2}>
+            <Header/>    
+            <Button primary onClick={()=>this.handleDown(2)} style={styles.bonfireButton}>Explore the Hotel</Button>
+            
           </Parallax.Layer>
 
           <Parallax.Layer offset={2} speed={0.5} style={{ backgroundColor: '#222', backgroundImage: `url(${Pattern})` }}>
-            <Button primary onClick={()=>this.handleDown(0)}>Page 2</Button>
+            <Button primary onClick={()=>this.handleDown(0)}>Back to Home</Button>
           </Parallax.Layer>
 
         </Parallax>
