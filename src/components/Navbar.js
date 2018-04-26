@@ -1,16 +1,14 @@
 import React from 'react'
 import { Segment, Menu, Icon } from 'semantic-ui-react'
 import ActiveComponent from '../observables/Renderer'
-
-const comp = new ActiveComponent()
+// import active from '../observables/Renderer'
+// const comp = new ActiveComponent()
 const styles = {
   container: {
     backgroundColor: 'rgb(0,0,0,0.5)',
-    position: 'absolute',
-    zIndex: 1,
-    top: 530,
-    width: '100%',
-    fontFamily: 'Raleway, sans-serif'
+    
+    fontFamily: 'Raleway, sans-serif',
+    zIndex: 1
   },
   segment: {
     background: 'transparent'
@@ -25,20 +23,16 @@ export default props => (
     <Segment style={styles.segment}>
       <Menu inverted secondary pointing>
         
-        <Menu.Item name='home' 
-          active={comp.activeComponent === 'home'} 
-          onClick={this.handleItemClick} >
-          <Icon name='home' size='large'/> 
-        </Menu.Item>
+        
 
         <Menu.Item name='resv' link 
-          active={comp.activeComponent === 'resv'} 
-          onClick={this.handleItemClick} >
+          active={false} 
+          onClick={props.rooms} >
             <span style={styles.tabs}>RESERVATIONS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={this.handleItemClick} />
-        <Menu.Item name='restaurant' active={false} onClick={this.handleItemClick} />
+        <Menu.Item name='eat' active={false} link  onClick={this.handleItemClick} >EAT & DRINK</Menu.Item>
+        <Menu.Item name='restaurant' active={false} onClick={this.handleItemClick} >DISCOVER NEW HOPE</Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item name='book now' active={false} onClick={this.handleItemClick} />
         </Menu.Menu>

@@ -61,7 +61,7 @@ export default props => (
       <img src={Logo} alt='' height={80} style={styles.logo}/>
       <p style={styles.title}>Clarion Inn & Suites</p>
       <p style={styles.subtitle}>New Hope - Lambertville</p>  
-      <p style={styles.phone}>D  {props.width} &middot; {props.height}</p>  
+      <p style={styles.phone}>T 215.862.5221</p>  
     </header>
     
   </div>

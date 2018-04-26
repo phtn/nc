@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { Button } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Pattern from '../assets/pattern.png'
-import Bridge from '../assets/images/erNH_40.jpg'
+import Bridge from '../assets/board/erNH_40.jpg'
 
 import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 
 const styles = {
   container: {
@@ -14,8 +15,9 @@ const styles = {
     margin: 20
   },
   bg: {
-    backgroundColor: '#666',
-    backgroundImage: `url(${Bridge})`
+    // backgroundColor: '#666',
+    backgroundImage: `url(${Bridge})`,
+    // width: window.innerWidth
   },
   bg2: {
     backgroundColor: 'teal',
@@ -32,12 +34,13 @@ class Home extends Component {
   render(){
     return (
       <div style={styles.container}>
-        <Parallax pages='3' ref='parallax' scrolling={true}>
+        <Parallax pages={3} ref='parallax' scrolling={false}>
 
           <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
             <Header/>    
-            <Parallax.Layer offset={0.90} speed={1} style={{ backgroundColor: 'rgb(153,27,50)'}}>
-              <Button primary onClick={()=>this.handleDown(1)} style={styles.button}>Explore the Hotel</Button>
+            <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
+              <Navbar rooms={()=>this.handleDown(1)}/>
+              {/* <Button primary onClick={} style={styles.bonfireButton}>Explore the Hotel</Button> */}
             </Parallax.Layer>
             
           </Parallax.Layer>
