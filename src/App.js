@@ -1,21 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+// mobx
+import { observer } from 'mobx-react'
+// observables
+import Renderer from './observables/Renderer'
+// semantic
+import 'semantic-ui-css/semantic.min.css'
+// components
+import Header from './components/Header'
+// import Navbar from './components/Navbar'
+// import Footer from './components/Footer'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+const renderThis = new Renderer()
+
+const App = observer(
+  class Main extends Component {
+    constructor(props){
+      super(props)
+      this.state = {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    }
+    render() {
+      console.log(window.innerHeight)
+      return (
+        <div>
+          {/* <Header width={this.state.width} height={this.state.height}/> */}
+          {renderThis.component}
+          {/* <Navbar/> */}
+          {/* <Footer/> */}
+          
+        </div>
+      )
+    }
   }
-}
+)
 
 export default App;
