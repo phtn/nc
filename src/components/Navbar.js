@@ -14,7 +14,8 @@ const styles = {
     border: 'none'
   },
   tabs: {
-    fontFamily: 'Nunito, sans-serif',
+    fontFamily: 'Raleway, sans-serif',
+    fontWeight: 100,
     color: `rgb(250,226,173)`
   }
 }
@@ -28,7 +29,7 @@ export default props => (
         <Menu.Item name='resv' link 
           active={true} 
           onClick={props.rooms} >
-            <span style={styles.tabs}>RESERVATIONS</span>
+            <span style={styles.tabs}>ROOMS</span>
         </Menu.Item>
 
         <Menu.Item name='eat' active={true} link  onClick={props.rest} ><span style={styles.tabs}>EAT & DRINK</span></Menu.Item>
