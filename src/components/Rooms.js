@@ -4,25 +4,28 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 // semantic
-import { Segment, Card, Image, Icon } from 'semantic-ui-react'
+import { Segment, Card, Image, Icon, Button } from 'semantic-ui-react'
 // images
 import King from '../assets/images/eNK1.png'
+import Doubles from '../assets/images/erNDD2.png'
+import Suites from '../assets/board/erSA_400.jpg'
 
 const styles = {
   container: {
     margin: `300px 20px 20px 20px`,
-    // height: 300,
     textAlign: 'center',
     border: '0px solid red',
     backgroundColor: 'rgba(0,0,0,0.5)',
     padding: 20,
-    // width: '80%'
-    
   },
   segment: {
     background: 'transparent',
-    margin: '0 auto',
-
+  },
+  book: {
+    marginLeft: 30
+  },
+  image: {
+    maxHeight: 175
   }
 }
 
@@ -39,9 +42,10 @@ const settings = {
 export default props => (
   <div style={styles.container}>
     <Slider {...settings}>
+
       <div style={styles.segment}>
         <Card color='red' fluid>
-          <Image src={King}/>
+          <Image style={styles.image} src={King}/>
           <Card.Content>
             <Card.Header>
               Single King Bed
@@ -58,11 +62,84 @@ export default props => (
           <Card.Content extra>
               <Icon name='user' />
               2 Adults
+              <Button primary style={styles.book} as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'> Book Now</Button>
           </Card.Content>
         </Card>
       </div>
-      <div>Double Beds</div>
-      <div>Suites</div>
+
+      <div style={styles.segment}>
+        <Card color='red' fluid>
+          <Image style={styles.image} src={Doubles} />
+          <Card.Content>
+            <Card.Header>
+              2 Double Beds
+            </Card.Header>
+            <Card.Meta>
+              <span className='date'>
+                Family Choice
+              </span>
+            </Card.Meta>
+            <Card.Description>
+              Microwave & Fridge, HDTV, Free Wifi
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+              <Icon name='user' />
+              4 Adults
+              <Button primary style={styles.book} as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'> Book Now</Button>
+          </Card.Content>
+        </Card>
+      </div>
+
+      <div style={styles.segment}>
+        <Card color='red' fluid>
+          <Image style={styles.image} src={Suites} />
+          <Card.Content>
+            <Card.Header>
+              Single King Suite
+            </Card.Header>
+            <Card.Meta>
+              <span className='date'>
+                Popular Choice
+              </span>
+            </Card.Meta>
+            <Card.Description>
+              Microwave & Fridge, HDTV, Wifi, Sitting Area
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+              <Icon name='user' />
+              4 Adults
+              <Button primary style={styles.book} as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'> Book Now</Button>
+          </Card.Content>
+        </Card>
+      </div>
+
+      <div style={styles.segment}>
+        <Card color='red' fluid>
+          <Image style={styles.image} src={Doubles} />
+          <Card.Content>
+            <Card.Header>
+              Double Bed Suite
+            </Card.Header>
+            <Card.Meta>
+              <span className='date'>
+                Popular Choice
+              </span>
+            </Card.Meta>
+            <Card.Description>
+              Microwave & Fridge, HDTV, Wifi, Sitting Area
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+              <Icon name='user' />
+              4 Adults
+              <Button primary style={styles.book} as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'> Book Now</Button>
+          </Card.Content>
+        </Card>
+      </div>
+
+      
     </Slider>
   </div>
 )

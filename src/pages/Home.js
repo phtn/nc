@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Menu } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
@@ -93,8 +93,9 @@ const Home = observer (
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221'/>    
               
               <Rooms/>
-              <Button primary onClick={()=>this.handleDown(2)} >Explore the Hotel</Button>
-              
+              <Menu widths={1}>
+                <Button primary onClick={()=>this.handleDown(2)} >Bonfire Restaurant & Bar</Button>
+              </Menu>
             </Parallax.Layer>
 
             {/* Page 3 */}
