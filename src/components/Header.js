@@ -1,7 +1,5 @@
 import React from 'react'
-import Linen from '../assets/pattern.png'
-import Logo from '../assets/clarion-logo.png'
-import { Icon } from 'semantic-ui-react'
+
 
 const styles = {
   container: {
@@ -36,7 +34,7 @@ const styles = {
     zIndex: 1,
     fontFamily: 'Playfair Display',
     fontWeight: 400,
-    color: 'rgb(250,226,173)',
+    color: 'rgb(153,27,50)',
     letterSpacing: '1px'
 
   },
@@ -58,10 +56,10 @@ const styles = {
 export default props => (
   <div style={styles.container}>
     <header style={styles.header}>
-      <img src={Logo} alt='' height={80} style={styles.logo}/>
-      <p style={styles.title}>Clarion Inn & Suites</p>
-      <p style={styles.subtitle}>New Hope - Lambertville</p>  
-      <p style={styles.phone}>T 215.862.5221</p>  
+      <img src={props.image} alt='' height={80} style={styles.logo}/>
+      <p style={styles.title}>{props.title}</p>
+      <p style={styles.subtitle}>{props.sub}</p>  
+      <p style={styles.phone}>{props.details}</p>  
     </header>
     
   </div>

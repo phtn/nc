@@ -1,6 +1,6 @@
 import React from 'react'
-import { Segment, Menu, Icon } from 'semantic-ui-react'
-import ActiveComponent from '../observables/Renderer'
+import { Segment, Menu } from 'semantic-ui-react'
+// import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()
 const styles = {
@@ -21,7 +21,7 @@ const styles = {
 export default props => (
   <div style={styles.container}>
     <Segment style={styles.segment}>
-      <Menu inverted secondary pointing widths='3'>
+      <Menu inverted secondary pointing >
         
         
 
@@ -33,7 +33,7 @@ export default props => (
 
         <Menu.Item name='eat' active={false} link  onClick={props.rest} >EAT & DRINK</Menu.Item>
         <Menu.Item name='restaurant' active={false} link >DISCOVER</Menu.Item>
-        
+        <Menu.Item name='restaurant' active={false} link >FUN</Menu.Item>
       </Menu>
     </Segment>
   </div>

@@ -6,7 +6,7 @@ import Renderer from './observables/Renderer'
 // semantic
 import 'semantic-ui-css/semantic.min.css'
 // components
-import Header from './components/Header'
+// import Header from './components/Header'
 // import Navbar from './components/Navbar'
 // import Footer from './components/Footer'
 
