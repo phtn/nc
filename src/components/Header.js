@@ -34,7 +34,8 @@ const styles = {
     zIndex: 1,
     fontFamily: 'Playfair Display',
     fontWeight: 400,
-    color: 'rgb(153,27,50)',
+    color: 'rgb(250,226,173)',
+    textShadow: `2px 2px 2px rgba(0, 0, 0, 1)`,
     letterSpacing: '1px'
 
   },

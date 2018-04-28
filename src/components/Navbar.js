@@ -5,35 +5,35 @@ import { Segment, Menu } from 'semantic-ui-react'
 // const comp = new ActiveComponent()
 const styles = {
   container: {
-    // backgroundColor: 'rgb(0,0,0,0.5)',
-    
-    fontFamily: 'Raleway, sans-serif',
     zIndex: 1
   },
   segment: {
     background: 'transparent'
   },
+  menu: {
+    border: 'none'
+  },
   tabs: {
     fontFamily: 'Nunito, sans-serif',
-    fontWeight: 600
+    color: `rgb(250,226,173)`
   }
 }
 export default props => (
   <div style={styles.container}>
     <Segment style={styles.segment}>
-      <Menu inverted secondary pointing >
+      <Menu inverted secondary pointing style={styles.menu}>
         
         
 
         <Menu.Item name='resv' link 
-          active={false} 
+          active={true} 
           onClick={props.rooms} >
             <span style={styles.tabs}>RESERVATIONS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >EAT & DRINK</Menu.Item>
-        <Menu.Item name='restaurant' active={false} link >DISCOVER</Menu.Item>
-        <Menu.Item name='restaurant' active={false} link >FUN</Menu.Item>
+        <Menu.Item name='eat' active={true} link  onClick={props.rest} ><span style={styles.tabs}>EAT & DRINK</span></Menu.Item>
+        <Menu.Item name='restaurant' active={true} link ><span style={styles.tabs}>DISCOVER</span></Menu.Item>
+        <Menu.Item name='restaurant' active={true} link ><span style={styles.tabs}>MEET THE TEAM</span></Menu.Item>
       </Menu>
     </Segment>
   </div>
