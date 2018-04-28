@@ -10,22 +10,26 @@ import King from '../assets/images/eNK1.png'
 
 const styles = {
   container: {
-    marginTop: 300,
-    height: 300,
+    margin: `300px 20px 20px 20px`,
+    // height: 300,
     textAlign: 'center',
     border: '0px solid red',
     backgroundColor: 'rgba(0,0,0,0.5)',
+    padding: 20,
+    // width: '80%'
     
   },
   segment: {
-    background: 'transparent'
+    background: 'transparent',
+    margin: '0 auto',
+
   }
 }
 
 const settings = {
   infinite: true,
   speed: 1000,
-  arrows: false,
+  arrows: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   fade: false,
@@ -35,8 +39,8 @@ const settings = {
 export default props => (
   <div style={styles.container}>
     <Slider {...settings}>
-      <Segment style={styles.segment} textAlign='center'>
-        <Card color='red'>
+      <div style={styles.segment}>
+        <Card color='red' fluid>
           <Image src={King}/>
           <Card.Content>
             <Card.Header>
@@ -56,7 +60,7 @@ export default props => (
               2 Adults
           </Card.Content>
         </Card>
-      </Segment>
+      </div>
       <div>Double Beds</div>
       <div>Suites</div>
     </Slider>

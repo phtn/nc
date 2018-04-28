@@ -21,7 +21,7 @@ const styles = {
 }
 export default props => (
   <div style={styles.container}>
-    <Segment style={styles.segment}>
+    <Segment style={styles.segment} compact>
       <Menu inverted secondary pointing style={styles.menu}>
         
         <Menu.Item name='resv' link active={true} onClick={props.rooms} > 
