@@ -24,17 +24,22 @@ export default props => (
     <Segment style={styles.segment}>
       <Menu inverted secondary pointing style={styles.menu}>
         
-        
-
-        <Menu.Item name='resv' link 
-          active={true} 
-          onClick={props.rooms} >
+        <Menu.Item name='resv' link active={true} onClick={props.rooms} > 
             <span style={styles.tabs}>ROOMS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={true} link  onClick={props.rest} ><span style={styles.tabs}>EAT & DRINK</span></Menu.Item>
-        <Menu.Item name='restaurant' active={true} link ><span style={styles.tabs}>DISCOVER</span></Menu.Item>
-        <Menu.Item name='restaurant' active={true} link ><span style={styles.tabs}>MEET THE TEAM</span></Menu.Item>
+        <Menu.Item name='eat' active={true} link  onClick={props.rest} >
+          <span style={styles.tabs}>EAT & DRINK</span>
+        </Menu.Item>
+        
+        <Menu.Item name='restaurant' active={true} link >
+          <span style={styles.tabs}>DISCOVER</span>
+        </Menu.Item>
+        
+        <Menu.Item name='restaurant' active={true} link >
+          <span style={styles.tabs}>EVENTS</span>
+        </Menu.Item>
+      
       </Menu>
     </Segment>
   </div>

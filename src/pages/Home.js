@@ -7,11 +7,12 @@ import Leather from '../assets/board/Leather.jpg'
 import Herbs from '../assets/board/herbs.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Bonfire from '../assets/board/bonfire.PNG'
-// components
+// main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Events from '../widgets/Events'
-
+// rooms & suites
+import Rooms from '../components/Rooms'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
@@ -39,9 +40,7 @@ const styles = {
     backgroundImage: `url(${Herbs})`,
     backgroundPosition: 'center center'
   },
-  bonfireButton: {
-    marginTop: 400
-  }
+  
 }
 
 const Home = observer (
@@ -75,7 +74,8 @@ const Home = observer (
       return (
         <div style={styles.container}>
           <Parallax pages={3} ref='parallax' scrolling={false}>
-  
+            
+            {/* Page 1 */}
             <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
               <Header image={Logo} title='Clarion Inn & Suites' sub='NEW HOPE - LAMBERTVILLE' details='T 215.862.5221'/>
               
@@ -83,20 +83,25 @@ const Home = observer (
   
               <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.99)', height: 100}}>
                 <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)}/>
-                {/* <Button primary onClick={} style={styles.bonfireButton}>Explore the Hotel</Button> */}
               </Parallax.Layer>
               
             </Parallax.Layer>
-  
+            
+            {/* Page 2 */}
             <Parallax.Layer offset={1} speed={0.5} style={{backgroundImage: `url(${this.getRightPhoto(layout.width)})`, backgroundPosition: 'center center'}}>
+              
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221'/>    
-              <Button primary onClick={()=>this.handleDown(2)} style={styles.bonfireButton}>Explore the Hotel</Button>
+              
+              <Rooms/>
+              <Button primary onClick={()=>this.handleDown(2)} >Explore the Hotel</Button>
               
             </Parallax.Layer>
-  
+
+            {/* Page 3 */}
             <Parallax.Layer offset={2} speed={0.5} style={styles.bg3}>
+              
               <Header image={Bonfire} title='' sub='' details=''/>    
-              <Button primary onClick={()=>this.handleDown(0)} style={styles.bonfireButton}>Go Back home</Button>
+              <Button primary onClick={()=>this.handleDown(0)} >Go Back home</Button>
               
             </Parallax.Layer>
   

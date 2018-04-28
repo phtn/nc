@@ -22,14 +22,9 @@ const App = observer(
       }
     }
     render() {
-      console.log(window.innerHeight)
       return (
         <div>
-          {/* <Header width={this.state.width} height={this.state.height}/> */}
           {renderThis.component}
-          {/* <Navbar/> */}
-          {/* <Footer/> */}
-          
         </div>
       )
     }
