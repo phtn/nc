@@ -40,7 +40,9 @@ const styles = {
     backgroundImage: `url(${Herbs})`,
     backgroundPosition: 'center center'
   },
-  
+  menu: {
+    backgroundColor: 'rgba(0,0,0,0.5)'
+  }
 }
 
 const Home = observer (
@@ -93,8 +95,8 @@ const Home = observer (
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221'/>    
               
               <Rooms/>
-              <Menu widths={1}>
-                <Button primary onClick={()=>this.handleDown(2)} >Bonfire Restaurant & Bar</Button>
+              <Menu widths={1} style={styles.menu}>
+                <Button secondary onClick={()=>this.handleDown(2)} >Bonfire Restaurant & Bar</Button>
               </Menu>
             </Parallax.Layer>
 

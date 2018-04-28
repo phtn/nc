@@ -12,11 +12,11 @@ import Suites from '../assets/board/erSA_400.jpg'
 
 const styles = {
   container: {
-    margin: `300px 20px 20px 20px`,
+    margin: `300px 0px 20px 0px`,
     textAlign: 'center',
     border: '0px solid red',
     backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: 20,
+    padding: '20px 30px 20px 30px',
   },
   segment: {
     background: 'transparent',
