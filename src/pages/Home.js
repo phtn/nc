@@ -42,6 +42,13 @@ const styles = {
   },
   menu: {
     backgroundColor: 'rgba(0,0,0,0.5)'
+  }, 
+  directions: {
+    // border: '1px solid red', 
+    padding: 20,
+    position: 'absolute',
+    width: '100%',
+    textAlign: 'center',
   }
 }
 
@@ -69,6 +76,7 @@ const Home = observer (
         layout.resizedHeight(window.innerHeight)
       })
     }
+
     // homepage
     homeWidthHeaderAdjuster(width){
       if (width <= 320){
@@ -88,6 +96,17 @@ const Home = observer (
         return 13
       } else {
         return 14
+      }
+    }
+    homeHeightMapAdjuster(height){
+      if ( height <= 568){
+        return 450
+      } else if (height <= 667){
+        return 500
+      } else if (height <= 736){
+        return 550
+      } else {
+        return 650
       }
     }
 
@@ -123,9 +142,14 @@ const Home = observer (
               <Header image={Logo} title='Clarion Inn & Suites' sub='NEW HOPE - LAMBERTVILLE' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
               
               {/* <Events/> */}
-  
+              
+              <div style={Object.assign({top: this.homeHeightMapAdjuster(layout.height)}, styles.directions)} className='animated slideInUp'>
+                <Button primary style={{zIndex: 1}} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
+              </div>
+
               <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
                 <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)} menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
+                
               </Parallax.Layer>
               
             </Parallax.Layer>

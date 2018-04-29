@@ -5,6 +5,7 @@ import { observer } from 'mobx-react'
 import Renderer from './observables/Renderer'
 // semantic
 import 'semantic-ui-css/semantic.min.css'
+import './animate.css'
 // components
 // import Header from './components/Header'
 // import Navbar from './components/Navbar'

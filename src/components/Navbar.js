@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Menu } from 'semantic-ui-react'
+import { Segment, Menu, Icon } from 'semantic-ui-react'
 // import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()
@@ -19,6 +19,11 @@ const styles = {
     // fontWeight: 100,
     color: `rgb(250,226,173)`,
     
+  },
+  address: {
+    color: 'tomato',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+
   }
 }
 export default props => (
@@ -43,7 +48,6 @@ export default props => (
         </Menu.Item>
       
       </Menu>
-
       
     </Segment>
   </div>
