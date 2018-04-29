@@ -1,10 +1,5 @@
 import React from 'react'
 
-
-// import Bridge from '../assets/images/erNH_40.jpg'
-// import Pool from '../assets/board/pool3_2.png'
-
-
 const styles = {
   container: {
     textAlign: 'center',
@@ -15,7 +10,7 @@ const styles = {
     backgroundColor: 'rgba(0,0,0,0.7)',
     position: 'absolute',
     top: 200,
-    left: window.innerWidth-420,
+    left: window.innerWidth-200,
     zIndex: 2,
   }
 }

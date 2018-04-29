@@ -12,7 +12,7 @@ import Suites from '../assets/board/erSA_400.jpg'
 
 const styles = {
   container: {
-    margin: `300px 0px 20px 0px`,
+    
     textAlign: 'center',
     border: '0px solid red',
     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -25,7 +25,7 @@ const styles = {
     marginLeft: 30
   },
   image: {
-    maxHeight: 175
+    maxHeight: 170
   }
 }
 
@@ -40,7 +40,7 @@ const settings = {
 }
 
 export default props => (
-  <div style={styles.container}>
+  <div style={Object.assign({margin: `${props.topMargin}px 0px 20px 0px`}, styles.container)}>
     <Slider {...settings}>
 
       <div style={styles.segment}>

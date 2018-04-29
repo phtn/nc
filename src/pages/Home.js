@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Menu } from 'semantic-ui-react'
+import { Button, Menu, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
@@ -49,9 +49,15 @@ const Home = observer (
   class Homepage extends Component {
 
     componentDidMount(){
+
+      // console.log(layout.height)
+
       window.addEventListener('resize', ()=> {
-        // console.log(layout.width)
         layout.resizedWidth(window.innerWidth)
+      })
+      window.addEventListener('resize', ()=> {
+        layout.resizedHeight(window.innerHeight)
+        // console.log(window.innerHeight)
       })
     }
   
@@ -59,8 +65,29 @@ const Home = observer (
       window.removeEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
       })
+      window.removeEventListener('resize', ()=> {
+        layout.resizedHeight(window.innerHeight)
+      })
     }
-  
+    // homepage
+    homeWidthHeaderAdjuster(width){
+      if (width > 376){
+        return 30
+      } else {
+        return 25
+      }
+    }
+    // rooms & suites
+    heightAdjuster(height){
+      if (height > 800){
+        return 350
+      } else if(height > 700){
+        return 300
+      } else {
+        return 200
+      }
+    }
+    
     getRightPhoto(width){
       if (width < 450){
         return Leather
@@ -79,9 +106,9 @@ const Home = observer (
             
             {/* Page 1 */}
             <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
-              <Header image={Logo} title='Clarion Inn & Suites' sub='NEW HOPE - LAMBERTVILLE' details='T 215.862.5221'/>
+              <Header image={Logo} title='Clarion Inn & Suites' sub='NEW HOPE - LAMBERTVILLE' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
               
-              <Events/>
+              {/* <Events/> */}
   
               <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.99)', height: 100}}>
                 <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)}/>
@@ -94,9 +121,10 @@ const Home = observer (
               
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221'/>    
               
-              <Rooms/>
+              <Rooms topMargin={this.heightAdjuster(layout.height)}/>
+
               <Menu widths={1} style={styles.menu}>
-                <Button secondary onClick={()=>this.handleDown(2)} >Bonfire Restaurant & Bar</Button>
+                <Button secondary onClick={()=>this.handleDown(2)} > Bonfire Restaurant & Bar</Button>
               </Menu>
             </Parallax.Layer>
 

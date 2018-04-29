@@ -16,19 +16,18 @@ const styles = {
   },
   header: {
     marginLeft: 20,
-    fontSize: 30,
-    color: '#fff',
-    fontFamily: 'Raleway, sans-serif',
-    fontWeight: 100,
     
   },
   title: {
+    color: '#fff',
+    fontFamily: 'Raleway, sans-serif',
+    fontWeight: 100,
     marginLeft: 88,
     textShadow: `3px 3px 9px rgba(150, 150, 150, 1)`
   },
   subtitle: {
     marginLeft: 90,
-    fontSize: 15,
+    fontSize: 13,
     position: 'absolute',
     top: 45,
     zIndex: 1,
@@ -58,7 +57,7 @@ export default props => (
   <div style={styles.container}>
     <header style={styles.header}>
       <img src={props.image} alt='' height={80} style={styles.logo}/>
-      <p style={styles.title}>{props.title}</p>
+      <p style={Object.assign({fontSize: props.titleSize}, styles.title)}>{props.title}</p>
       <p style={styles.subtitle}>{props.sub}</p>  
       <p style={styles.phone}>{props.details}</p>  
     </header>

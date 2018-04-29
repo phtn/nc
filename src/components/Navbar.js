@@ -15,7 +15,7 @@ const styles = {
   },
   tabs: {
     fontFamily: 'Raleway, sans-serif',
-    fontWeight: 100,
+    // fontWeight: 100,
     color: `rgb(250,226,173)`
   }
 }
