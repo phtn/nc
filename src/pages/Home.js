@@ -106,7 +106,7 @@ const Home = observer (
       } else if (height <= 740){
         return 550
       } else {
-        return 650
+        return 600
       }
     }
 
