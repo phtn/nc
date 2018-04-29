@@ -71,12 +71,26 @@ const Home = observer (
     }
     // homepage
     homeWidthHeaderAdjuster(width){
-      if (width > 376){
+      if (width <= 320){
+        return 23
+      } else if (width > 376){
         return 30
       } else {
         return 25
       }
     }
+    homeWidthNavbarAdjuster(width){
+      if (width <= 320){
+        return 11
+      } else if (width < 375){
+        return 12
+      } else if (width === 375){
+        return 13
+      } else {
+        return 14
+      }
+    }
+
     // rooms & suites
     heightAdjuster(height){
       if (height > 800){
@@ -110,8 +124,8 @@ const Home = observer (
               
               {/* <Events/> */}
   
-              <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.99)', height: 100}}>
-                <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)}/>
+              <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
+                <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)} menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
               </Parallax.Layer>
               
             </Parallax.Layer>
@@ -119,7 +133,7 @@ const Home = observer (
             {/* Page 2 */}
             <Parallax.Layer offset={1} speed={0.5} style={{backgroundImage: `url(${this.getRightPhoto(layout.width)})`, backgroundPosition: 'center center'}}>
               
-              <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221'/>    
+              <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
               
               <Rooms topMargin={this.heightAdjuster(layout.height)}/>
 
