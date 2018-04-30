@@ -15,11 +15,12 @@ const styles = {
     
     textAlign: 'center',
     border: '0px solid red',
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    // backgroundColor: 'rgba(0,0,0,0.5)',
     padding: '20px 30px 20px 30px',
   },
   segment: {
     background: 'transparent',
+    margin: 5
   },
   book: {
     marginLeft: 30

@@ -7,6 +7,7 @@ import Leather from '../assets/board/walle.jpeg'
 import Herbs from '../assets/board/herbs.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Bonfire from '../assets/board/bonfire.PNG'
+import Linen from '../assets/linen.png'
 // main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -34,8 +35,10 @@ const styles = {
     // width: window.innerWidth
   },
   bg2: {
-    backgroundImage: `url(${ROOM1})`,
-    backgroundPosition: 'center center'
+    backgroundImage: `url(${Linen})`,
+    backgroundRepeat: 'repeat',
+    // backgroundPosition: 'center center'
+    backgroundColor: '#050f2c'
   },
   bg3: {
     backgroundImage: `url(${Herbs})`,
@@ -156,10 +159,10 @@ const Home = observer (
             </Parallax.Layer>
             
             {/* Page 2 */}
-            <Parallax.Layer offset={1} speed={0.5} style={{backgroundImage: `url(${this.getRightPhoto(layout.width)})`, backgroundPosition: 'center center'}}>
+            <Parallax.Layer offset={1} speed={0.5} style={styles.bg2}>
               
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
-              <Rewards/>
+              <Rewards />
               <Rooms topMargin={this.heightAdjuster(layout.height)}/>
 
               <Menu widths={1} style={styles.menu}>

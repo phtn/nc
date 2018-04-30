@@ -12,16 +12,19 @@ const styles = {
     width: '100%',
   },
   image: {
-    height: 80,
+    height: 70,
     margin: '0 auto'
   },
   gift: {
     height: 40,
-    marginRight: 10
+    marginRight: 15
   }
 }
 export default props => (
   <div style={styles.container}>
+    
+    <Image src={Rewards} style={styles.image}/>
+
     <Message icon positive>
       <Image src={Gift} style={styles.gift}/>
       <Message.Content>
@@ -29,7 +32,6 @@ export default props => (
         Join Choice Privileges Rewards. It's free!
       </Message.Content>
     </Message>
-    
-    <Image src={Rewards} style={styles.image}/>
+
   </div>
 )
