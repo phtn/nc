@@ -3,7 +3,7 @@ import { Button, Menu, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
-import Leather from '../assets/board/witale.jpg'
+import Leather from '../assets/board/walle.jpeg'
 import Herbs from '../assets/board/herbs.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Bonfire from '../assets/board/bonfire.PNG'
@@ -13,6 +13,7 @@ import Navbar from '../components/Navbar'
 import Events from '../widgets/Events'
 // rooms & suites
 import Rooms from '../components/Rooms'
+import Rewards from '../widgets/ChoiceRewards'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
@@ -158,7 +159,7 @@ const Home = observer (
             <Parallax.Layer offset={1} speed={0.5} style={{backgroundImage: `url(${this.getRightPhoto(layout.width)})`, backgroundPosition: 'center center'}}>
               
               <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
-              
+              <Rewards/>
               <Rooms topMargin={this.heightAdjuster(layout.height)}/>
 
               <Menu widths={1} style={styles.menu}>
