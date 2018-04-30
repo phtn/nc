@@ -15,7 +15,7 @@ const styles = {
     // fontSize: 12
   },
   tabs: {
-    fontFamily: 'Raleway, sans-serif',
+    fontFamily: 'Playfair Display',
     // fontWeight: 100,
     color: `rgb(250,226,173)`,
     
