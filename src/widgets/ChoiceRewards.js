@@ -1,6 +1,6 @@
 import React from 'react'
 import Rewards from '../assets/board/rewards.jpg'
-import { Image, Message, Icon } from 'semantic-ui-react'
+import { Image, Message } from 'semantic-ui-react'
 import Gift from '../assets/board/gift.svg'
 
 const styles = {

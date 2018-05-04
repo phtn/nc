@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
-import { Button, Menu, Icon } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
 import Leather from '../assets/board/walle.jpeg'
-import Herbs from '../assets/board/herbs.jpg'
+import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
-import Bonfire from '../assets/board/bonfire.PNG'
 import Linen from '../assets/linen.png'
+import Summer from '../assets/board/pool4.jpg'
 // main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
-import Events from '../widgets/Events'
+import NavbarDesktop from '../components/NavbarDesktop'
+import BonfireDesktop from '../components/BonfireDesktop'
+import AmenitiesDesktop from '../components/AmenitiesDesktop'
+import DiscoverDesktop from '../components/DiscoverDesktop'
+// import Events from '../widgets/Events'
 // rooms & suites
 import Rooms from '../components/Rooms'
-import Rewards from '../widgets/ChoiceRewards'
+import RoomsDesktop from '../components/RoomsDesktop'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
@@ -26,7 +30,7 @@ const styles = {
     // maxHeight: 500
   },
   button: {
-    margin: 20
+    fontFamily: 'Playfair Display'
   },
   bg: {
     // backgroundColor: '#666',
@@ -42,7 +46,14 @@ const styles = {
   },
   bg3: {
     backgroundImage: `url(${Herbs})`,
-    backgroundPosition: 'center center'
+    // backgroundPosition: 'center center',
+    backgroundSize: `${layout.width}px ${layout.height}px`
+  },
+  bg4: {
+    backgroundImage: `linear-gradient(to right top, #007184, #009B95, #00C485, #87E75B, #FFFF18)`
+    // backgroundImage: `linear-gradient(to right top, #051937, #643062, #c14962, #f58940, #e6e031)`
+    // backgroundPosition: 'center center',
+    
   },
   menu: {
     backgroundColor: 'rgba(0,0,0,0.5)'
@@ -61,7 +72,7 @@ const Home = observer (
 
     componentDidMount(){
 
-      // console.log(layout.height)
+      this.refs.parallax.scrollTo(0)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -91,7 +102,7 @@ const Home = observer (
         return 25
       }
     }
-    homeWidthNavbarAdjuster(width){
+    homeWidthNavbarAdjuster(width){ // mobile
       if (width <= 320){
         return 11
       } else if (width < 375){
@@ -113,6 +124,25 @@ const Home = observer (
         return 600
       }
     }
+    homeWidthNavbarComponent(width){
+      if (width < 600){
+        return <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)} menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
+      } else {
+        return <NavbarDesktop 
+          rooms={()=>this.handleDown(1)} 
+          rest={()=>this.handleDown(2)} 
+          amenities={()=>this.handleDown(3)} 
+          group={()=>this.handleDown(4)} 
+          events={()=>this.handleDown(5)} 
+          discover={()=>this.handleDown(6)}
+          />
+      }
+    }
+    homeWidthDirectionsDispay(width){
+      if (width > 600){
+        return 'none'
+      }
+    }
 
     // rooms & suites
     heightAdjuster(height){
@@ -122,6 +152,19 @@ const Home = observer (
         return 300
       } else {
         return 200
+      }
+    }
+    widthComponentAdjuster(width){
+      if (width < 600){
+        return <Rooms topMargin={this.heightAdjuster(layout.height)}/>
+      } else {
+        return <RoomsDesktop 
+          rest={()=>this.handleDown(2)} 
+          amenities={()=>this.handleDown(3)} 
+          group={()=>this.handleDown(4)} 
+          events={()=>this.handleDown(5)} 
+          discover={()=>this.handleDown(6)}
+          />
       }
     }
     
@@ -139,42 +182,118 @@ const Home = observer (
     render(){
       return (
         <div style={styles.container}>
-          <Parallax pages={3} ref='parallax' scrolling={false}>
+          <Parallax pages={7} ref='parallax' scrolling={false}>
             
-            {/* Page 1 */}
+            {/* Page 1 HOME */}
             <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
-              <Header image={Logo} title='Clarion Inn & Suites' sub='NEW HOPE - LAMBERTVILLE' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} title='Clarion Inn & Suites' 
+                sub='NEW HOPE - LAMBERTVILLE' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
               
-              {/* <Events/> */}
               
               <div style={Object.assign({top: this.homeHeightMapAdjuster(layout.height)}, styles.directions)} className='animated slideInUp'>
-                <Button primary style={{zIndex: 1}} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
+                <Button primary style={Object.assign({display: this.homeWidthDirectionsDispay(layout.width), zIndex: 1})} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
               </div>
 
               <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
-                <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)} menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
-                
+                {this.homeWidthNavbarComponent(layout.width)}
               </Parallax.Layer>
               
             </Parallax.Layer>
             
-            {/* Page 2 */}
+            {/* Page 2 ROOMS & SUITES*/}
             <Parallax.Layer offset={1} speed={0.5} style={styles.bg2}>
               
-              <Header image={Logo} title='Rooms & Suites' sub='KING &middot; DOUBLES &middot; SUITES' details='T 215.862.5221' titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
-              <Rewards />
-              <Rooms topMargin={this.heightAdjuster(layout.height)}/>
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} 
+                title='Rooms & Suites' 
+                sub='KING &middot; DOUBLES &middot; SUITES' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+              
+              
 
-              <Menu widths={1} style={styles.menu}>
-                <Button secondary onClick={()=>this.handleDown(2)} > Bonfire Restaurant & Bar</Button>
-              </Menu>
+              {this.widthComponentAdjuster(layout.width)}
+
+              
             </Parallax.Layer>
 
-            {/* Page 3 */}
+            {/* Page 3 EAT & DRINK*/}
             <Parallax.Layer offset={2} speed={0.5} style={styles.bg3}>
               
-              <Header image={Bonfire} title='' sub='' details=''/>    
-              <Button primary onClick={()=>this.handleDown(0)} >Go Back home</Button>
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} 
+                title='Eat & Drink' 
+                sub='BAR &middot; GRILL &middot; ENTERTAINMENT' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+
+              <BonfireDesktop rooms={()=>this.handleDown(1)} amenities={()=>this.handleDown(3)}/>
+              
+            </Parallax.Layer>
+
+            {/* Page 4 HOTEL AMENITIES*/}
+            <Parallax.Layer offset={3} speed={0.5} style={styles.bg4}>
+              
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} 
+                title='Hotel Amenities' 
+                sub='SWIMMING POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+
+              <AmenitiesDesktop rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)}/>
+              
+            </Parallax.Layer>
+
+            
+            {/* Page 5 GROUP RESERVATIONS*/}
+            <Parallax.Layer offset={4} speed={0.5} style={styles.bg3}>
+              
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} title='GROUP RESERVATIONS' 
+                sub='WEDDINGS &middot; CONFERENCES &middot; SPORTS TEAMS' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+
+              
+              
+            </Parallax.Layer>
+
+            
+            {/* Page 6 EVENTS*/}
+            <Parallax.Layer offset={5} speed={0.5} style={styles.bg3}>
+              
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} title='EVENTS & LIVE PERFORMANCES' 
+                sub='RRAZZ ROOM &middot; BOOZY BINGO &middot; KARAOKE' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+
+              
+            </Parallax.Layer>
+
+            {/* Page 6 DISCOVER*/}
+            <Parallax.Layer offset={6} speed={0.5} style={styles.bg3}>
+              
+              <Header 
+                home={()=> this.handleDown(0)} 
+                image={Logo} 
+                title='DISCOVER NEW HOPE & LAMBERTVILLE' 
+                sub='MAIN ST &middot; PEDDLERS VILLAGE &middot; LAMBERTVILLE STATION' 
+                details='T 215.862.5221' 
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+
+
+              <DiscoverDesktop/>
               
             </Parallax.Layer>
   

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Menu, Icon } from 'semantic-ui-react'
+import { Segment, Menu } from 'semantic-ui-react'
 // import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()

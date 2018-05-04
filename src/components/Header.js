@@ -40,9 +40,9 @@ const styles = {
   },
   phone: {
     marginLeft: 90,
-    fontSize: 15,
+    fontSize: 17,
     position: 'absolute',
-    top: 70,
+    top: 65,
     zIndex: 1,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
@@ -50,13 +50,14 @@ const styles = {
     color: '#fff',
   },
   logo: {
-    position: 'absolute'
+    position: 'absolute',
+    cursor: 'pointer'
   }
 }
 export default props => (
   <div style={styles.container}>
     <header style={styles.header}>
-      <img src={props.image} alt='' height={80} style={styles.logo}/>
+      <img src={props.image} alt='' height={80} style={styles.logo} onClick={props.home}/>
       <p style={Object.assign({fontSize: props.titleSize}, styles.title)}>{props.title}</p>
       <p style={styles.subtitle}>{props.sub}</p>  
       <p style={styles.phone}>{props.details}</p>  
