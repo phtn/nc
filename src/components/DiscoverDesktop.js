@@ -1,12 +1,12 @@
 import React from 'react'
-import { Item, Button, Icon, Menu, Container } from 'semantic-ui-react'
+import { Item, Button, Icon, Menu, Container, Message, Image} from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import Doubles from '../assets/images/erNDD2.png'
-import King from '../assets/images/eNK1.png'
-// import Suites from '../assets/board/erSA_400.jpg'
+import Discover1 from '../assets/images/disco1.jpg'
+import Discover2 from '../assets/images/disco2.jpg'
+import Discover3 from '../assets/images/disco3.jpg'
 
 import Chevron from '../assets/chevron.svg'
 import Lefty from '../assets/left.svg'
@@ -18,7 +18,7 @@ const styles = {
   },
   innerContainer: {
     height: 470,
-    backgroundColor: '#eee',
+    backgroundColor: 'transparent',
     padding: '10px 100px 0px 100px',
   },
   header: {
@@ -77,173 +77,22 @@ export default props => (
     <div style={styles.innerContainer}>
       <Slider {...settings} >
 
-         <div>
-          <Item.Group>
-            <Item>
-              <Item.Image size='huge' src={King} />
-
-              <Item.Content>
-                <Item.Header style={styles.header}>Single King Bed</Item.Header>
-                
-
-                <Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta>
-                <Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM &nbsp;&middot;&nbsp; Check-Out: 11AM</Item.Meta>
-                <Item.Extra>
-                  <Menu vertical fluid>
-                    <Menu.Item>
-                      <Button disabled fluid as='a' href=''><Icon name='universal access' />AMENITIES</Button>
-                    </Menu.Item>
-                    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-                    <Menu.Item>Free WiFi</Menu.Item>
-                    <Menu.Item>HD Channel TV</Menu.Item>
-                    <Menu.Item>Coffee Maker</Menu.Item>
-                    <Menu.Item>All Brand New Rooms</Menu.Item>
-                    <Menu.Item>
-                      <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-                    </Menu.Item>
-                    
-                  </Menu>
-                </Item.Extra>
-                
-              </Item.Content>
-            </Item>
-          </Item.Group>
+        <div style={{margin: '0 auto'}}>
+          <Image.Group>
+            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover2} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover3} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
+          </Image.Group>
+          <Message positive style={{maxWidth: 918}}>
+            <Message.Content>
+              <Message.Header>New Hope Bridge & Main Street &middot; Distance: 3.3 miles &middot; Drive: 5 minutes</Message.Header>
+            </Message.Content>
+          </Message>
         </div>
 
-        <div>
-          <Item.Group>
-            <Item>
-              <Item.Image size='huge' src={Doubles} />
-
-              <Item.Content>
-                <Item.Header style={styles.header}>2 Double Beds</Item.Header>
-                
-
-                <Item.Meta><Icon name='user'/> &nbsp; Sleeps 4</Item.Meta>
-                <Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM &nbsp;&middot;&nbsp; Check-Out: 11AM</Item.Meta>
-                <Item.Extra>
-                  <Menu vertical fluid>
-                    <Menu.Item>
-                      <Button disabled fluid as='a' href=''><Icon name='universal access' />AMENITIES</Button>
-                    </Menu.Item>
-                    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-                    <Menu.Item>Free WiFi</Menu.Item>
-                    <Menu.Item>HD Channel TV</Menu.Item>
-                    <Menu.Item>Coffee Maker</Menu.Item>
-                    <Menu.Item>All Brand New Rooms</Menu.Item>
-                    <Menu.Item>
-                      <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-                    </Menu.Item>
-                    
-                  </Menu>
-                </Item.Extra>
-                
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </div>
-
-        <div>
-          <Item.Group>
-            <Item>
-              <Item.Image size='huge' src={King} />
-
-              <Item.Content>
-                <Item.Header style={styles.header}>Single King Suite</Item.Header>
-                
-
-                <Item.Meta><Icon name='user'/> &nbsp; Sleeps 4</Item.Meta>
-                <Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM &nbsp;&middot;&nbsp; Check-Out: 11AM</Item.Meta>
-                <Item.Extra>
-                  <Menu vertical fluid>
-                    <Menu.Item>
-                      <Button disabled fluid as='a' href=''><Icon name='universal access' />AMENITIES</Button>
-                    </Menu.Item>
-                    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-                    <Menu.Item>Free WiFi</Menu.Item>
-                    <Menu.Item>HD Channel TV</Menu.Item>
-                    <Menu.Item>Coffee Maker</Menu.Item>
-                    <Menu.Item>All Brand New Rooms</Menu.Item>
-                    <Menu.Item>Spacious Sitting Area</Menu.Item>
-                    <Menu.Item>
-                      <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-                    </Menu.Item>
-                    
-                  </Menu>
-                </Item.Extra>
-                
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </div>
-
-        <div>
-          <Item.Group>
-            <Item>
-              <Item.Image size='huge' src={Doubles} />
-
-              <Item.Content>
-                <Item.Header style={styles.header}>2 Double Beds Suite</Item.Header>
-                
-
-                <Item.Meta><Icon name='user'/> &nbsp; Sleeps 4</Item.Meta>
-                <Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM &nbsp;&middot;&nbsp; Check-Out: 11AM</Item.Meta>
-                <Item.Extra>
-                  <Menu vertical fluid>
-                    <Menu.Item>
-                      <Button disabled fluid as='a' href=''><Icon name='universal access' />AMENITIES</Button>
-                    </Menu.Item>
-                    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-                    <Menu.Item>Free WiFi</Menu.Item>
-                    <Menu.Item>HD Channel TV</Menu.Item>
-                    <Menu.Item>Coffee Maker</Menu.Item>
-                    <Menu.Item>All Brand New Rooms</Menu.Item>
-                    <Menu.Item>Spacious Sitting Area</Menu.Item>
-                    <Menu.Item>
-                      <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-                    </Menu.Item>
-                    
-                  </Menu>
-                </Item.Extra>
-                
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </div>
-
-        <div>
-          <Item.Group>
-            <Item>
-              <Item.Image size='huge' src={King} />
-
-              <Item.Content>
-                <Item.Header style={styles.header}>Jacuzzi King Suite</Item.Header>
-                
-
-                <Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta>
-                <Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM &nbsp;&middot;&nbsp; Check-Out: 11AM</Item.Meta>
-                <Item.Extra>
-                  <Menu vertical fluid>
-                    <Menu.Item>
-                      <Button disabled fluid as='a' href=''><Icon name='universal access' />AMENITIES</Button>
-                    </Menu.Item>
-                    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-                    <Menu.Item>Free WiFi</Menu.Item>
-                    <Menu.Item>HD Channel TV</Menu.Item>
-                    <Menu.Item>Coffee Maker</Menu.Item>
-                    <Menu.Item>All Brand New Rooms</Menu.Item>
-                    <Menu.Item>Spacious Sitting Area</Menu.Item>
-                    <Menu.Item>
-                      <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-                    </Menu.Item>
-                    
-                  </Menu>
-                </Item.Extra>
-                
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </div>
 
        
 
@@ -252,6 +101,10 @@ export default props => (
     
     <div style={{marginTop: 30}}>
       <Menu fluid inverted widths={5}>
+        
+        <Menu.Item name='rooms' active={false} link  onClick={props.rooms} >
+          <span style={styles.tabs}>ROOMS</span>
+        </Menu.Item>
         <Menu.Item name='eat' active={false} link  onClick={props.rest} >
           <span style={styles.tabs}>EAT & DRINK</span>
         </Menu.Item>
@@ -268,9 +121,7 @@ export default props => (
           <span style={styles.tabs}>EVENTS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
-          <span style={styles.tabs}>DISCOVER</span>
-        </Menu.Item>
+        
 
       </Menu>
     </div>

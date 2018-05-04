@@ -8,6 +8,8 @@ import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Linen from '../assets/linen.png'
 import Summer from '../assets/board/pool4.jpg'
+import Bouquet from '../assets/board/bo1.jpg'
+import Discover from '../assets/images/disco2.jpg'
 // main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -55,6 +57,14 @@ const styles = {
     // backgroundPosition: 'center center',
     
   },
+  bg5: {
+    backgroundImage: `url(${Bouquet})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
+  },
+  bg6: {
+    backgroundImage: `url(${Discover})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
+  },
   menu: {
     backgroundColor: 'rgba(0,0,0,0.5)'
   }, 
@@ -72,7 +82,7 @@ const Home = observer (
 
     componentDidMount(){
 
-      this.refs.parallax.scrollTo(0)
+      this.refs.parallax.scrollTo(6)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -126,7 +136,13 @@ const Home = observer (
     }
     homeWidthNavbarComponent(width){
       if (width < 600){
-        return <Navbar rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)} events={()=>this.handleDown(3)} menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
+        return <Navbar 
+          rooms={()=>this.handleDown(1)} 
+          rest={()=>this.handleDown(2)} 
+          events={()=>this.handleDown(3)} 
+          menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
+
+
       } else {
         return <NavbarDesktop 
           rooms={()=>this.handleDown(1)} 
@@ -154,7 +170,7 @@ const Home = observer (
         return 200
       }
     }
-    widthComponentAdjuster(width){
+    renderRoomComponent(width){
       if (width < 600){
         return <Rooms topMargin={this.heightAdjuster(layout.height)}/>
       } else {
@@ -198,7 +214,7 @@ const Home = observer (
                 <Button primary style={Object.assign({display: this.homeWidthDirectionsDispay(layout.width), zIndex: 1})} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
               </div>
 
-              <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.7)', height: 100}}>
+              <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.85)', height: 100}}>
                 {this.homeWidthNavbarComponent(layout.width)}
               </Parallax.Layer>
               
@@ -217,7 +233,7 @@ const Home = observer (
               
               
 
-              {this.widthComponentAdjuster(layout.width)}
+              {this.renderRoomComponent(layout.width)}
 
               
             </Parallax.Layer>
@@ -240,7 +256,7 @@ const Home = observer (
             {/* Page 4 HOTEL AMENITIES*/}
             <Parallax.Layer offset={3} speed={0.5} style={styles.bg4}>
               
-              <Header 
+              <Header // HEADER
                 home={()=> this.handleDown(0)} 
                 image={Logo} 
                 title='Hotel Amenities' 
@@ -254,7 +270,7 @@ const Home = observer (
 
             
             {/* Page 5 GROUP RESERVATIONS*/}
-            <Parallax.Layer offset={4} speed={0.5} style={styles.bg3}>
+            <Parallax.Layer offset={4} speed={0.5} style={styles.bg5}>
               
               <Header 
                 home={()=> this.handleDown(0)} 
@@ -274,7 +290,7 @@ const Home = observer (
               <Header 
                 home={()=> this.handleDown(0)} 
                 image={Logo} title='EVENTS & LIVE PERFORMANCES' 
-                sub='RRAZZ ROOM &middot; BOOZY BINGO &middot; KARAOKE' 
+                sub='THE RRAZZ ROOM &middot; BOOZY BINGO &middot; KARAOKE NIGHTS' 
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
@@ -282,7 +298,7 @@ const Home = observer (
             </Parallax.Layer>
 
             {/* Page 6 DISCOVER*/}
-            <Parallax.Layer offset={6} speed={0.5} style={styles.bg3}>
+            <Parallax.Layer offset={6} speed={0.5} style={styles.bg}>
               
               <Header 
                 home={()=> this.handleDown(0)} 
