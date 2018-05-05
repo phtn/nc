@@ -1,5 +1,5 @@
 import React from 'react'
-import { Item, Button, Icon, Menu, Container, Message, Image} from 'semantic-ui-react'
+import { Menu, Container, Message, Image} from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

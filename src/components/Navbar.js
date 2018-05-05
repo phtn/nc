@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Menu } from 'semantic-ui-react'
+import { Segment, Menu, Button } from 'semantic-ui-react'
 // import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()
@@ -28,8 +28,8 @@ const styles = {
 }
 export default props => (
   <div style={styles.container}>
-    <Segment style={styles.segment} compact>
-      <Menu inverted secondary pointing style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
+    <Segment style={styles.segment} >
+      <Menu inverted secondary pointing fluid style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
         
         <Menu.Item name='resv' link active={false} onClick={props.rooms} > 
             <span style={styles.tabs}>ROOMS</span>
@@ -39,12 +39,9 @@ export default props => (
           <span style={styles.tabs}>EAT & DRINK</span>
         </Menu.Item>
         
-        <Menu.Item name='restaurant' active={false} link >
-          <span style={styles.tabs}>DISCOVER</span>
-        </Menu.Item>
         
         <Menu.Item name='restaurant' active={false} link >
-          <span style={styles.tabs}>EVENTS</span>
+          <Button positive fluid>BOOK NOW</Button>
         </Menu.Item>
       
       </Menu>

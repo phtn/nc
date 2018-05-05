@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 // semantic
-import { Card, Image, Icon, Button } from 'semantic-ui-react'
+import { Card, Image, Icon, Button, Menu } from 'semantic-ui-react'
 // images
 import King from '../assets/images/eNK1.png'
 import Doubles from '../assets/images/erNDD2.png'
@@ -30,7 +30,11 @@ const styles = {
   },
   image: {
     maxHeight: 170
-  }
+  },
+  tabs: {
+    fontFamily: 'Playfair Display',
+    color: `rgb(250,226,173)`,
+  },
 }
 
 const settings = {
@@ -150,5 +154,28 @@ export default props => (
         
       </Slider>
     </div>
+
+    <div style={{marginTop: 0}}>
+      <Menu fluid inverted widths={5}>
+
+        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+          <span style={styles.tabs}>EAT & DRINK</span>
+        </Menu.Item>
+
+        <Menu.Item name='group' active={false} link  onClick={props.group} >
+          <span style={styles.tabs}>AMENITIES</span>
+        </Menu.Item>
+
+        <Menu.Item name='events' active={false} link  onClick={props.events} >
+          <span style={styles.tabs}>EVENTS</span>
+        </Menu.Item>
+
+        <Menu.Item name='discover' active={false} link  onClick={props.discover} >
+          <span style={styles.tabs}>DISCOVER</span>
+        </Menu.Item>
+
+      </Menu>
+    </div>
+
   </div>
 )

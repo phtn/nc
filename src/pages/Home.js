@@ -3,19 +3,19 @@ import { Button, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Animated from 'animated/lib/targets/react-dom'
 import Bridge from '../assets/board/erNH_40.jpg'
-import ROOM1 from '../assets/images/ROOM1.jpg'
 import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Linen from '../assets/linen.png'
-import Summer from '../assets/board/pool4.jpg'
 import Bouquet from '../assets/board/bo1.jpg'
 import Discover from '../assets/images/disco2.jpg'
 import Mixer from '../assets/board/mixerboard.jpg'
+import Sea from '../assets/board/sea.jpg'
 // main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import NavbarDesktop from '../components/NavbarDesktop'
 import BonfireDesktop from '../components/BonfireDesktop'
+import Bonfire from '../components/Bonfire'
 import AmenitiesDesktop from '../components/AmenitiesDesktop'
 import DiscoverDesktop from '../components/DiscoverDesktop'
 import EventsDesktop from '../components/EventsDesktop'
@@ -27,8 +27,10 @@ import RoomsDesktop from '../components/RoomsDesktop'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
+import States from '../observables/States'
 
 const layout = new Layout()
+const states = new States()
 
 const styles = {
   container: {
@@ -38,26 +40,21 @@ const styles = {
     fontFamily: 'Playfair Display'
   },
   bg: {
-    // backgroundColor: '#666',
     backgroundImage: `url(${Bridge})`,
     backgroundPosition: 'center center'
-    // width: window.innerWidth
   },
   bg2: {
     backgroundImage: `url(${Linen})`,
     backgroundRepeat: 'repeat',
-    // backgroundPosition: 'center center'
     backgroundColor: '#050f2c'
   },
   bg3: {
     backgroundImage: `url(${Herbs})`,
-    // backgroundPosition: 'center center',
     backgroundSize: `${layout.width}px ${layout.height}px`
   },
   bg4: {
-    backgroundImage: `linear-gradient(to right top, #007184, #009B95, #00C485, #87E75B, #FFFF18)`
-    // backgroundImage: `linear-gradient(to right top, #051937, #643062, #c14962, #f58940, #e6e031)`
-    // backgroundPosition: 'center center',
+    backgroundImage: `url(${Sea})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
     
   },
   bg5: {
@@ -147,7 +144,9 @@ const Home = observer (
           rooms={()=>this.handleDown(1)} 
           rest={()=>this.handleDown(2)} 
           events={()=>this.handleDown(3)} 
-          menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}/>
+          menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}
+          toggle={()=>states.toggleSidebar(states.sidebarVisibility)}
+          />
 
 
       } else {
@@ -179,10 +178,35 @@ const Home = observer (
     }
     renderRoomComponent(width){
       if (width < 600){
-        return <Rooms topMargin={this.heightAdjuster(layout.height)}/>
+        return <Rooms 
+          topMargin={this.heightAdjuster(layout.height)}
+          rest={()=>this.handleDown(2)} 
+          amenities={()=>this.handleDown(3)} 
+          events={()=>this.handleDown(5)} 
+          discover={()=>this.handleDown(6)}
+          />
       } else {
         return <RoomsDesktop 
           rest={()=>this.handleDown(2)} 
+          amenities={()=>this.handleDown(3)} 
+          group={()=>this.handleDown(4)} 
+          events={()=>this.handleDown(5)} 
+          discover={()=>this.handleDown(6)}
+          />
+      }
+    }
+
+    renderBonfireComponent(width){
+      if (width < 600){
+        return <Bonfire 
+          rooms={()=>this.handleDown(1)} 
+          amenities={()=>this.handleDown(3)} 
+          events={()=>this.handleDown(5)} 
+          discover={()=>this.handleDown(6)}
+          />
+      } else {
+        return <BonfireDesktop 
+          rooms={()=>this.handleDown(1)} 
           amenities={()=>this.handleDown(3)} 
           group={()=>this.handleDown(4)} 
           events={()=>this.handleDown(5)} 
@@ -256,13 +280,15 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
-              <BonfireDesktop 
+                {this.renderBonfireComponent(layout.width)}
+
+              {/* <BonfireDesktop 
                 rooms={()=>this.handleDown(1)} 
                 amenities={()=>this.handleDown(3)} 
                 group={()=>this.handleDown(4)}
                 events={()=>this.handleDown(5)}
                 discover={()=>this.handleDown(6)}
-                />
+                /> */}
               
             </Parallax.Layer>
 

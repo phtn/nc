@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import fire from '../database/Fire'
-import { Button, Checkbox, Form, Segment, Select, Radio, Message, Icon, Menu, Container } from 'semantic-ui-react'
+import { Form, Segment, Radio, Message, Menu, Container } from 'semantic-ui-react'
 
 
 const styles = {
@@ -24,19 +24,6 @@ const styles = {
   }
 }
 
-const groupTypeOptions = [
-  {key: 'wd', value: 'wd', text: 'Wedding'},
-  {key: 'co', value: 'co', text: 'Company'},
-  {key: 'sp', value: 'sp', text: 'Sports Team'},
-  {key: 'cb', value: 'cb', text: 'Club'},
-]
-
-const numberOfRoomsOptions = [
-  {key: '5', value: '5', text: '5 Rooms'},
-  {key: '10', value: '10', text: '10 Rooms'},
-  {key: '15', value: '15', text: '15 Rooms'},
-  {key: 'more', value: 'more', text: 'More than 15 Rooms'},
-]
 
 
 class Group extends Component {

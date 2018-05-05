@@ -1,5 +1,5 @@
 import React from 'react'
-import { Item, Menu, Container, Image, Card, Button, Icon } from 'semantic-ui-react'
+import { Item, Menu, Container, Button, Icon } from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -26,7 +26,6 @@ const styles = {
     padding: '10px 100px 0px 100px',
   },
   header: {
-    fontSize: 26,
     marginTop: 10,
     color: '#050f2c',
     fontFamily: 'Roboto, sans-serif',
@@ -39,12 +38,12 @@ const styles = {
     color: `rgb(250,226,173)`,
   },
   address: {
-    color: `#fff`,
+    color: `#333`,
     marginTop: 10,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
     fontSize: 12,
-    textShadow: '2px 2px 2px #333'
+    textShadow: '2px 2px 2px #eee'
   },
   menu: {
     position: 'absolute',
@@ -102,7 +101,7 @@ export default props => (
             <Item.Header style={styles.header}>Summer is here!</Item.Header>
             
 
-            <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10</Item.Meta>
+            <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; Annual Pool Membership also available. </Item.Meta>
             <Item.Meta><Icon name='clock'/> &nbsp; Open: 10AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
             <Item.Extra>
               <Menu vertical fluid>
@@ -114,7 +113,7 @@ export default props => (
                 <Menu.Item>Live Music</Menu.Item>
                 <Menu.Item>Free Towels</Menu.Item>
                 <Menu.Item>
-                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='id card' />POOL MEMBERSHIP</Button>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='id card' />ANNUAL POOL MEMBERSHIP</Button>
                 </Menu.Item>
                 
               </Menu>
@@ -145,7 +144,7 @@ export default props => (
                 <Menu.Item>Just beside the Pool</Menu.Item>
                 <Menu.Item>Great space for Gatherings</Menu.Item>
                 <Menu.Item>
-                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='info' />AVAILABILITY</Button>
                 </Menu.Item>
                 
               </Menu>
@@ -178,7 +177,7 @@ export default props => (
                 <Menu.Item>Perfect for Family Gatherings</Menu.Item>
                 <Menu.Item>Private Parties</Menu.Item>
                 <Menu.Item>
-                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='info' />AVAILABILITY</Button>
                 </Menu.Item>
                 
               </Menu>
@@ -210,7 +209,7 @@ export default props => (
                 <Menu.Item>Karaoke Nights with DJ Dwayne</Menu.Item>
                 <Menu.Item>Can be arranged for Private Parties</Menu.Item>
                 <Menu.Item>
-                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='info' />AVAILABILITY</Button>
                 </Menu.Item>
                 
               </Menu>
