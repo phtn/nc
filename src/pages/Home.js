@@ -89,7 +89,7 @@ const Home = observer (
 
     componentDidMount(){
 
-      this.refs.parallax.scrollTo(4)
+      this.refs.parallax.scrollTo(0)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
