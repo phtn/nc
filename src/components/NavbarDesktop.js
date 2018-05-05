@@ -59,11 +59,21 @@ export default props => (
           <span style={styles.tabs}>MEET THE TEAM</span>
         </Menu.Item>
 
+        
+
+
+
+
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Button primary><Icon name='map'/> &nbsp; Get Directions</Button>
+            <Button primary as='a' href='https://www.google.com/maps/dir/6426+Lower+York+Road,+New+Hope,+PA+18938'><Icon name='map' /> &nbsp; Get Directions</Button>
           </Menu.Item>
-          
+        </Menu.Menu>
+
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <Button primary as='a' href='https://mail.google.com/mail/?view=cm&fs=1&to=clarionsalespa@gmail.com'><Icon name='mail' /> &nbsp; Contact Sales</Button>
+          </Menu.Item>
         </Menu.Menu>
 
       </Menu>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
+import Animated from 'animated/lib/targets/react-dom'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
 import Herbs from '../assets/board/outdoor.jpg'
@@ -9,6 +10,7 @@ import Linen from '../assets/linen.png'
 import Summer from '../assets/board/pool4.jpg'
 import Bouquet from '../assets/board/bo1.jpg'
 import Discover from '../assets/images/disco2.jpg'
+import Mixer from '../assets/board/mixerboard.jpg'
 // main components
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
@@ -16,6 +18,8 @@ import NavbarDesktop from '../components/NavbarDesktop'
 import BonfireDesktop from '../components/BonfireDesktop'
 import AmenitiesDesktop from '../components/AmenitiesDesktop'
 import DiscoverDesktop from '../components/DiscoverDesktop'
+import EventsDesktop from '../components/EventsDesktop'
+import GroupDesktop from '../components/GroupDesktop'
 // import Events from '../widgets/Events'
 // rooms & suites
 import Rooms from '../components/Rooms'
@@ -64,6 +68,10 @@ const styles = {
     backgroundImage: `url(${Discover})`,
     backgroundSize: `${layout.width}px ${layout.height}px`
   },
+  bg7: {
+    backgroundImage: `url(${Mixer})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
+  },
   menu: {
     backgroundColor: 'rgba(0,0,0,0.5)'
   }, 
@@ -81,7 +89,7 @@ const Home = observer (
 
     componentDidMount(){
 
-      this.refs.parallax.scrollTo(3)
+      this.refs.parallax.scrollTo(4)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -197,7 +205,7 @@ const Home = observer (
     render(){
       return (
         <div style={styles.container}>
-          <Parallax pages={7} ref='parallax' scrolling={false}>
+          <Parallax pages={7} ref='parallax' scrolling={false} effect={(animation, toValue)=> Animated.timing(animation, { toValue, duration: 0 })}>
             
             {/* Page 1 HOME */}
             <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
@@ -248,7 +256,13 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
-              <BonfireDesktop rooms={()=>this.handleDown(1)} amenities={()=>this.handleDown(3)}/>
+              <BonfireDesktop 
+                rooms={()=>this.handleDown(1)} 
+                amenities={()=>this.handleDown(3)} 
+                group={()=>this.handleDown(4)}
+                events={()=>this.handleDown(5)}
+                discover={()=>this.handleDown(6)}
+                />
               
             </Parallax.Layer>
 
@@ -263,7 +277,13 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
-              <AmenitiesDesktop rooms={()=>this.handleDown(1)} rest={()=>this.handleDown(2)}/>
+              <AmenitiesDesktop 
+                rooms={()=>this.handleDown(1)} 
+                rest={()=>this.handleDown(2)}
+                group={()=>this.handleDown(4)}
+                events={()=>this.handleDown(5)}
+                discover={()=>this.handleDown(6)}
+                />
               
             </Parallax.Layer>
 
@@ -275,16 +295,22 @@ const Home = observer (
                 home={()=> this.handleDown(0)} 
                 image={Logo} title='GROUP RESERVATIONS' 
                 sub='WEDDINGS &middot; CONFERENCES &middot; SPORTS TEAMS' 
-                details='T 215.862.5221' 
+                details='T 215.862.5221'
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
-              
+              <GroupDesktop
+                rooms={()=>this.handleDown(1)} 
+                rest={()=>this.handleDown(2)}
+                amenities={()=>this.handleDown(3)}
+                events={()=>this.handleDown(5)}
+                discover={()=>this.handleDown(6)}
+              />
               
             </Parallax.Layer>
 
             
             {/* Page 6 EVENTS*/}
-            <Parallax.Layer offset={5} speed={0.5} style={styles.bg3}>
+            <Parallax.Layer offset={5} speed={0.5} style={styles.bg7}>
               
               <Header 
                 home={()=> this.handleDown(0)} 
@@ -293,7 +319,13 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
-              
+              <EventsDesktop 
+                rooms={()=>this.handleDown(1)} 
+                rest={()=>this.handleDown(2)}
+                group={()=>this.handleDown(4)}
+                amenities={()=>this.handleDown(3)}
+                discover={()=>this.handleDown(6)}
+              />
             </Parallax.Layer>
 
             {/* Page 6 DISCOVER*/}
@@ -308,7 +340,13 @@ const Home = observer (
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
 
-              <DiscoverDesktop/>
+              <DiscoverDesktop
+                rooms={()=>this.handleDown(1)} 
+                rest={()=>this.handleDown(2)}
+                group={()=>this.handleDown(4)}
+                amenities={()=>this.handleDown(3)}
+                events={()=>this.handleDown(5)}
+              />
               
             </Parallax.Layer>
   

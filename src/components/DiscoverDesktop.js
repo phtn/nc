@@ -6,7 +6,10 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import Discover1 from '../assets/images/disco1.jpg'
 import Discover2 from '../assets/images/disco2.jpg'
-import Discover3 from '../assets/images/disco3.jpg'
+import Discover3 from '../assets/board/nh1.JPG'
+import Discover4 from '../assets/board/nh2.jpg'
+import Discover5 from '../assets/board/nh3.jpg'
+import Discover6 from '../assets/board/pv1.jpg'
 
 import Chevron from '../assets/chevron.svg'
 import Lefty from '../assets/left.svg'
@@ -14,7 +17,6 @@ import Lefty from '../assets/left.svg'
 const styles = {
   container: {
     padding: '130px 0px 0px 0px',
-    
   },
   innerContainer: {
     height: 470,
@@ -79,12 +81,12 @@ export default props => (
 
         <div style={{margin: '0 auto'}}>
           <Image.Group>
-            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
-            <Image size='medium' src={Discover2} spaced style={{maxWidth: 600}}/>
-            <Image size='medium' src={Discover3} spaced style={{maxWidth: 600}}/>
-            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
-            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
-            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600}}/>
+            <Image size='medium' src={Discover1} spaced style={{maxWidth: 600, maxHeight: 200}}/>
+            <Image size='medium' src={Discover2} spaced style={{maxWidth: 600, maxHeight: 200}}/>
+            <Image size='medium' src={Discover3} spaced style={{maxWidth: 600, maxHeight: 200}}/>
+            <Image size='medium' src={Discover4} spaced style={{maxWidth: 600, maxHeight: 200}}/>
+            <Image size='medium' src={Discover5} spaced style={{maxWidth: 600, maxHeight: 200}}/>
+            <Image size='medium' src={Discover6} spaced style={{maxWidth: 600, maxHeight: 200}}/>
           </Image.Group>
           <Message positive style={{maxWidth: 918}}>
             <Message.Content>
@@ -113,11 +115,11 @@ export default props => (
           <span style={styles.tabs}>HOTEL AMENITIES</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+        <Menu.Item name='eat' active={false} link  onClick={props.group} >
           <span style={styles.tabs}>GROUP RESERVATIONS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+        <Menu.Item name='eat' active={false} link  onClick={props.events} >
           <span style={styles.tabs}>EVENTS</span>
         </Menu.Item>
 

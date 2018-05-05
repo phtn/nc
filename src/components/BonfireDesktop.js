@@ -26,7 +26,7 @@ const styles = {
   },
   innerContainer: {
     height: 470,
-    backgroundColor: 'rgba(238,238,238,0.2)',
+    backgroundColor: 'transparent',
     padding: '10px 100px 0px 100px',
   },
   header: {
@@ -212,15 +212,15 @@ export default props => (
           <span style={styles.tabs}>HOTEL AMENITIES</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+        <Menu.Item name='eat' active={false} link  onClick={props.group} >
           <span style={styles.tabs}>GROUP RESERVATIONS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+        <Menu.Item name='eat' active={false} link  onClick={props.events} >
           <span style={styles.tabs}>EVENTS</span>
         </Menu.Item>
 
-        <Menu.Item name='eat' active={false} link  onClick={props.rest} >
+        <Menu.Item name='eat' active={false} link  onClick={props.discover} >
           <span style={styles.tabs}>DISCOVER</span>
         </Menu.Item>
 
