@@ -4,6 +4,11 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Pool from '../assets/images/pool3.png'
+import Courtyard from '../assets/board/court1.jpg'
+import Lounge from '../assets/board/lounge1.jpg'
+import Lobby from '../assets/board/lobby1.jpg'
+import Bar from '../assets/board/bar1.jpg'
+import BC from '../assets/board/bc1.jpg'
 
 
 import Chevron from '../assets/chevron.svg'
@@ -23,7 +28,10 @@ const styles = {
   header: {
     fontSize: 26,
     marginTop: 10,
-    color: '#050f2c'
+    color: '#050f2c',
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    fontSize: 36
   },
 
   tabs: {
@@ -99,7 +107,7 @@ export default props => (
             <Item.Extra>
               <Menu vertical fluid>
                 <Menu.Item>
-                  <Button disabled fluid as='a' href=''><Icon name='universal access' />SWIMMING POOL</Button>
+                  <Button disabled fluid as='a' href=''><Icon name='universal access' />OUTDOOR SWIMMING POOL</Button>
                 </Menu.Item>
                 <Menu.Item>Cabana Full Bar</Menu.Item>
                 <Menu.Item>Free WiFi</Menu.Item>
@@ -107,6 +115,166 @@ export default props => (
                 <Menu.Item>Free Towels</Menu.Item>
                 <Menu.Item>
                   <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='id card' />POOL MEMBERSHIP</Button>
+                </Menu.Item>
+                
+              </Menu>
+            </Item.Extra>
+            
+          </Item.Content>
+        </Item>
+      </Item.Group>
+      </div>
+
+      <div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='big' src={Courtyard} />
+
+          <Item.Content>
+            <Item.Header style={styles.header}>Spacious Courtyard</Item.Header>
+            
+
+            
+            <Item.Extra>
+              <Menu vertical fluid>
+                <Menu.Item>
+                  <Button disabled fluid as='a' href=''><Icon name='universal access' />THE COURTYARD</Button>
+                </Menu.Item>
+                <Menu.Item>Perfect area to relax with friends</Menu.Item>
+                <Menu.Item>Private Parties</Menu.Item>
+                <Menu.Item>Just beside the Pool</Menu.Item>
+                <Menu.Item>Great space for Gatherings</Menu.Item>
+                <Menu.Item>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                </Menu.Item>
+                
+              </Menu>
+            </Item.Extra>
+            
+          </Item.Content>
+        </Item>
+      </Item.Group>
+      </div>
+
+      <div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='big' src={Lounge} />
+
+          <Item.Content>
+            <Item.Header style={styles.header}>Hangout at our Lounge Area</Item.Header>
+            
+
+            
+            <Item.Extra>
+              <Menu vertical fluid>
+                <Menu.Item>
+                  <Button disabled fluid as='a' href=''><Icon name='universal access' />THE LOUNGE</Button>
+                </Menu.Item>
+                <Menu.Item>Perfect place to hangout with friends</Menu.Item>
+                <Menu.Item>Bar & Restaurant Open</Menu.Item>
+                <Menu.Item>Very Spacious</Menu.Item>
+                <Menu.Item>Elegant Design perfect for Meet & Greet</Menu.Item>
+                <Menu.Item>Perfect for Family Gatherings</Menu.Item>
+                <Menu.Item>Private Parties</Menu.Item>
+                <Menu.Item>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                </Menu.Item>
+                
+              </Menu>
+            </Item.Extra>
+            
+          </Item.Content>
+        </Item>
+      </Item.Group>
+      </div>
+
+      <div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='big' src={Bar} />
+
+          <Item.Content>
+            <Item.Header style={styles.header}>Bonfire Bar & Grill</Item.Header>
+            
+
+            
+            <Item.Extra>
+              <Menu vertical fluid>
+                <Menu.Item>
+                  <Button disabled fluid as='a' href=''><Icon name='cocktail' />THE BONFIRE BAR & GRILL</Button>
+                </Menu.Item>
+                <Menu.Item>Perfect place to hangout with friends</Menu.Item>
+                <Menu.Item>Famous for our Mexican Food Selections</Menu.Item>
+                <Menu.Item>Modern feel</Menu.Item>
+                <Menu.Item>Karaoke Nights with DJ Dwayne</Menu.Item>
+                <Menu.Item>Can be arranged for Private Parties</Menu.Item>
+                <Menu.Item>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='INFO' />AVAILABILITY</Button>
+                </Menu.Item>
+                
+              </Menu>
+            </Item.Extra>
+            
+          </Item.Content>
+        </Item>
+      </Item.Group>
+      </div>
+
+      <div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='big' src={Lobby} />
+
+          <Item.Content>
+            <Item.Header style={styles.header}>Elegantly Designed Lobby</Item.Header>
+            
+
+            
+            <Item.Extra>
+              <Menu vertical fluid>
+                <Menu.Item>
+                  <Button disabled fluid as='a' href=''><Icon name='universal access' />HOTEL LOBBY</Button>
+                </Menu.Item>
+                <Menu.Item>A Space to Welcome you with style</Menu.Item>
+                <Menu.Item>24/7 FREE Coffee</Menu.Item>
+                <Menu.Item>24/7 Guest Services</Menu.Item>
+                <Menu.Item>Comfortable Lounge Area</Menu.Item>
+                <Menu.Item>Check-In: 3PM | Check-Out: 11AM</Menu.Item>
+                <Menu.Item>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+                </Menu.Item>
+                
+              </Menu>
+            </Item.Extra>
+            
+          </Item.Content>
+        </Item>
+      </Item.Group>
+      </div>
+
+      <div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='big' src={BC} />
+
+          <Item.Content>
+            <Item.Header style={styles.header}>BUSINESS CENTER</Item.Header>
+            
+
+            
+            <Item.Extra>
+              <Menu vertical fluid>
+                <Menu.Item>
+                  <Button disabled fluid as='a' href=''><Icon name='desktop' />PROFESSIONAL BUSINESS CENTER</Button>
+                </Menu.Item>
+                <Menu.Item>High Speed Internet</Menu.Item>
+                <Menu.Item>Print Boarding Passes</Menu.Item>
+                <Menu.Item>Print from your Room</Menu.Item>
+                <Menu.Item>Executive Seats</Menu.Item>
+                <Menu.Item>Open 24/7</Menu.Item>
+                <Menu.Item>
+                  <Button primary fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
                 </Menu.Item>
                 
               </Menu>

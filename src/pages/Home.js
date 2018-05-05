@@ -3,7 +3,6 @@ import { Button, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Bridge from '../assets/board/erNH_40.jpg'
 import ROOM1 from '../assets/images/ROOM1.jpg'
-import Leather from '../assets/board/walle.jpeg'
 import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
 import Linen from '../assets/linen.png'
@@ -82,7 +81,7 @@ const Home = observer (
 
     componentDidMount(){
 
-      this.refs.parallax.scrollTo(6)
+      this.refs.parallax.scrollTo(3)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -184,13 +183,13 @@ const Home = observer (
       }
     }
     
-    getRightPhoto(width){
-      if (width < 450){
-        return Leather
-      } else{
-        return ROOM1
-      }
-    }
+    // getRightPhoto(width){
+    //   if (width < 450){
+    //     return Leather
+    //   } else{
+    //     return ROOM1
+    //   }
+    // }
   
     handleDown(p){
       this.refs.parallax.scrollTo(p)
@@ -260,7 +259,7 @@ const Home = observer (
                 home={()=> this.handleDown(0)} 
                 image={Logo} 
                 title='Hotel Amenities' 
-                sub='SWIMMING POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
+                sub='OUTDOOR POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
