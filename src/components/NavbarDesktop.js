@@ -59,6 +59,14 @@ export default props => (
           <span style={styles.tabs}>MEET THE TEAM</span>
         </Menu.Item>
 
+        <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+          <Icon name='facebook square'/>
+        </Menu.Item>
+
+        <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+          <Icon name='instagram'/>
+        </Menu.Item>
+
         
 
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Menu, Button } from 'semantic-ui-react'
+import { Segment, Menu, Button, Icon } from 'semantic-ui-react'
 // import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()
@@ -41,7 +41,10 @@ export default props => (
         
         
         <Menu.Item name='restaurant' active={false} link >
-          <Button positive fluid>BOOK NOW</Button>
+          <Button positive fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>
+            <Icon name='bed'/>
+            &nbsp;BOOK NOW
+          </Button>
         </Menu.Item>
       
       </Menu>
