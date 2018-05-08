@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Icon } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Animated from 'animated/lib/targets/react-dom'
+
 import Bridge from '../assets/board/erNH_40.jpg'
 import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
@@ -24,6 +25,7 @@ import GroupDesktop from '../components/GroupDesktop'
 // rooms & suites
 import Rooms from '../components/Rooms'
 import RoomsDesktop from '../components/RoomsDesktop'
+import RoomSelectDesktop from '../components/RoomSelectDesktop'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
@@ -84,9 +86,24 @@ const styles = {
 const Home = observer (
   class Homepage extends Component {
 
-    componentDidMount(){
+    imageDimension(image){
+      let i = new Image()
+      i.src = image.src
+      return {
 
-      this.refs.parallax.scrollTo(0)
+      }
+    }
+
+
+    getImageHeight(){
+      let roomImage = document.querySelector('#roomImage')
+      console.log(roomImage)
+    }
+    componentDidMount(){
+      this.getImageHeight()
+
+      this.getItems(states.parallaxOffset)
+      this.storeItems(states.parallaxOffset)
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -151,7 +168,10 @@ const Home = observer (
 
       } else {
         return <NavbarDesktop 
-          rooms={()=>this.handleDown(1)} 
+          rooms={()=>{
+            this.handleDown(1)
+            localStorage.setItem('offset',1)
+          }} 
           rest={()=>this.handleDown(2)} 
           amenities={()=>this.handleDown(3)} 
           group={()=>this.handleDown(4)} 
@@ -180,19 +200,51 @@ const Home = observer (
       if (width < 600){
         return <Rooms 
           topMargin={this.heightAdjuster(layout.height)}
-          rest={()=>this.handleDown(2)} 
-          amenities={()=>this.handleDown(3)} 
-          events={()=>this.handleDown(5)} 
-          discover={()=>this.handleDown(6)}
+          rest={()=>{
+            this.handleDown(2)
+            this.storeItems(2)
+          }} 
+          amenities={()=>{
+            this.handleDown(3)
+            this.storeItems(3)
+          }} 
+          events={()=>{
+            this.handleDown(5)
+            this.storeItems(5)
+          }} 
+          discover={()=>{
+            this.handleDown(6)
+            this.storeItems(6)
+          }}
           />
       } else {
-        return <RoomsDesktop 
-          rest={()=>this.handleDown(2)} 
-          amenities={()=>this.handleDown(3)} 
-          group={()=>this.handleDown(4)} 
-          events={()=>this.handleDown(5)} 
-          discover={()=>this.handleDown(6)}
-          />
+          return states.getRoomComponent(
+            ()=>{
+            this.handleDown(2)
+            this.storeItems(2)
+          },()=> {
+            this.handleDown(3)
+            this.storeItems(3)
+          },()=> {
+            this.handleDown(4)
+            this.storeItems(4)
+          },()=> {
+            this.handleDown(5)
+            this.storeItems(5)
+          },()=> {
+            this.handleDown(6)
+            this.storeItems(6)
+          },     
+          layout.height - layout.height*.1,
+          ()=>states.setComponent(0),
+          ()=>states.setComponent(1),
+          ()=>states.setComponent(2),
+          ()=>states.setComponent(3),
+          ()=>states.setComponent(4),
+          ()=>states.setComponent(5),
+          ()=>states.setComponent(6),
+          ()=>states.setComponent(7),
+        )
       }
     }
 
@@ -207,14 +259,32 @@ const Home = observer (
       } else {
         return <BonfireDesktop 
           rooms={()=>this.handleDown(1)} 
-          amenities={()=>this.handleDown(3)} 
+          amenities={()=> {
+              this.handleDown(3)
+              localStorage.setItem('offset', 3)
+              console.log('amen')
+            }
+          } 
           group={()=>this.handleDown(4)} 
           events={()=>this.handleDown(5)} 
           discover={()=>this.handleDown(6)}
           />
       }
     }
-    
+
+    storeItems(offset){
+      if (localStorage.getItem('offset') === null){
+        localStorage.setItem('offset', 0)
+      } else {
+        // this.refs.parallax.scrollTo(localStorage.getItem('offset'))
+        this.handleDown(offset)
+
+      }
+    }
+    getItems(offset){
+      this.refs.parallax.scrollTo(localStorage.getItem('offset'))
+    }
+
     // getRightPhoto(width){
     //   if (width < 450){
     //     return Leather
@@ -222,19 +292,26 @@ const Home = observer (
     //     return ROOM1
     //   }
     // }
-  
+    setOffset(p){
+      localStorage.setItem('offset', p)
+    }
     handleDown(p){
       this.refs.parallax.scrollTo(p)
+      // states.setOffest(p)
+      this.setOffset(p)
     }
     render(){
       return (
         <div style={styles.container}>
-          <Parallax pages={7} ref='parallax' scrolling={false} effect={(animation, toValue)=> Animated.timing(animation, { toValue, duration: 0 })}>
+          <Parallax pages={7} ref='parallax' scrolling={false} effect={(animation, toValue) => Animated.timing(animation, { toValue, duration: 0 })}>
             
             {/* Page 1 HOME */}
             <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} title='Clarion Inn & Suites' 
                 sub='NEW HOPE - LAMBERTVILLE' 
                 details='T 215.862.5221' 
@@ -255,10 +332,13 @@ const Home = observer (
             <Parallax.Layer offset={1} speed={0.5} style={styles.bg2}>
               
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} 
                 title='Rooms & Suites' 
-                sub='KING &middot; DOUBLES &middot; SUITES' 
+                sub='KING &middot; DOUBLES &middot; SUITES &middot; JACUZZI'  
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
               
@@ -273,7 +353,10 @@ const Home = observer (
             <Parallax.Layer offset={2} speed={0.5} style={styles.bg3}>
               
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} 
                 title='Eat & Drink' 
                 sub='BAR &middot; GRILL &middot; ENTERTAINMENT' 
@@ -296,7 +379,10 @@ const Home = observer (
             <Parallax.Layer offset={3} speed={0.5} style={styles.bg4}>
               
               <Header // HEADER
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} 
                 title='Hotel Amenities' 
                 sub='OUTDOOR POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
@@ -318,7 +404,10 @@ const Home = observer (
             <Parallax.Layer offset={4} speed={0.5} style={styles.bg5}>
               
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} title='GROUP RESERVATIONS' 
                 sub='WEDDINGS &middot; CONFERENCES &middot; SPORTS TEAMS' 
                 details='T 215.862.5221'
@@ -339,7 +428,10 @@ const Home = observer (
             <Parallax.Layer offset={5} speed={0.5} style={styles.bg7}>
               
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} title='EVENTS & LIVE PERFORMANCES' 
                 sub='THE RRAZZ ROOM &middot; BOOZY BINGO &middot; KARAOKE NIGHTS' 
                 details='T 215.862.5221' 
@@ -358,7 +450,10 @@ const Home = observer (
             <Parallax.Layer offset={6} speed={0.5} style={styles.bg}>
               
               <Header 
-                home={()=> this.handleDown(0)} 
+                home={()=> {
+                  this.handleDown(0)
+                  this.setOffset(0)
+                }} 
                 image={Logo} 
                 title='DISCOVER NEW HOPE & LAMBERTVILLE' 
                 sub='MAIN ST &middot; PEDDLERS VILLAGE &middot; LAMBERTVILLE STATION' 

@@ -8,3 +8,13 @@ body {
   font-family: sans-serif;
   background-color:black;
 }
+
+.blink_me {
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

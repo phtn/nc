@@ -48,6 +48,7 @@ const styles = {
     fontWeight: 100,
     // color: 'rgb(153,27,50)',
     color: '#fff',
+    textDecoration: 'none'
   },
   logo: {
     position: 'absolute',
@@ -60,7 +61,7 @@ export default props => (
       <img src={props.image} alt='' height={80} style={styles.logo} onClick={props.home}/>
       <p style={Object.assign({fontSize: props.titleSize}, styles.title)}>{props.title}</p>
       <p style={styles.subtitle}>{props.sub}</p>  
-      <p style={styles.phone}>{props.details}</p>  
+      <p ><a href='tel: 2158625221' style={styles.phone}>{props.details}</a></p>  
     </header>
     
   </div>
