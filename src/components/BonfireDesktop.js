@@ -27,7 +27,7 @@ const styles = {
   innerContainer: {
     height: 470,
     backgroundColor: 'transparent',
-    padding: '10px 100px 0px 100px',
+    padding: '10px 50px 0px 50px',
   },
   header: {
     fontSize: 26,
@@ -84,8 +84,8 @@ export default props => (
         <Slider {...settings}>
 
           <div style={{margin: '0 auto'}}>
-            <Image.Group>
-              <Image size='huge' src={Breakfast} spaced style={{maxWidth: 600}}/>
+            <Image.Group style={{width: window.innerWidth*.666}}>
+              <Image size='huge' src={Breakfast} spaced />
             </Image.Group>
             <Message positive style={{maxWidth: 600}} icon>
               <Icon name='food' />
@@ -96,8 +96,8 @@ export default props => (
             </Message>
           </div>
           <div style={{margin: '0 auto'}}>
-            <Image.Group>
-              <Image size='huge' src={Breakfast2} spaced style={{maxWidth: 600}}/>
+            <Image.Group style={{width: window.innerWidth*.666}}>
+              <Image size='huge' src={Breakfast2} spaced />
             </Image.Group>
             <Message positive style={{maxWidth: 600}} icon>
               <Icon name='food' />
@@ -202,7 +202,7 @@ export default props => (
 
     </div>
     
-    <div style={{marginTop: 30}}>
+    <div style={{position: 'absolute', top: props.top, width: window.innerWidth }}>
       <Menu fluid inverted widths={5}>
         <Menu.Item name='eat' active={false} link  onClick={props.rooms} >
           <span style={styles.tabs}>ROOMS</span>
@@ -225,11 +225,13 @@ export default props => (
         </Menu.Item>
 
       </Menu>
+
+      <div style={styles.address}>
+        <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
+      </div>
     </div>
 
-    <div style={styles.address}>
-      <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
-    </div>
+    
 
     <div><img src={Bonfire} style={styles.bonfireLogo} alt=''/></div>
   </div>

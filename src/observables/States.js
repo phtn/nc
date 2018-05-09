@@ -12,7 +12,13 @@ import JacuzziSuite from '../assets/images/erGSK2_40.jpg'
 const images = [null, King, Doubles, KingSuite, Doubles, JacuzziSuite]
 const headers = [null, 'Luxury King Bed', '2 Double Beds', 'Luxury King Suite', '2 Double Bed Suite', 'Grand Jacuzzi Suite']
 const tags = [null, 'POPULAR CHOICE', "FAMILY'S CHOICE", ""]
-const descriptions = [null, 'Luxury King Description']
+const descriptions = [null, 
+  'Reserve this Luxurious Brand New King Room. It comes with a new very comfortable King Bed, Spacious with a modern design filled with art paintings from local area. It has a fully equipped bathroom and plenty of universal power outlets on bedside tables and work area.  It also has a home automation system which automatically regulates the temperature of the room based on guest presence or absence from the room. ',
+  'This Brand New Room comes with a new very comfortable 2 Double beds, Spacious with a modern design filled with art paintings from local area. It has a fully equipped bathroom and plenty of universal power outlets on bedside tables and work area.  It also has a home automation system which automatically regulates the temperature of the room based on guest presence or absence from the room. ',
+  'Reserve this Luxurious Brand New King Suite. It comes with a new very comfortable King Bed, Spacious with a modern design filled with art paintings from local area. It has a fully equipped bathroom and plenty of universal power outlets on bedside tables and work area.  It also has a home automation system which automatically regulates the temperature of the room based on guest presence or absence from the room. With a huge sitting area with another set of 42in TV, microwave and fridge.',
+  'Two Double Bed Suite is one of a kind. It comes with a new very comfortable King Bed, Spacious with a modern design filled with art paintings from local area. It has a fully equipped bathroom and plenty of universal power outlets on bedside tables and work area.  It also has a home automation system which automatically regulates the temperature of the room based on guest presence or absence from the room. With a huge sitting area with another set of 42in TV, microwave and fridge.',
+  'This Superior category Jacuzzi Suite is the finest in all Bucks County. It comes with a new very comfortable King Bed, Spacious with a modern design filled with art paintings from local area. It has a fully equipped bathroom and plenty of universal power outlets on bedside tables and work area.  It also has a home automation system which automatically regulates the temperature of the room based on guest presence or absence from the room. With a huge sitting area with another set of 42in TV, microwave and fridge, and of course, A state of the art Jacuzzi system.',
+]
 
 class States {
   constructor(){
@@ -63,7 +69,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
-
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
           />
             case 2: return <RoomsDesktop 
             image={images[this.roomComponent]} 
@@ -72,6 +82,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
           />
           case 3: return <RoomsDesktop 
             image={images[this.roomComponent]} 
@@ -80,6 +95,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
           />
           case 4: return <RoomsDesktop 
             image={images[this.roomComponent]} 
@@ -88,6 +108,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
           />
           case 5: return <RoomsDesktop 
             image={images[this.roomComponent]} 
@@ -96,6 +121,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
           />
           case 6: return <RoomsDesktop 
             image={images[this.roomComponent]} 
@@ -104,6 +134,11 @@ class States {
             description={descriptions[this.roomComponent]}
             back={back}
             top={top}
+            rest={rest}
+            amenities={amenities}
+            group={group}
+            events={events}
+            discover={discover} 
             />
           default: return <RoomSelectDesktop/>
         }

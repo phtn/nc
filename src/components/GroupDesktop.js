@@ -261,7 +261,7 @@ class Group extends Component {
 
 
         
-        <div style={{marginTop: 30}}>
+        <div style={{position: 'absolute', top: this.props.top, width: window.innerWidth }}>
           <Menu fluid inverted widths={5}>
             
             <Menu.Item name='rooms' active={false} link  onClick={this.props.rooms} >
@@ -286,11 +286,13 @@ class Group extends Component {
             
 
           </Menu>
+
+          <div style={styles.address}>
+            <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
+          </div>
         </div>
 
-        <div style={styles.address}>
-          <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
-        </div>
+        
 
 
       </div>

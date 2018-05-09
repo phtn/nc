@@ -21,6 +21,7 @@ import AmenitiesDesktop from '../components/AmenitiesDesktop'
 import DiscoverDesktop from '../components/DiscoverDesktop'
 import EventsDesktop from '../components/EventsDesktop'
 import GroupDesktop from '../components/GroupDesktop'
+import RestaurantDesktop from '../components/RestaurantDesktop'
 // import Events from '../widgets/Events'
 // rooms & suites
 import Rooms from '../components/Rooms'
@@ -257,7 +258,7 @@ const Home = observer (
           discover={()=>this.handleDown(6)}
           />
       } else {
-        return <BonfireDesktop 
+        return <RestaurantDesktop 
           rooms={()=>this.handleDown(1)} 
           amenities={()=> {
               this.handleDown(3)
@@ -268,6 +269,7 @@ const Home = observer (
           group={()=>this.handleDown(4)} 
           events={()=>this.handleDown(5)} 
           discover={()=>this.handleDown(6)}
+          top={layout.height - layout.height*.1}
           />
       }
     }
@@ -361,7 +363,9 @@ const Home = observer (
                 title='Eat & Drink' 
                 sub='BAR &middot; GRILL &middot; ENTERTAINMENT' 
                 details='T 215.862.5221' 
-                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}
+                
+              />    
 
                 {this.renderBonfireComponent(layout.width)}
 
@@ -387,7 +391,9 @@ const Home = observer (
                 title='Hotel Amenities' 
                 sub='OUTDOOR POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
                 details='T 215.862.5221' 
-                titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
+                titleSize={this.homeWidthHeaderAdjuster(layout.width)}
+                
+              />    
 
               <AmenitiesDesktop 
                 rooms={()=>this.handleDown(1)} 
@@ -395,6 +401,7 @@ const Home = observer (
                 group={()=>this.handleDown(4)}
                 events={()=>this.handleDown(5)}
                 discover={()=>this.handleDown(6)}
+                top={layout.height - layout.height*.1}
                 />
               
             </Parallax.Layer>
@@ -419,6 +426,7 @@ const Home = observer (
                 amenities={()=>this.handleDown(3)}
                 events={()=>this.handleDown(5)}
                 discover={()=>this.handleDown(6)}
+                top={layout.height - layout.height*.1}
               />
               
             </Parallax.Layer>
@@ -443,6 +451,7 @@ const Home = observer (
                 group={()=>this.handleDown(4)}
                 amenities={()=>this.handleDown(3)}
                 discover={()=>this.handleDown(6)}
+                top={layout.height - layout.height*.1}
               />
             </Parallax.Layer>
 
@@ -467,6 +476,7 @@ const Home = observer (
                 group={()=>this.handleDown(4)}
                 amenities={()=>this.handleDown(3)}
                 events={()=>this.handleDown(5)}
+                top={layout.height - layout.height*.1}
               />
               
             </Parallax.Layer>

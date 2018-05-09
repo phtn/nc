@@ -86,6 +86,7 @@ const RoomAmenities = props => (
     <Menu.Item>HD Channel TV</Menu.Item>
     <Menu.Item>Coffee Maker with Premium Coffee & Tea</Menu.Item>
     <Menu.Item>All Brand New Rooms</Menu.Item>
+    <Menu.Item>Bedside Table Power Outlets</Menu.Item>
 
     <Menu.Item>
       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
@@ -105,7 +106,14 @@ const StayInfo = props => (
 
 
     <Menu.Item>
-      <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+      <Button 
+        color='red' 
+        // className='blink_fast'
+        fluid as='a' 
+        href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>
+        <Icon name='bed' />BOOK NOW
+      </Button>
+
     </Menu.Item>
   </div>
 )
@@ -130,18 +138,29 @@ const RoomDesktop = observer (
     render(){
       return(
         <div style={styles.container} id='roomImage'>
-          <Image src={Back} style={styles.backButton} onClick={this.props.back}/>
+          <Image 
+            src={Back} 
+            style={styles.backButton} 
+            onClick={this.props.back}
+            className='animated fadeInRight back_button'  
+          />
+          
           <div style={styles.innerContainer}>
           
               <div >
                 
                 <Item.Group>
                   <Item>
-                    <Item.Image size='huge' src={this.props.image} style={{marginLeft:10, width: window.innerWidth*.666 }} />
+                    <Item.Image 
+                      size='huge' 
+                      src={this.props.image} 
+                      style={{marginLeft:10, width: window.innerWidth*.666 }} 
+                      className='animated fadeIn'
+                    />
 
                     <Item.Content>
                       
-                      <Item.Extra>
+                      <Item.Extra className='animated fadeInUp'>
                         <Menu vertical fluid style={{marginRight: 10}}>
                           <Menu.Item>
                             <span style={styles.header}>{this.props.header}</span>
@@ -149,7 +168,7 @@ const RoomDesktop = observer (
                             <Item.Meta><Icon name='star' color='yellow'/>&nbsp; &nbsp;{this.props.tag}</Item.Meta>
                           </Menu.Item>
 
-                          <Slider {...settings}>
+                          <Slider {...settings} >
                             <RoomDesc description={this.props.description}/>
                             <RoomAmenities/>
                             <StayInfo/>

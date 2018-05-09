@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { Item, Button, Icon, Menu, Container, Divider, Message, Image, Card } from 'semantic-ui-react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import { Item, Button, Icon, Menu, Container, Message, Image, Card } from 'semantic-ui-react'
+// import Slider from 'react-slick'
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 
 import King from '../assets/images/eNK1.png'
@@ -12,6 +12,7 @@ import KingSuite from '../assets/images/ROOM1.jpg'
 import JacuzziSuite from '../assets/images/erGSK2_40.jpg'
 import Rewards from '../assets/board/rewards.jpg'
 import Gift from '../assets/board/gift.svg'
+import Meet from '../assets/board/hands.jpg'
 
 
 import Righty from '../assets/arrow-right.svg'
@@ -138,10 +139,10 @@ const RoomDesktop = observer (
       return(
         <div style={styles.container} id='roomImage'>
           <div style={styles.innerContainer}>
-            <Menu widths={5} style={styles.menu} >
+            <Menu widths={5} style={styles.menu} borderless>
               
               <Menu.Item link onClick={this.props.king}>
-              <Card>
+              <Card className='animated fadeIn room_one'>
                 <Image style={styles.image} src={King} />
                 <Card.Content>
                   <Card.Header>
@@ -164,7 +165,7 @@ const RoomDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.doubles}>
-              <Card>
+              <Card className='animated fadeIn room_two'>
                 <Image style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -187,7 +188,7 @@ const RoomDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.ksuite}>
-              <Card>
+              <Card className='animated fadeIn room_three'>
                 <Image style={styles.image} src={KingSuite} />
                 <Card.Content>
                   <Card.Header>
@@ -210,7 +211,7 @@ const RoomDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.dsuite}>
-              <Card>
+              <Card className='animated fadeIn room_four'>
                 <Image style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -233,7 +234,7 @@ const RoomDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.jsuite}>
-              <Card>
+              <Card className='animated fadeIn room_five'>
                 <Image style={styles.image} src={JacuzziSuite} />
                 <Card.Content>
                   <Card.Header>
@@ -258,23 +259,50 @@ const RoomDesktop = observer (
               
             </Menu>
 
-            <Menu widths={2}  borderless>
-              <Menu.Item>
-                <Image src={Rewards} size='medium'/>
-              </Menu.Item>
-              <Menu.Item >
-                <Item.Group>
-                  <Item>
-                    <Item.Image size='tiny' src={Gift} />
+            <Menu widths={3}  borderless>
 
-                    <Item.Content style={{width: 400}}>
-                      <Item.Header>Get a gift from us upon check-in!</Item.Header>
-                     
-                      <Item.Description>Join Choice Privileges Rewards Today. It's free!</Item.Description>
-                    </Item.Content>
-                  </Item>
-                </Item.Group>
+            <Menu.Item>
+              <Card color='red' as='a' href='https://www.choicehotels.com/choice-privileges' className='animated fadeIn gift_card'>
+                <Image style={styles.image} src={Gift} />
+                <Card.Content>
+                  <Card.Header>
+                    Get a gift from us upon check-in!
+                  </Card.Header>
+                  <Card.Meta>
+                    <span className='date'>
+                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                    </span>
+                  </Card.Meta>
+                  <Card.Description>
+                    Join Choice Privileges Rewards. It's free!
+                  </Card.Description>
+                </Card.Content>
+              </Card>
+            </Menu.Item>
+              
+              <Menu.Item>
+                <Image src={Rewards} size='medium' as='a' href='https://www.choicehotels.com/choice-privileges'/>
               </Menu.Item>
+              
+              <Menu.Item>
+              <Card color='red' as='a' href='https://www.choicehotels.com/clarion/meet-me-at-clarion' className='animated fadeIn meet_card'>
+                <Image style={styles.image} src={Meet} />
+                <Card.Content>
+                  <Card.Header>
+                    Meet Me at Clarion!
+                  </Card.Header>
+                  {/* <Card.Meta>
+                    <span className='date'>
+                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                    </span>
+                  </Card.Meta> */}
+                  <Card.Description>
+                    We believe life is better when you get together. Read more...
+                    {/* Read More... */}
+                  </Card.Description>
+                </Card.Content>
+              </Card>
+            </Menu.Item>
               
             </Menu>
           </div>

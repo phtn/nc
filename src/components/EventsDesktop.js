@@ -99,7 +99,7 @@ export default props => (
       </Slider>
     </div>
     
-    <div style={{marginTop: 30}}>
+    <div style={{position: 'absolute', top: props.top, width: window.innerWidth }}>
       <Menu fluid inverted widths={5}>
         
         <Menu.Item name='rooms' active={false} link  onClick={props.rooms} >
@@ -124,10 +124,13 @@ export default props => (
         
 
       </Menu>
+
+      <div style={styles.address}>
+        <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
+      </div>
+      
     </div>
 
-    <div style={styles.address}>
-      <Container textAlign='center'>6426 Lower York Rd New Hope, PA 18938 &middot; Clarion Inn & Suites &middot; Terms of Use | Privacy Policy</Container>
-    </div>
+    
   </div>
 )

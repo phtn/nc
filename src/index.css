@@ -13,8 +13,47 @@ body {
   animation: blinker 3s linear infinite;
 }
 
+.blink_fast {
+  animation: blinker .5s linear infinite;
+}
+
+
 @keyframes blinker {
-  50% {
+  30% {
     opacity: 0;
   }
+}
+
+.back_button {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-delay: .5s;
+}
+
+.room_one {
+  -webkit-animation-duration: .3s;
+  -webkit-animation-delay: 0s;
+}
+.room_two {
+  -webkit-animation-duration: .3s;
+  -webkit-animation-delay: .2s;
+}
+.room_three {
+  -webkit-animation-duration: .3s;
+  -webkit-animation-delay: .4s;
+}
+.room_four {
+  -webkit-animation-duration: .3s;
+  -webkit-animation-delay: .6s;
+}
+.room_five {
+  -webkit-animation-duration: .3s;
+  -webkit-animation-delay: .8s;
+}
+.gift_card {
+  /* -webkit-animation-duration: .3s; */
+  -webkit-animation-delay: 1s;
+}
+.meet_card {
+  /* -webkit-animation-duration: .3s; */
+  -webkit-animation-delay: 1.2s;
 }
