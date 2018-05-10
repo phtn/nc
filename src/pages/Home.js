@@ -15,7 +15,7 @@ import Sea from '../assets/board/sea.jpg'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import NavbarDesktop from '../components/NavbarDesktop'
-import BonfireDesktop from '../components/BonfireDesktop'
+// import BonfireDesktop from '../components/BonfireDesktop'
 import Bonfire from '../components/Bonfire'
 import AmenitiesDesktop from '../components/AmenitiesDesktop'
 import DiscoverDesktop from '../components/DiscoverDesktop'
@@ -25,8 +25,8 @@ import RestaurantDesktop from '../components/RestaurantDesktop'
 // import Events from '../widgets/Events'
 // rooms & suites
 import Rooms from '../components/Rooms'
-import RoomsDesktop from '../components/RoomsDesktop'
-import RoomSelectDesktop from '../components/RoomSelectDesktop'
+// import RoomsDesktop from '../components/RoomsDesktop'
+// import RoomSelectDesktop from '../components/RoomSelectDesktop'
 // observables
 import { observer } from 'mobx-react'
 import Layout from '../observables/Layout'
@@ -87,21 +87,10 @@ const styles = {
 const Home = observer (
   class Homepage extends Component {
 
-    imageDimension(image){
-      let i = new Image()
-      i.src = image.src
-      return {
+    
 
-      }
-    }
-
-
-    getImageHeight(){
-      let roomImage = document.querySelector('#roomImage')
-      console.log(roomImage)
-    }
+    
     componentDidMount(){
-      this.getImageHeight()
 
       this.getItems(states.parallaxOffset)
       this.storeItems(states.parallaxOffset)

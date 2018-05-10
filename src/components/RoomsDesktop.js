@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { Item, Button, Icon, Menu, Container, Divider, Message, Image } from 'semantic-ui-react'
+import { Item, Button, Icon, Menu, Container, Message, Image } from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import Doubles from '../assets/images/erNDD2.png'
-import King from '../assets/images/eNK1.png'
+// import Doubles from '../assets/images/erNDD2.png'
+// import King from '../assets/images/eNK1.png'
 // import Suites from '../assets/board/erSA_400.jpg'
 
+
+// import Lefty from '../assets/left-arrow.svg'
 import Righty from '../assets/arrow-right.svg'
-import Lefty from '../assets/left-arrow.svg'
 import Back from '../assets/back.svg'
 
 const styles = {

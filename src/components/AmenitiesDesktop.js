@@ -224,7 +224,10 @@ const AmenitiesDesktop = observer (
                       </Menu.Item>
                       <Menu.Item>Perfect place to hangout with friends</Menu.Item>
                       <Menu.Item>Famous for our Mexican Food Selections</Menu.Item>
-                      <Menu.Item>Modern feel</Menu.Item>
+                      <Menu.Item>Modern Designed Bar</Menu.Item>
+                      <Menu.Item>Premium Craft Beer</Menu.Item>
+                      <Menu.Item>Imported Beer</Menu.Item>
+                      <Menu.Item>Topshelf Liqour</Menu.Item>
                       <Menu.Item>Karaoke Nights with DJ Dwayne</Menu.Item>
                       <Menu.Item>Can be arranged for Private Parties</Menu.Item>
                       <Button animated='fade' color='red' fluid>

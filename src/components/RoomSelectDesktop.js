@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { Item, Button, Icon, Menu, Container, Message, Image, Card } from 'semantic-ui-react'
+import { Icon, Menu, Container, Image, Card } from 'semantic-ui-react'
 // import Slider from 'react-slick'
 // import 'slick-carousel/slick/slick.css'
 // import 'slick-carousel/slick/slick-theme.css'
@@ -15,8 +15,8 @@ import Gift from '../assets/board/gift.svg'
 import Meet from '../assets/board/hands.jpg'
 
 
-import Righty from '../assets/arrow-right.svg'
-import Lefty from '../assets/left-arrow.svg'
+// import Righty from '../assets/arrow-right.svg'
+// import Lefty from '../assets/left-arrow.svg'
 
 const styles = {
   container: {
@@ -58,77 +58,63 @@ const styles = {
   }
 }
 
-const Right = props => (
-  <div>
-    <img src={Righty} onClick={props.onClick} height={40} className='slick-next blink_me' alt='' style={{marginLeft: 20, maxHeight: 100}} />
-  </div>
-)
+// const Right = props => (
+//   <div>
+//     <img src={Righty} onClick={props.onClick} height={40} className='slick-next blink_me' alt='' style={{marginLeft: 20, maxHeight: 100}} />
+//   </div>
+// )
 
-const Left = props => (
-  <div style={{ paddingRight: 50}}>
-    {/* <img src={Lefty} onClick={props.onClick} height={40} className='slick-prev' alt='' style={{marginRight: 20, maxHeight: 100}}/> */}
-  </div>
-)
+// const Left = props => (
+//   <div style={{ paddingRight: 50}}>
+//     <img src={Lefty} onClick={props.onClick} height={40} className='slick-prev' alt='' style={{marginRight: 20, maxHeight: 100}}/>
+//   </div>
+// )
 
 
-
-// const Flash = props => {
-//   const sidebarSettings = {
-//     arrows: false
-//   }  
-//   return (
-//     <Slider settings={settings}>
-//       <RoomDesc/>
-//       <RoomAmenities/>
-//       <StayInfo/>
-//     </Slider>
-//   )
-// }
-
-const RoomDesc = props => (
-  <div>
-    <Menu.Item><Message size='big'>Description</Message></Menu.Item>
+// const RoomDesc = props => (
+//   <div>
+//     <Menu.Item><Message size='big'>Description</Message></Menu.Item>
     
 
-    <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-    </Menu.Item>
-  </div>
-)
+//     <Menu.Item>
+//       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+//     </Menu.Item>
+//   </div>
+// )
 
-const RoomAmenities = props => (
-  <div>
-    <Menu.Item>
-      <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />ROOM AMENITIES</Button>
-    </Menu.Item>
-    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-    <Menu.Item>Free WiFi</Menu.Item>
-    <Menu.Item>HD Channel TV</Menu.Item>
-    <Menu.Item>Coffee Maker with Premium Coffee & Tea</Menu.Item>
-    <Menu.Item>All Brand New Rooms</Menu.Item>
+// const RoomAmenities = props => (
+//   <div>
+//     <Menu.Item>
+//       <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />ROOM AMENITIES</Button>
+//     </Menu.Item>
+//     <Menu.Item>Microwave & Refrigerator</Menu.Item>
+//     <Menu.Item>Free WiFi</Menu.Item>
+//     <Menu.Item>HD Channel TV</Menu.Item>
+//     <Menu.Item>Coffee Maker with Premium Coffee & Tea</Menu.Item>
+//     <Menu.Item>All Brand New Rooms</Menu.Item>
 
-    <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-    </Menu.Item>
-  </div>
-)
+//     <Menu.Item>
+//       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+//     </Menu.Item>
+//   </div>
+// )
 
-const StayInfo = props => (
-  <div>
-    <Menu.Item>
-      <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />STAY INFO</Button>
-    </Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM </Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-Out: 11AM</Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='food'/> &nbsp; Free Continental Breakfast </Item.Meta></Menu.Item>
+// const StayInfo = props => (
+//   <div>
+//     <Menu.Item>
+//       <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />STAY INFO</Button>
+//     </Menu.Item>
+//     <Menu.Item><Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta></Menu.Item>
+//     <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM </Item.Meta></Menu.Item>
+//     <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-Out: 11AM</Item.Meta></Menu.Item>
+//     <Menu.Item><Item.Meta><Icon name='food'/> &nbsp; Free Continental Breakfast </Item.Meta></Menu.Item>
 
 
-    <Menu.Item>
-      <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-    </Menu.Item>
-  </div>
-)
+//     <Menu.Item>
+//       <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+//     </Menu.Item>
+//   </div>
+// )
 
 
 
@@ -150,7 +136,7 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                      <Icon name='bed' color='red'/>&nbsp; &nbsp;POPULAR CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -173,7 +159,7 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                      <Icon name='bed' color='red'/><Icon name='bed' color='red'/>&nbsp; &nbsp;FAMILY'S CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -196,7 +182,7 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                    <Icon name='bed' color='red'/>&nbsp; &nbsp;COUPLE'S CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -219,7 +205,7 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                    <Icon name='bed' color='red'/><Icon name='bed' color='red'/>&nbsp; &nbsp;BIG FAM CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -242,11 +228,11 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;NEW FEATURE
+                      <Icon name='bed' color='red'/><Icon name='bath' color='red'/>&nbsp; &nbsp;NEW FEATURE
                     </span>
                   </Card.Meta>
                   <Card.Description>
-                    All Brand New! Read more...
+                    Superior category of suites...
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>

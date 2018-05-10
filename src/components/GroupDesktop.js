@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import fire from '../database/Fire'
-import { Form, Segment, Radio, Message, Menu, Container } from 'semantic-ui-react'
+import { Form, Segment, Radio, Message, Menu, Container, Header, Icon, Divider } from 'semantic-ui-react'
 
 
 const styles = {
@@ -21,6 +21,9 @@ const styles = {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
     fontSize: 12
+  },
+  header: {
+    color: 'rgb(165, 20, 55)'
   }
 }
 
@@ -127,11 +130,18 @@ class Group extends Component {
 
         {/* SEMANTIC */}
         <Segment>
-          <Message 
-            info 
-            icon='info'
-            header="We will never share your information to anyone."
-          />
+        
+        <Header as='h1' style={styles.header}>
+          <Icon name='users' size='huge'/>
+          <Header.Content>
+            Get Group Rates for Weddings, Sports Teams, Meetings or any events!
+            <Header.Subheader>
+              Our Sales Team will contact you within 24 hours.
+            </Header.Subheader>
+          </Header.Content>
+        </Header>
+
+        <Divider/>
         <Form>
         <Form.Group widths='equal'>
           <Form.Input fluid label='Email' placeholder='Email Address' />
@@ -141,28 +151,35 @@ class Group extends Component {
         </Form.Group>
         <Form.Group inline>
           <label>Group Type</label>
-          <Form.Field control={Radio} label='Wedding' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
+          <Form.Field control={Radio} label='Wedding' value='Wedding' checked={true} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='Corporate' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='Sports Team' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='Club' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
         </Form.Group>
         <Form.Group inline>
-          <label>Number of Rooms</label>
+          <label>Estimated Number of Rooms</label>
           <Form.Field control={Radio} label='5 Rooms' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='10 Rooms' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='15 Rooms' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='More than 15 Rooms' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
         </Form.Group>
         <Form.Group inline>
-          <label>Nights of Stay</label>
+          <label>Estimated Nights of Stay</label>
           <Form.Field control={Radio} label='1 Night' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='2 Nights' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='3 Nights' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='More 3 Nights' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
         </Form.Group>
         <Form.TextArea label='Special Requests' placeholder='Type your requests here...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button positive>Submit</Form.Button>
+
+        <Message 
+          info 
+          icon='info'
+          header="We will never share your information to anyone."
+        />
+        
+        {/* <Form.Checkbox label='I agree to the Terms and Conditions' /> */}
+        <Form.Button color='red' >Submit</Form.Button>
       </Form>
       </Segment>
         
