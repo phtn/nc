@@ -38,7 +38,7 @@ class States {
       //   console.log(this.sidebarVisibility)
       // }
 
-      parallaxOffset: 1,
+      parallaxOffset: 0,
       setOffset(offset){
         this.parallaxOffset = offset
       },
