@@ -92,8 +92,8 @@ const Home = observer (
     
     componentDidMount(){
 
-      this.getItems(states.parallaxOffset)
-      this.storeItems(states.parallaxOffset)
+      this.getItems(localStorage.getItem('offset'))
+      this.storeItems(localStorage.getItem('offset'))
 
       window.addEventListener('resize', ()=> {
         layout.resizedWidth(window.innerWidth)
@@ -274,7 +274,7 @@ const Home = observer (
       }
     }
     getItems(offset){
-      this.refs.parallax.scrollTo(localStorage.getItem('offset'))
+      this.refs.parallax.scrollTo(offset)
     }
 
   

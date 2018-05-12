@@ -66,7 +66,7 @@ const RoomSelectDesktop = observer (
             <Menu widths={5} style={styles.menu} borderless>
               
               <Menu.Item link onClick={this.props.king}>
-              <Card className='animated fadeIn room_one'>
+              <Card className='animated fadeIn room_one' raised>
                 <Image style={styles.image} src={King} />
                 <Card.Content>
                   <Card.Header>
@@ -89,7 +89,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.doubles}>
-              <Card className='animated fadeIn room_two'>
+              <Card className='animated fadeIn room_two' raised>
                 <Image style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -112,7 +112,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.ksuite}>
-              <Card className='animated fadeIn room_three'>
+              <Card className='animated fadeIn room_three' raised>
                 <Image style={styles.image} src={KingSuite} />
                 <Card.Content>
                   <Card.Header>
@@ -135,7 +135,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.dsuite}>
-              <Card className='animated fadeIn room_four'>
+              <Card className='animated fadeIn room_four' raised>
                 <Image style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -158,7 +158,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.jsuite}>
-              <Card className='animated fadeIn room_five'>
+              <Card className='animated fadeIn room_five' raised>
                 <Image style={styles.image} src={JacuzziSuite} />
                 <Card.Content>
                   <Card.Header>

@@ -192,7 +192,7 @@ const RestaurantDesktop = observer (
     }
     updateImage(index){
       this.setState({imageIndex: index})
-      console.log(index)
+      // console.log(index)
     }
 
     

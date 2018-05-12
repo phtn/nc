@@ -38,24 +38,23 @@ class Group extends Component {
       name: '',
       phone: '',
       groupName: '',
-      groupType: 'Wedding',
-      numberOfRooms: '1',
+      groupType: 'WEDD',
+      numberOfRooms: '10',
       numberOfNights: '1',
       arrivalDate: '',
-      giftbags: 'Yes',
-      specialRequest: 'None',
+      createdAt: null
     }
+
+    this.handleGroupTypeChange = (e, { value }) => this.setState({groupType: value }, a=> console.log(this.state.groupType))
+    this.handleNumberOfRoomsChange = (e, { value }) => this.setState({numberOfRooms: value }, a=> console.log(this.state.numberOfRooms))
+    this.handleNumberOfNightsChange = (e, { value }) => this.setState({numberOfNights: value }, a=> console.log(this.state.numberOfNights))
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handlePhoneChange = this.handlePhoneChange.bind(this)
     this.handleGroupNameChange = this.handleGroupNameChange.bind(this)
-    this.handleGroupTypeChange = this.handleGroupTypeChange.bind(this)
-    this.handleNumberOfRoomsChange = this.handleNumberOfRoomsChange.bind(this)
-    this.handleNumberOfNightsChange = this.handleNumberOfNightsChange.bind(this)
     this.handleArrivalDateChange = this.handleArrivalDateChange.bind(this)
-    this.handleGiftbagsChange = this.handleGiftbagsChange.bind(this)
-    this.handleSpecialRequestChange = this.handleSpecialRequestChange.bind(this)
+    
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   
@@ -71,26 +70,13 @@ class Group extends Component {
   handleGroupNameChange(e){
     this.setState({groupName: e.target.value})
   }
-  handleGroupTypeChange(e){
-    this.setState({groupType: e.target.value})
-  }
-  handleNumberOfRoomsChange(e){
-    this.setState({numberOfRooms: e.target.value})
-  }
-  handleNumberOfNightsChange(e){
-    this.setState({numberOfNights: e.target.value})
-  }
+  
   handleArrivalDateChange(e){
     this.setState({arrivalDate: e.target.value})
   }
-  handleGiftbagsChange(e){
-    this.setState({giftbags: e.target.value})
-  }
-  handleSpecialRequestChange(e){
-    this.setState({specialRequest: e.target.value})
-  }
+ 
 
-  handleInsertData(email, name, phone, groupName, groupType, numberOfRooms, numberOfNights, arrivalDate, giftbags, specialRequest){
+  handleInsertData(email, name, phone, groupName, groupType, numberOfRooms, numberOfNights, arrivalDate, createdAt){
     
     const db = fire.database().ref('groups/' + new Date())
     db.set({
@@ -102,11 +88,10 @@ class Group extends Component {
       numberOfRooms,
       numberOfNights,
       arrivalDate,
-      giftbags,
-      specialRequest
+      createdAt
     }, ()=> {
       // Show Success Toast
-      this.props.showToast()
+      // this.props.showToast()
     })
   }
   clearInputs(){
@@ -119,13 +104,14 @@ class Group extends Component {
     this.refs.inputSpecialRequest.value = ''
   }
   handleSubmit(e){
+    this.setState({createdAt: new Date()})
     e.preventDefault()
-    this.handleInsertData(this.state.email, this.state.name, this.state.phone, this.state.groupName, this.state.groupType, this.state.numberOfRooms, this.state.numberOfNights, this.state.arrivalDate, this.state.giftbags, this.state.specialRequest)
-    this.clearInputs()
+    this.handleInsertData(this.state.email, this.state.name, this.state.phone, this.state.groupName, this.state.groupType, this.state.numberOfRooms, this.state.numberOfNights, this.state.arrivalDate, this.state.createdAt)
+    // this.clearInputs()
   }
   
   render(){
-    
+    // const { value } = this.state
     return(
       <div style={styles.container}>
         <div style={styles.innerContainer}>
@@ -148,40 +134,40 @@ class Group extends Component {
               </Header>
               <Divider/>
               <Form.Group widths='equal'>
-                <Form.Input  label='Email' placeholder='Email Address' />
-                <Form.Input fluid label='Contact Name' placeholder='Contact Name' />
+                <Form.Input  label='Email' placeholder='Email Address' onChange={this.handleEmailChange}/>
+                <Form.Input fluid label='Contact Name' placeholder='Contact Name' onChange={this.handleNameChange}/>
               </Form.Group>
               <Form.Group widths='equal'>
-                <Form.Input fluid label='Phone Number' placeholder='Phone Number' />
-                <Form.Input fluid label='Group Name' placeholder='Group Name' />
+                <Form.Input fluid label='Phone Number' placeholder='Phone Number' onChange={this.handlePhoneChange}/>
+                <Form.Input fluid label='Group Name' placeholder='Group Name' onChange={this.handleGroupNameChange}/>
               </Form.Group>
               <Form.Group inline>
                 <label>Group Type</label>
-                <Form.Field control={Radio} label='Wedding' value='Wedding' checked={true} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='Corporate' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='Sports Team' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='Club' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='Wedding' value='WEDD' checked={this.state.groupType === 'WEDD'} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='Corporate' value='CORP' checked={this.state.groupType === 'CORP'} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='Sports Team' value='TEAM' checked={this.state.groupType === 'TEAM'} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='Club' value='CLUB' checked={this.state.groupType === 'CLUB'} onChange={this.handleGroupTypeChange} />
               </Form.Group>
               <Form.Group inline>
                 <label>Estimated Rooms</label>
-                <Form.Field control={Radio} label='10 Rooms' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='15 Rooms' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='More than 15' value='Club' checked={true} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='10 Rooms' value='10' checked={this.state.numberOfRooms === '10'} onChange={this.handleNumberOfRoomsChange} />
+                <Form.Field control={Radio} label='15 Rooms' value='15' checked={this.state.numberOfRooms === '15'} onChange={this.handleNumberOfRoomsChange} />
+                <Form.Field control={Radio} label='15+ Rooms' value='15+' checked={this.state.numberOfRooms === '15+'} onChange={this.handleNumberOfRoomsChange} />
               </Form.Group>
               <Form.Group inline>
                 <label>Estimated Nights</label>
-                <Form.Field control={Radio} label='1 Night' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='2 Nights' value='Corporate' checked={true} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='3 Nights' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
-                <Form.Field control={Radio} label='More than 3 Nights' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
+                <Form.Field control={Radio} label='1 Night' value='1' checked={this.state.numberOfNights === '1'} onChange={this.handleNumberOfNightsChange} />
+                <Form.Field control={Radio} label='2 Nights' value='2' checked={this.state.numberOfNights === '2'} onChange={this.handleNumberOfNightsChange} />
+                <Form.Field control={Radio} label='3 Nights' value='3' checked={this.state.numberOfNights === '3'} onChange={this.handleNumberOfNightsChange} />
+                <Form.Field control={Radio} label='3+ Nights' value='3+' checked={this.state.numberOfNights === '3+'} onChange={this.handleNumberOfNightsChange} />
               </Form.Group>
-              <Form.Input  label='Date of Event' placeholder='MM / DD / YEAR' />
+              <Form.Input  label='Date of Arrival' placeholder='MM / DD / YEAR' onChange={this.handleArrivalDateChange}/>
               {/* <Form.TextArea label='Special Requests' placeholder='Type your requests here...' /> */}
 
               {/* <Message info icon='lock' header='We Value your Privacy.' content='We will never share your information to anyone.'/> */}
                 
 
-              <Form.Button color='red' >Submit</Form.Button>
+              <Form.Button color='red' onClick={this.handleSubmit}>Submit</Form.Button>
               </Form>
               </Segment>
             </Grid.Column>
