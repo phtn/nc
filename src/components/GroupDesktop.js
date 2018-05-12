@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import fire from '../database/Fire'
-import { Form, Segment, Radio, Message, Menu, Container, Header, Icon, Divider, Grid } from 'semantic-ui-react'
+import { Form, Segment, Radio, Menu, Container, Header, Icon, Divider, Grid } from 'semantic-ui-react'
 
 
 const styles = {
@@ -30,6 +30,7 @@ const styles = {
 
 
 
+
 class Group extends Component {
   constructor(props){
     super(props)
@@ -42,12 +43,14 @@ class Group extends Component {
       numberOfRooms: '10',
       numberOfNights: '1',
       arrivalDate: '',
-      createdAt: null
+      createdAt: null,
+      submitted: false,
+      submitClass: 'animated'
     }
 
-    this.handleGroupTypeChange = (e, { value }) => this.setState({groupType: value }, a=> console.log(this.state.groupType))
-    this.handleNumberOfRoomsChange = (e, { value }) => this.setState({numberOfRooms: value }, a=> console.log(this.state.numberOfRooms))
-    this.handleNumberOfNightsChange = (e, { value }) => this.setState({numberOfNights: value }, a=> console.log(this.state.numberOfNights))
+    this.handleGroupTypeChange = (e, { value }) => this.setState({groupType: value })
+    this.handleNumberOfRoomsChange = (e, { value }) => this.setState({numberOfRooms: value })
+    this.handleNumberOfNightsChange = (e, { value }) => this.setState({numberOfNights: value })
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
@@ -92,23 +95,59 @@ class Group extends Component {
     }, ()=> {
       // Show Success Toast
       // this.props.showToast()
+      // this.clearInputs()
+      this.showSubmitSuccess()
     })
   }
   clearInputs(){
-    this.refs.inputEmail.value = ''
-    this.refs.inputName.value = ''
-    this.refs.inputPhone.value = ''
-    this.refs.inputGroupName.value = ''
-    this.refs.inputRooms.value = ''
-    this.refs.inputArrivalDate.value = ''
-    this.refs.inputSpecialRequest.value = ''
+    this.setState({email: ''})
+    this.setState({name: ''})
+    this.setState({phone: ''})
+    this.setState({groupName: ''})
+    this.setState({groupType: 'WEDD'})
+    this.setState({numberOfRooms: '10'})
+    this.setState({numberOfNights: '1'})
   }
+  showSubmitSuccess(){
+    this.setState({submitted: true})
+    
+  }
+  
+  buttonSubmitSwitch(){
+    if (!this.state.submitted){
+      return <Form.Button fluid color='red' className={this.state.submitClass} onClick={this.handleSubmit}>Submit</Form.Button>
+    } else {
+      return <Form.Button positive fluid className='animated zoomIn submit_success'><Icon name='check' /> &nbsp;Submit Successful!</Form.Button>
+    }
+  }
+
   handleSubmit(e){
-    this.setState({createdAt: new Date()})
-    e.preventDefault()
-    this.handleInsertData(this.state.email, this.state.name, this.state.phone, this.state.groupName, this.state.groupType, this.state.numberOfRooms, this.state.numberOfNights, this.state.arrivalDate, this.state.createdAt)
-    // this.clearInputs()
+    
+    if (this.state.email !== '' && this.state.name !== '' && this.state.phone !== ''){
+      this.setState({submitClass: 'animated zoomOut'})
+      this.setState({createdAt: new Date()})
+      e.preventDefault()
+      this.handleInsertData(
+        this.state.email, 
+        this.state.name, 
+        this.state.phone, 
+        this.state.groupName, 
+        this.state.groupType, 
+        this.state.numberOfRooms, 
+        this.state.numberOfNights, 
+        this.state.arrivalDate, 
+        this.state.createdAt
+      )
+    } else {
+      this.setState({submitClass: 'animated shake'})
+    }
+
+    
   }
+
+
+
+  
   
   render(){
     // const { value } = this.state
@@ -134,7 +173,7 @@ class Group extends Component {
               </Header>
               <Divider/>
               <Form.Group widths='equal'>
-                <Form.Input  label='Email' placeholder='Email Address' onChange={this.handleEmailChange}/>
+                <Form.Input label='Email' placeholder='Email Address' onChange={this.handleEmailChange}/>
                 <Form.Input fluid label='Contact Name' placeholder='Contact Name' onChange={this.handleNameChange}/>
               </Form.Group>
               <Form.Group widths='equal'>
@@ -166,8 +205,10 @@ class Group extends Component {
 
               {/* <Message info icon='lock' header='We Value your Privacy.' content='We will never share your information to anyone.'/> */}
                 
+              {/* <Form.Button color='red' onClick={this.handleSubmit}>Submit</Form.Button> */}
+              
+              {this.buttonSubmitSwitch()}
 
-              <Form.Button color='red' onClick={this.handleSubmit}>Submit</Form.Button>
               </Form>
               </Segment>
             </Grid.Column>

@@ -57,3 +57,6 @@ body {
   /* -webkit-animation-duration: .3s; */
   -webkit-animation-delay: 1.2s;
 }
+.submit_success {
+  -webkit-animation-delay: .5s;
+}

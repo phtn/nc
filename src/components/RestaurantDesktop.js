@@ -1,25 +1,18 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { Item, Button, Icon, Menu, Container, Message, Label} from 'semantic-ui-react'
+import { Item, Button, Icon, Menu, Container, Label} from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import CrossfadeImage from 'react-crossfade-image'
 
-// import Doubles from '../assets/images/erNDD2.png'
-// import King from '../assets/images/eNK1.png'
-// import Suites from '../assets/board/erSA_400.jpg'
 
-// import Righty from '../assets/arrow-right.svg'
-// import Lefty from '../assets/left-arrow.svg'
-// import Back from '../assets/back.svg'
 
 // images
-import Event1 from '../assets/images/event1.jpg'
-import Breakfast2 from '../assets/images/brk11.jpg'
-import Breakfast3 from '../assets/images/brk12.jpg'
-import Breakfast4 from '../assets/images/brk13.jpg'
+// import Event1 from '../assets/images/event1.jpg'
+// import Breakfast2 from '../assets/images/brk11.jpg'
+// import Breakfast3 from '../assets/images/brk12.jpg'
+// import Breakfast4 from '../assets/images/brk13.jpg'
 
 import Chimi from '../assets/board/chimi.jpg'
 import Beans from '../assets/board/beans.jpg'
@@ -81,16 +74,16 @@ const styles = {
 // )
 
 
-const RoomDesc = props => (
-  <div>
-    <Menu.Item><Message size='big'>{props.description}</Message></Menu.Item>
+// const RoomDesc = props => (
+//   <div>
+//     <Menu.Item><Message size='big'>{props.description}</Message></Menu.Item>
     
 
-    <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-    </Menu.Item>
-  </div>
-)
+//     <Menu.Item>
+//       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+//     </Menu.Item>
+//   </div>
+// )
 
 
 
