@@ -277,19 +277,12 @@ const Home = observer (
       this.refs.parallax.scrollTo(localStorage.getItem('offset'))
     }
 
-    // getRightPhoto(width){
-    //   if (width < 450){
-    //     return Leather
-    //   } else{
-    //     return ROOM1
-    //   }
-    // }
+  
     setOffset(p){
       localStorage.setItem('offset', p)
     }
     handleDown(p){
       this.refs.parallax.scrollTo(p)
-      // states.setOffest(p)
       this.setOffset(p)
     }
     render(){
@@ -359,13 +352,7 @@ const Home = observer (
 
                 {this.renderBonfireComponent(layout.width)}
 
-              {/* <BonfireDesktop 
-                rooms={()=>this.handleDown(1)} 
-                amenities={()=>this.handleDown(3)} 
-                group={()=>this.handleDown(4)}
-                events={()=>this.handleDown(5)}
-                discover={()=>this.handleDown(6)}
-                /> */}
+              
               
             </Parallax.Layer>
 

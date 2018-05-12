@@ -239,7 +239,7 @@ const RestaurantDesktop = observer (
           </div>
           
           <div style={{position: 'absolute', top: this.props.top, width: window.innerWidth }}>
-            <Menu fluid inverted widths={5}>
+            <Menu fluid inverted widths={5} style={{borderRadius: 0}}>
               <Menu.Item name='eat' active={false} link  onClick={this.props.rooms} >
                 <span style={styles.tabs}>ROOMS</span>
               </Menu.Item>

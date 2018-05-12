@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { Icon, Menu, Container, Image, Card } from 'semantic-ui-react'
-// import Slider from 'react-slick'
-// import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
+
 
 
 import King from '../assets/images/eNK1.png'
@@ -15,8 +13,7 @@ import Gift from '../assets/board/gift.svg'
 import Meet from '../assets/board/hands.jpg'
 
 
-// import Righty from '../assets/arrow-right.svg'
-// import Lefty from '../assets/left-arrow.svg'
+
 
 const styles = {
   container: {
@@ -58,72 +55,13 @@ const styles = {
   }
 }
 
-// const Right = props => (
-//   <div>
-//     <img src={Righty} onClick={props.onClick} height={40} className='slick-next blink_me' alt='' style={{marginLeft: 20, maxHeight: 100}} />
-//   </div>
-// )
-
-// const Left = props => (
-//   <div style={{ paddingRight: 50}}>
-//     <img src={Lefty} onClick={props.onClick} height={40} className='slick-prev' alt='' style={{marginRight: 20, maxHeight: 100}}/>
-//   </div>
-// )
 
 
-// const RoomDesc = props => (
-//   <div>
-//     <Menu.Item><Message size='big'>Description</Message></Menu.Item>
-    
-
-//     <Menu.Item>
-//       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-//     </Menu.Item>
-//   </div>
-// )
-
-// const RoomAmenities = props => (
-//   <div>
-//     <Menu.Item>
-//       <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />ROOM AMENITIES</Button>
-//     </Menu.Item>
-//     <Menu.Item>Microwave & Refrigerator</Menu.Item>
-//     <Menu.Item>Free WiFi</Menu.Item>
-//     <Menu.Item>HD Channel TV</Menu.Item>
-//     <Menu.Item>Coffee Maker with Premium Coffee & Tea</Menu.Item>
-//     <Menu.Item>All Brand New Rooms</Menu.Item>
-
-//     <Menu.Item>
-//       <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-//     </Menu.Item>
-//   </div>
-// )
-
-// const StayInfo = props => (
-//   <div>
-//     <Menu.Item>
-//       <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />STAY INFO</Button>
-//     </Menu.Item>
-//     <Menu.Item><Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta></Menu.Item>
-//     <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM </Item.Meta></Menu.Item>
-//     <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-Out: 11AM</Item.Meta></Menu.Item>
-//     <Menu.Item><Item.Meta><Icon name='food'/> &nbsp; Free Continental Breakfast </Item.Meta></Menu.Item>
-
-
-//     <Menu.Item>
-//       <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
-//     </Menu.Item>
-//   </div>
-// )
-
-
-
-
-const RoomDesktop = observer (
+const RoomSelectDesktop = observer (
   class RoomPage extends Component {
     render(){
       return(
-        <div style={styles.container} id='roomImage'>
+        <div style={styles.container}>
           <div style={styles.innerContainer}>
             <Menu widths={5} style={styles.menu} borderless>
               
@@ -277,14 +215,9 @@ const RoomDesktop = observer (
                   <Card.Header>
                     Meet Me at Clarion!
                   </Card.Header>
-                  {/* <Card.Meta>
-                    <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
-                    </span>
-                  </Card.Meta> */}
+                  
                   <Card.Description>
                     We believe life is better when you get together. Read more...
-                    {/* Read More... */}
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -294,7 +227,7 @@ const RoomDesktop = observer (
           </div>
           
           <div style={{position: 'absolute', top: this.props.top, width: window.innerWidth }}>
-            <Menu fluid inverted widths={5}>
+            <Menu fluid inverted widths={5} style={{borderRadius: 0}}>
               <Menu.Item name='eat' active={false} link  onClick={this.props.rest} >
                 <span style={styles.tabs}>EAT & DRINK</span>
               </Menu.Item>
@@ -328,4 +261,4 @@ const RoomDesktop = observer (
     }
   }
 )
-export default RoomDesktop
+export default RoomSelectDesktop

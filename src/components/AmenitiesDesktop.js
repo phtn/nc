@@ -122,7 +122,7 @@ const AmenitiesDesktop = observer (
                       <Button animated='fade' color='red' fluid>
                         <Button.Content  visible>ANNUAL POOL MEMBERSHIP</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       </Menu.Item>
@@ -156,9 +156,9 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Great space for Gatherings</Menu.Item>
                       <Menu.Item>
                       <Button animated='fade' color='red' fluid>
-                        <Button.Content  visible>AVAILABILITY</Button.Content>
+                        <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       </Menu.Item>
@@ -193,9 +193,9 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Perfect for Family Gatherings</Menu.Item>
                       <Menu.Item>Private Parties</Menu.Item>
                       <Button animated='fade' color='red' fluid>
-                        <Button.Content  visible>AVAILABILITY</Button.Content>
+                        <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -233,7 +233,7 @@ const AmenitiesDesktop = observer (
                       <Button animated='fade' color='red' fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -268,7 +268,7 @@ const AmenitiesDesktop = observer (
                       <Button animated='fade' color='red' fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -303,7 +303,7 @@ const AmenitiesDesktop = observer (
                       <Button animated='fade' color='red' fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -338,7 +338,7 @@ const AmenitiesDesktop = observer (
                       <Button animated='fade' color='red' fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -369,9 +369,9 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>High Speed Internet</Menu.Item>
                       <Menu.Item>Projector & White Screen</Menu.Item>
                       <Button animated='fade' color='red' fluid>
-                        <Button.Content  visible>AVAILABILITY</Button.Content>
+                        <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
-                          215 - 862 - 5221
+                          CALL 215 - 862 - 5221
                         </Button.Content>
                       </Button>
                       
@@ -392,8 +392,8 @@ const AmenitiesDesktop = observer (
 
           </div>
           
-          <div style={{position: 'absolute', top: this.props.top, width: window.innerWidth, zIndex: 1 }}>
-            <Menu fluid inverted widths={5}>
+          <div style={{position: 'absolute', top: this.props.top, width: window.innerWidth, zIndex: 2 }}>
+            <Menu fluid inverted widths={5} style={{borderRadius: 0}}>
               <Menu.Item name='rooms' active={false} link  onClick={this.props.rooms} >
                 <span style={styles.tabs}>ROOMS</span>
               </Menu.Item>

@@ -100,7 +100,7 @@ export default props => (
     </div>
     
     <div style={{position: 'absolute', top: props.top, width: window.innerWidth }}>
-      <Menu fluid inverted widths={5}>
+      <Menu fluid inverted widths={5} style={{borderRadius: 0}}>
         
         <Menu.Item name='rooms' active={false} link  onClick={props.rooms} >
           <span style={styles.tabs}>ROOMS</span>

@@ -25,7 +25,7 @@ class States {
     extendObservable(this, {
       
 
-      parallaxOffset: 0,
+      parallaxOffset: 4,
       setOffset(offset){
         this.parallaxOffset = offset
       },
