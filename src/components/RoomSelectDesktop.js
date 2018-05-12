@@ -256,7 +256,7 @@ const RoomDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='star' color='yellow'/>&nbsp; &nbsp;POPULAR CHOICE
+                      <Icon name='star' color='yellow'/><Icon name='star' color='yellow'/><Icon name='star' color='yellow'/>
                     </span>
                   </Card.Meta>
                   <Card.Description>

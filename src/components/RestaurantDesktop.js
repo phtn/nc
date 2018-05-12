@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { Item, Button, Icon, Menu, Container, Message, } from 'semantic-ui-react'
+import { Item, Button, Icon, Menu, Container, Message, Label} from 'semantic-ui-react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+
+import CrossfadeImage from 'react-crossfade-image'
 
 // import Doubles from '../assets/images/erNDD2.png'
 // import King from '../assets/images/eNK1.png'
@@ -14,8 +16,18 @@ import 'slick-carousel/slick/slick-theme.css'
 // import Back from '../assets/back.svg'
 
 // images
-import Breakfast4 from '../assets/images/brk13.jpg'
+import Event1 from '../assets/images/event1.jpg'
+import Breakfast2 from '../assets/images/brk11.jpg'
 import Breakfast3 from '../assets/images/brk12.jpg'
+import Breakfast4 from '../assets/images/brk13.jpg'
+
+import Chimi from '../assets/board/chimi.jpg'
+import Beans from '../assets/board/beans.jpg'
+import Shrimp from '../assets/board/shrimp.jpg'
+import Burger from '../assets/board/burger.jpg'
+import Humus1 from '../assets/board/humus1.jpg'
+import Humus2 from '../assets/board/humus2.jpg'
+
 
 const styles = {
   container: {
@@ -80,36 +92,51 @@ const RoomDesc = props => (
   </div>
 )
 
-const RoomAmenities = props => (
-  <div>
+
+
+const MexicanFood = props => (
+
+  <div style={styles.menu}>
     <Menu.Item>
-      <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />ROOM AMENITIES</Button>
+      <Button basic color='red' fluid as='a' href=''><Icon name='food' />POPULAR MEXICAN CHOICES</Button>
     </Menu.Item>
-    <Menu.Item>Microwave & Refrigerator</Menu.Item>
-    <Menu.Item>Free WiFi</Menu.Item>
-    <Menu.Item>HD Channel TV</Menu.Item>
-    <Menu.Item>Coffee Maker with Premium Coffee & Tea</Menu.Item>
-    <Menu.Item>All Brand New Rooms</Menu.Item>
-
     <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+      <Label floated='right' color='teal'>14</Label>
+      Chimichangga
     </Menu.Item>
-  </div>
-)
-
-const StayInfo = props => (
-  <div>
     <Menu.Item>
-      <Button basic color='red' fluid as='a' href=''><Icon name='universal access' />STAY INFO</Button>
+      <Label floated='right' color='teal'>14</Label>
+      Fajitas
     </Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='user'/> &nbsp; Sleeps 2</Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-In: 3PM </Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='clock'/> &nbsp; Check-Out: 11AM</Item.Meta></Menu.Item>
-    <Menu.Item><Item.Meta><Icon name='food'/> &nbsp; Free Continental Breakfast </Item.Meta></Menu.Item>
-
-
     <Menu.Item>
-      <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+      <Label floated='right' color='teal'>14</Label>
+      Bestek Ranchero
+    </Menu.Item>
+    <Menu.Item>
+      <Label floated='right' color='teal'>14</Label>
+      Tostadas (3)
+    </Menu.Item>
+    <Menu.Item>
+      <Label floated='right' color='teal'>3</Label>
+      Tacos
+    </Menu.Item>
+    <Menu.Item>
+      <Label floated='right' color='teal'>14</Label>
+      Quesadillas
+    </Menu.Item>
+    <Menu.Item>
+      <Label floated='right' color='teal'>15</Label>
+      Sopezz
+    </Menu.Item>
+    <Menu.Item>
+      <Button animated='fade' color='red' fluid >
+        <Button.Content visible>
+          <Icon name='birthday' />RESERVATIONS
+        </Button.Content>
+        <Button.Content hidden>
+          <Icon name='call'/>&nbsp;215-862-5221
+        </Button.Content>
+      </Button>
     </Menu.Item>
   </div>
 )
@@ -118,37 +145,59 @@ const StayInfo = props => (
 const settings = {
   infinite: true,
   speed: 1000,
-  arrows: true,
+  arrows: false,
   slidesToShow: 1,
   slidesToScroll: 1,
   fade: false,
-  autoplay: false,
+  autoplay: true,
   dots: false,
   // nextArrow: <Right/>,
   // prevArrow: <Left/>,
 }
 
 
-const images = [Breakfast4, Breakfast3]
+const images = [Chimi, Shrimp, Beans, Burger, Humus1, Humus2]
 
 const RestaurantDesktop = observer (
   class RestaurantPage extends Component {
-    loadImage(images){
+    constructor(props){
+      super(props)
+      this.state = {
+        imageIndex: 0
+      }
+      this.intervalID = 0
+    }
+    componentDidMount(){
+      this.crossfadeImages()
+    }
+    componentWillUnmount(){
+      this.clearLoop()
+    }
+    clearLoop(){
+      clearInterval(this.intervalID)
+    }
+    crossfadeImages(){
       // for (let i in images){
       //   setTimeout(t=> { return images[i]}, 2000)
       // }
-      return images[0]
+      let imageCount = images.length
+      let index = 0
+      this.intervalID = setInterval(t => { 
+        
+        index = (index + 1) % imageCount
+        
+        this.updateImage(index)
+        
+      }, 7000)
+    }
+    updateImage(index){
+      this.setState({imageIndex: index})
+      console.log(index)
     }
 
-    loop(){
-      for (let i in 10){
-        setInterval(t=> {
-          console.log(i)
-        }, 1000)
-      }
-    }
+    
     render(){
-      this.loop()
+      
       return(
         <div style={styles.container} id='roomImage'>
           
@@ -159,8 +208,9 @@ const RestaurantDesktop = observer (
                 <Item.Group>
                   <Item>
                     
-                    <Item.Image size='huge' src={this.loadImage(images)} style={{marginLeft:10, width: window.innerWidth*.666 }} />
-
+                    <Item.Image className='animated fadeIn' size='huge' src={images[this.state.imageIndex]} style={{marginLeft:10, width: window.innerWidth*.666 }} />
+                    {/* <CrossfadeImage src={Breakfast3} style={{marginLeft:10, width: window.innerWidth*.666 }}/> */}
+                    {/* <CrossfadeImage src={Breakfast4} style={{marginLeft:10, width: window.innerWidth*.666 }}/> */}
                     <Item.Content>
                       
                       <Item.Extra>
@@ -168,13 +218,13 @@ const RestaurantDesktop = observer (
                           <Menu.Item>
                             <span style={styles.header}>{this.props.header}</span>
                             <br/>
-                            <Item.Meta><Icon name='star' color='yellow'/>&nbsp; &nbsp;{this.props.tag}</Item.Meta>
+                            <Item.Meta><Icon name='star' color='yellow'/><Icon name='star' color='yellow'/><Icon name='star' color='yellow'/><Icon name='star' color='yellow'/><Icon name='star' color='yellow'/></Item.Meta>
                           </Menu.Item>
 
                           <Slider {...settings}>
-                            <RoomDesc description={this.props.description}/>
-                            <RoomAmenities/>
-                            <StayInfo/>
+                            {/* <RoomDesc description={this.props.description}/> */}
+                            {/* <RoomAmenities/> */}
+                            <MexicanFood/>
                           </Slider>
                         </Menu>
                       </Item.Extra>

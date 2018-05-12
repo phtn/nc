@@ -158,15 +158,14 @@ class Group extends Component {
         </Form.Group>
         <Form.Group inline>
           <label>Estimated Number of Rooms</label>
-          <Form.Field control={Radio} label='5 Rooms' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='10 Rooms' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='15 Rooms' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
-          <Form.Field control={Radio} label='More than 15 Rooms' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
+          <Form.Field control={Radio} label='More than 15 Rooms' value='Club' checked={true} onChange={this.handleGroupTypeChange} />
         </Form.Group>
         <Form.Group inline>
           <label>Estimated Nights of Stay</label>
           <Form.Field control={Radio} label='1 Night' value='Wedding' checked={false} onChange={this.handleGroupTypeChange} />
-          <Form.Field control={Radio} label='2 Nights' value='Corporate' checked={false} onChange={this.handleGroupTypeChange} />
+          <Form.Field control={Radio} label='2 Nights' value='Corporate' checked={true} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='3 Nights' value='Sports Team' checked={false} onChange={this.handleGroupTypeChange} />
           <Form.Field control={Radio} label='More 3 Nights' value='Club' checked={false} onChange={this.handleGroupTypeChange} />
         </Form.Group>

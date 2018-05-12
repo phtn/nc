@@ -248,6 +248,7 @@ const Home = observer (
           />
       } else {
         return <RestaurantDesktop 
+          header='Bonfire Bar & Grill'
           rooms={()=>this.handleDown(1)} 
           amenities={()=> {
               this.handleDown(3)
