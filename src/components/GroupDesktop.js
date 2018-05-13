@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import fire from '../database/Fire'
 import { Form, Segment, Radio, Menu, Container, Header, Icon, Divider, Grid } from 'semantic-ui-react'
 
+// import twilio from 'twilio'
+
+
+// const acc = 'ACaced57ce3c8e61873bf0f1def96418a7'
+// const tok = 'd7e2466c63de48dfecd2e63ba8d677c5'
 
 const styles = {
   container: {padding: '130px 0px 0px 0px'},
@@ -140,6 +145,7 @@ class Group extends Component {
       )
     } else {
       this.setState({submitClass: 'animated shake'})
+      setTimeout(()=> {this.setState({submitClass: ''})}, 300)
     }
 
     

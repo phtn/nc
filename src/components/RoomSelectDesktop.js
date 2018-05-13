@@ -205,7 +205,7 @@ const RoomSelectDesktop = observer (
             </Menu.Item>
               
               <Menu.Item>
-                <Image src={Rewards} size='medium' as='a' href='https://www.choicehotels.com/choice-privileges'/>
+                <Image className='animated fadeIn' src={Rewards} size='medium' as='a' href='https://www.choicehotels.com/choice-privileges'/>
               </Menu.Item>
               
               <Menu.Item>
