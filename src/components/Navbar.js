@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Menu, Button, Icon } from 'semantic-ui-react'
+import { Segment, Button, Icon } from 'semantic-ui-react'
 // import ActiveComponent from '../observables/Renderer'
 // import active from '../observables/Renderer'
 // const comp = new ActiveComponent()
@@ -29,7 +29,7 @@ const styles = {
 export default props => (
   <div style={styles.container}>
     <Segment style={styles.segment} >
-      <Menu inverted secondary pointing fluid style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
+      {/* <Menu inverted secondary pointing fluid style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
         
         <Menu.Item name='resv' link active={false} onClick={props.rooms} > 
             <span style={styles.tabs}>ROOMS</span>
@@ -41,13 +41,18 @@ export default props => (
         
         
         <Menu.Item name='restaurant' active={false} link >
-          <Button positive fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>
+          <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>
             <Icon name='bed'/>
             &nbsp;BOOK NOW
           </Button>
         </Menu.Item>
       
-      </Menu>
+      </Menu> */}
+
+      <Button color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>
+        <Icon name='bed'/>
+        &nbsp;BOOK NOW
+      </Button>
       
     </Segment>
   </div>

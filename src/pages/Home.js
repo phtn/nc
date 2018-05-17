@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'semantic-ui-react'
+import { Button, Icon, Grid, Image } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Animated from 'animated/lib/targets/react-dom'
-
+import '../animate.css'
 import Bridge from '../assets/board/erNH_40.jpg'
 import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
@@ -23,6 +23,9 @@ import EventsDesktop from '../components/EventsDesktop'
 import GroupDesktop from '../components/GroupDesktop'
 import RestaurantDesktop from '../components/RestaurantDesktop'
 // import Events from '../widgets/Events'
+
+// icons
+import BedIcon from '../assets/bed.svg' 
 // rooms & suites
 import Rooms from '../components/Rooms'
 // import RoomsDesktop from '../components/RoomsDesktop'
@@ -170,7 +173,7 @@ const Home = observer (
           />
       }
     }
-    homeWidthDirectionsDispay(width){
+    homeWidthDirectionsDisplay(width){
       if (width > 600){
         return 'none'
       }
@@ -302,9 +305,32 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
               
+              <div 
+                style={{
+                  position: 'relative',
+                  top: 200,
+                  
+                }}
+              >
+                {/* Grid Here... */}
+
+                <Grid centered >
+                  <Grid.Row columns={2}>
+                    <Grid.Column textAlign='center' className='animated fadeInRight'>
+                      <Image src={BedIcon} style={{height: 30}} avatar/>
+                      <span style={{marginLeft: 5, color: '#eee'}}>Rooms & Suites</span>
+                    </Grid.Column>
+                    <Grid.Column></Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                
+
+
+
+              </div>
               
               <div style={Object.assign({top: this.homeHeightMapAdjuster(layout.height)}, styles.directions)} className='animated slideInUp'>
-                <Button primary style={Object.assign({display: this.homeWidthDirectionsDispay(layout.width), zIndex: 1})} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
+                <Button primary style={Object.assign({display: this.homeWidthDirectionsDisplay(layout.width), zIndex: 1})} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
               </div>
 
               <Parallax.Layer offset={0.90 } speed={1} style={{ backgroundColor: 'rgba(0,0,0, 0.85)', height: 100}}>
