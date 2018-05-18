@@ -181,7 +181,7 @@ const RestaurantDesktop = observer (
         
         this.updateImage(index)
         
-      }, 7000)
+      }, 5000)
     }
     updateImage(index){
       this.setState({imageIndex: index})

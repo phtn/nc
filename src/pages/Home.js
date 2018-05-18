@@ -57,6 +57,10 @@ const styles = {
     backgroundImage: `url(${Bridge})`,
     backgroundPosition: 'center center'
   },
+  bg_1: {
+    backgroundImage: `url(${Bridge})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
+  },
   bg2: {
     backgroundImage: `url(${Linen})`,
     backgroundRepeat: 'repeat',
@@ -142,6 +146,13 @@ const Home = observer (
         return 30
       } else {
         return 25
+      }
+    }
+    selectHomeBG(width){
+      if (width > 2000){
+        return styles.bg_1
+      } else {
+        return styles.bg
       }
     }
     homeWidthNavbarAdjuster(width){ // mobile
@@ -416,7 +427,7 @@ const Home = observer (
           <Parallax pages={7} ref='parallax' scrolling={false} effect={(animation, toValue) => Animated.timing(animation, { toValue, duration: 0 })}>
             
             {/* Page 1 HOME */}
-            <Parallax.Layer offset={0} speed={0.5} style={styles.bg}>
+            <Parallax.Layer offset={0} speed={0.5} style={this.selectHomeBG(layout.width)}>
               <Header 
                 home={()=> {
                   this.handleDown(0)

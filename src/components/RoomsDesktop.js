@@ -12,7 +12,8 @@ import 'slick-carousel/slick/slick-theme.css'
 
 // import Lefty from '../assets/left-arrow.svg'
 import Righty from '../assets/arrow-right.svg'
-import Back from '../assets/back.svg'
+import Back from '../assets/new-left-arrow.svg'
+
 
 const styles = {
   container: {
@@ -147,7 +148,7 @@ const RoomDesktop = observer (
             src={Back} 
             style={styles.backButton} 
             onClick={this.props.back}
-            className='animated fadeInRight back_button'  
+            className='animated fadeInLeft back_button'  
           />
           
           <div style={styles.innerContainer}>
