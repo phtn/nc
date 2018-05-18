@@ -32,8 +32,10 @@ import GroupIcon from '../assets/group.svg'
 import EventIcon from '../assets/event.svg'
 import DiscoverIcon from '../assets/discover.svg'
 import CallIcon from '../assets/call.svg'
-// rooms & suites
+
+// mobile pages
 import Rooms from '../components/Rooms'
+import AmenitiesMobile from '../components/AmenitiesMobile'
 // import RoomsDesktop from '../components/RoomsDesktop'
 // import RoomSelectDesktop from '../components/RoomSelectDesktop'
 // observables
@@ -98,7 +100,8 @@ const styles = {
     color: 'rgb(250,226,173)',
     fontFamily: 'Playfair Display',
     letterSpacing: 1,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    userSelect: 'none'
   }
 }
 
@@ -364,6 +367,27 @@ const Home = observer (
           />
       }
     }
+    renderAmenities(width){
+      if(width < 600) {
+        return <AmenitiesMobile 
+          rooms={()=>this.handleDown(1)} 
+          rest={()=>this.handleDown(2)}
+          group={()=>this.handleDown(4)}
+          events={()=>this.handleDown(5)}
+          discover={()=>this.handleDown(6)}
+          top={layout.height - layout.height*.1}
+        />
+      } else {
+        return <AmenitiesDesktop 
+          rooms={()=>this.handleDown(1)} 
+          rest={()=>this.handleDown(2)}
+          group={()=>this.handleDown(4)}
+          events={()=>this.handleDown(5)}
+          discover={()=>this.handleDown(6)}
+          top={layout.height - layout.height*.1}
+        />
+      }
+    }
 
     storeItems(offset){
       if (localStorage.getItem('offset') === null){
@@ -424,7 +448,7 @@ const Home = observer (
                   this.setOffset(0)
                 }} 
                 image={Logo} 
-                title='Rooms & Suites' 
+                title='ROOMS & SUITES' 
                 sub='KING &middot; DOUBLES &middot; SUITES &middot; JACUZZI'  
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
@@ -468,20 +492,13 @@ const Home = observer (
                 }} 
                 image={Logo} 
                 title='Hotel Amenities' 
-                sub='OUTDOOR POOL &middot; FITNESS CENTER &middot; BUSINESS CENTER' 
+                sub='OUTDOOR POOL &middot; FITNESS CENTER'
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}
                 
               />    
 
-              <AmenitiesDesktop 
-                rooms={()=>this.handleDown(1)} 
-                rest={()=>this.handleDown(2)}
-                group={()=>this.handleDown(4)}
-                events={()=>this.handleDown(5)}
-                discover={()=>this.handleDown(6)}
-                top={layout.height - layout.height*.1}
-                />
+              {this.renderAmenities(layout.width)}
               
             </Parallax.Layer>
 
