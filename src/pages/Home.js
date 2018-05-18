@@ -98,7 +98,7 @@ const styles = {
     textAlign: 'center',
   },
   mobileMenuStyle: {
-    backgroundColor: 'rgba(0,0,0,0.8)',
+    backgroundColor: 'rgba(5,15,44,0.8)',
     borderRadius: '15px 0px 0px 15px',
     padding: 5,
     color: 'rgb(250,226,173)',
@@ -194,7 +194,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(1)} textAlign='left' className='animated fadeInLeft rooms_menu' style={styles.mobileMenuStyle}>
-                <Image src={BedIcon} style={{height: 30}} avatar/>
+                <Image src={BedIcon} style={{height: 30, backgroundColor: 'rgb(250,226,173)', padding: 5}} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Rooms</span>
               </Grid.Column>
             </Grid.Row>
@@ -459,7 +459,7 @@ const Home = observer (
                   this.setOffset(0)
                 }} 
                 image={Logo} 
-                title='ROOMS & SUITES' 
+                title='Rooms & Suites' 
                 sub='KING &middot; DOUBLES &middot; SUITES &middot; JACUZZI'  
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
