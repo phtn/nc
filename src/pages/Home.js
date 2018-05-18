@@ -13,7 +13,7 @@ import Mixer from '../assets/board/mixerboard.jpg'
 import Sea from '../assets/board/sea.jpg'
 // main components
 import Header from '../components/Header'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 import NavbarDesktop from '../components/NavbarDesktop'
 // import BonfireDesktop from '../components/BonfireDesktop'
 import Bonfire from '../components/Bonfire'
@@ -25,7 +25,13 @@ import RestaurantDesktop from '../components/RestaurantDesktop'
 // import Events from '../widgets/Events'
 
 // icons
-import BedIcon from '../assets/bed.svg' 
+import BedIcon from '../assets/bed.svg'
+import EatIcon from '../assets/eat.svg'
+import AmenitiesIcon from '../assets/amenities.svg'
+import GroupIcon from '../assets/group.svg'
+import EventIcon from '../assets/event.svg'
+import DiscoverIcon from '../assets/discover.svg'
+import CallIcon from '../assets/call.svg'
 // rooms & suites
 import Rooms from '../components/Rooms'
 // import RoomsDesktop from '../components/RoomsDesktop'
@@ -84,6 +90,15 @@ const styles = {
     position: 'absolute',
     width: '100%',
     textAlign: 'center',
+  },
+  mobileMenuStyle: {
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    borderRadius: '15px 0px 0px 15px',
+    padding: 5,
+    color: 'rgb(250,226,173)',
+    fontFamily: 'Playfair Display',
+    letterSpacing: 1,
+    cursor: 'pointer'
   }
 }
 
@@ -148,17 +163,100 @@ const Home = observer (
         return 600
       }
     }
+    mobileMenu(width){
+      if (width < 600){
+        return <div 
+          style={{
+            position: 'relative',
+            top: 150,
+            
+          }}
+        >
+          {/* Grid Here... */}
+
+          <Grid centered >
+
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(1)} textAlign='left' className='animated fadeInLeft rooms_menu' style={styles.mobileMenuStyle}>
+                <Image src={BedIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Rooms</span>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(2)} textAlign='left' className='animated fadeInLeft eat_menu' style={styles.mobileMenuStyle}>
+                <Image src={EatIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Eat & Drink</span>
+              </Grid.Column>
+            </Grid.Row>
+            
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(3)} textAlign='left' className='animated fadeInLeft amenities_menu' style={styles.mobileMenuStyle}>
+                <Image src={AmenitiesIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Amenities</span>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(4)} textAlign='left' className='animated fadeInLeft group_menu' style={styles.mobileMenuStyle}>
+                <Image src={GroupIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Groups</span>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(5)} textAlign='left' className='animated fadeInLeft event_menu' style={styles.mobileMenuStyle}>
+                <Image src={EventIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Events</span>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column onClick={()=>this.handleDown(6)} textAlign='left' className='animated fadeInLeft discover_menu' style={styles.mobileMenuStyle}>
+                <Image src={DiscoverIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Discover</span>
+              </Grid.Column>
+            </Grid.Row>
+            
+            <Grid.Row columns={3}>
+              <Grid.Column></Grid.Column>
+              <Grid.Column></Grid.Column>
+              <Grid.Column as='a' href='tel:215-862-5221' textAlign='left' className='animated fadeInLeft reservations_menu' style={styles.mobileMenuStyle}>
+                <Image src={CallIcon} style={{height: 30}} avatar/>
+                <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Reservations</span>
+              </Grid.Column>
+            </Grid.Row>
+
+
+
+          </Grid>
+          
+          <div style={{padding: 10, position: 'absolute', top: layout.height - 200, backgroundColor: 'rgba(0,0,0,0.7)', width: '100%', height: 100}}>
+            <Button fluid color='red' as='a' href=''>BOOK NOW</Button>
+          </div>
+
+
+        </div>
+      } else {
+        return null
+      }
+      
+    }
     homeWidthNavbarComponent(width){
       if (width < 600){
-        return <Navbar 
-          rooms={()=>this.handleDown(1)} 
-          rest={()=>this.handleDown(2)} 
-          events={()=>this.handleDown(3)} 
-          menuLabelSize={this.homeWidthNavbarAdjuster(layout.width)}
-          toggle={()=>states.toggleSidebar(states.sidebarVisibility)}
-          />
-
-
+        return null
       } else {
         return <NavbarDesktop 
           rooms={()=>{
@@ -305,29 +403,7 @@ const Home = observer (
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
               
-              <div 
-                style={{
-                  position: 'relative',
-                  top: 200,
-                  
-                }}
-              >
-                {/* Grid Here... */}
-
-                <Grid centered >
-                  <Grid.Row columns={2}>
-                    <Grid.Column textAlign='center' className='animated fadeInRight'>
-                      <Image src={BedIcon} style={{height: 30}} avatar/>
-                      <span style={{marginLeft: 5, color: '#eee'}}>Rooms & Suites</span>
-                    </Grid.Column>
-                    <Grid.Column></Grid.Column>
-                  </Grid.Row>
-                </Grid>
-                
-
-
-
-              </div>
+              {this.mobileMenu(layout.width)}
               
               <div style={Object.assign({top: this.homeHeightMapAdjuster(layout.height)}, styles.directions)} className='animated slideInUp'>
                 <Button primary style={Object.assign({display: this.homeWidthDirectionsDisplay(layout.width), zIndex: 1})} as='a' href='https://www.google.com/maps/place/6426+Lower+York+Rd,+New+Hope,+PA+18938'><Icon name='map'/> Get Directions</Button>
