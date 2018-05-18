@@ -106,6 +106,11 @@ const styles = {
     letterSpacing: 1,
     cursor: 'pointer',
     userSelect: 'none'
+  },
+  mobileMenuIcon: {
+    height: 30, 
+    backgroundColor: 'rgb(250,226,173)', 
+    padding: 5
   }
 }
 
@@ -194,7 +199,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(1)} textAlign='left' className='animated fadeInLeft rooms_menu' style={styles.mobileMenuStyle}>
-                <Image src={BedIcon} style={{height: 30, backgroundColor: 'rgb(250,226,173)', padding: 5}} avatar/>
+                <Image src={BedIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Rooms</span>
               </Grid.Column>
             </Grid.Row>
@@ -203,7 +208,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(2)} textAlign='left' className='animated fadeInLeft eat_menu' style={styles.mobileMenuStyle}>
-                <Image src={EatIcon} style={{height: 30}} avatar/>
+                <Image src={EatIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Eat & Drink</span>
               </Grid.Column>
             </Grid.Row>
@@ -212,7 +217,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(3)} textAlign='left' className='animated fadeInLeft amenities_menu' style={styles.mobileMenuStyle}>
-                <Image src={AmenitiesIcon} style={{height: 30}} avatar/>
+                <Image src={AmenitiesIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Amenities</span>
               </Grid.Column>
             </Grid.Row>
@@ -221,7 +226,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(4)} textAlign='left' className='animated fadeInLeft group_menu' style={styles.mobileMenuStyle}>
-                <Image src={GroupIcon} style={{height: 30}} avatar/>
+                <Image src={GroupIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Groups</span>
               </Grid.Column>
             </Grid.Row>
@@ -230,7 +235,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(5)} textAlign='left' className='animated fadeInLeft event_menu' style={styles.mobileMenuStyle}>
-                <Image src={EventIcon} style={{height: 30}} avatar/>
+                <Image src={EventIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Events</span>
               </Grid.Column>
             </Grid.Row>
@@ -239,7 +244,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column onClick={()=>this.handleDown(6)} textAlign='left' className='animated fadeInLeft discover_menu' style={styles.mobileMenuStyle}>
-                <Image src={DiscoverIcon} style={{height: 30}} avatar/>
+                <Image src={DiscoverIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Discover</span>
               </Grid.Column>
             </Grid.Row>
@@ -248,7 +253,7 @@ const Home = observer (
               <Grid.Column></Grid.Column>
               <Grid.Column></Grid.Column>
               <Grid.Column as='a' href='tel:215-862-5221' textAlign='left' className='animated fadeInLeft reservations_menu' style={styles.mobileMenuStyle}>
-                <Image src={CallIcon} style={{height: 30}} avatar/>
+                <Image src={CallIcon} style={styles.mobileMenuIcon} avatar/>
                 <span style={{marginLeft: 5, color: 'rgb(250,226,173)'}}>Reservations</span>
               </Grid.Column>
             </Grid.Row>
@@ -258,7 +263,7 @@ const Home = observer (
           </Grid>
           
           <div style={{padding: 10, position: 'absolute', top: layout.height - 200, backgroundColor: 'rgba(0,0,0,0.7)', width: '100%', height: 100}}>
-            <Button fluid color='red' as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>BOOK NOW</Button>
+            <Button fluid style={{backgroundColor: 'rgb(153,27,50)', color: 'rgb(250,226,173)'}} as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>BOOK NOW</Button>
           </div>
 
 

@@ -64,23 +64,23 @@ body {
 /* mobile menu */
 
 .room_menu {
-  -webkit-animation-delay: 0.0s;
-}
-.eat_menu {
-  -webkit-animation-delay: 0.02s;
-}
-.amenities_menu {
   -webkit-animation-delay: 0.4s;
 }
-.group_menu {
+.eat_menu {
   -webkit-animation-delay: 0.6s;
 }
-.event_menu {
+.amenities_menu {
   -webkit-animation-delay: 0.8s;
 }
-.discover_menu {
+.group_menu {
   -webkit-animation-delay: 1.0s;
 }
-.reservations_menu {
+.event_menu {
   -webkit-animation-delay: 1.2s;
+}
+.discover_menu {
+  -webkit-animation-delay: 1.4s;
+}
+.reservations_menu {
+  -webkit-animation-delay: 1.6s;
 }
