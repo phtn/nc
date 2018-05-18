@@ -2,11 +2,6 @@ import React, { Component } from 'react'
 import fire from '../database/Fire'
 import { Form, Segment, Radio, Menu, Container, Header, Icon, Divider, Grid } from 'semantic-ui-react'
 
-// import twilio from 'twilio'
-
-
-// const acc = 'ACaced57ce3c8e61873bf0f1def96418a7'
-// const tok = 'd7e2466c63de48dfecd2e63ba8d677c5'
 
 const styles = {
   container: {padding: '130px 0px 0px 0px'},
@@ -14,9 +9,8 @@ const styles = {
     height: 600,
     // backgroundColor: 'transparent',
     backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: '0px 50px 0px 50px',
+    padding: '0px 5px 0px 5px',
   },
- 
   tabs: {
     fontFamily: 'Playfair Display',
     color: `rgb(250,226,173)`,
@@ -162,7 +156,7 @@ class Group extends Component {
         <div style={styles.innerContainer}>
 
 
-        <Grid>
+        <Grid stackable>
           <Grid.Row>
             <Grid.Column width={8}>
             <Segment>
@@ -170,9 +164,9 @@ class Group extends Component {
 
               <Header as='h2' style={styles.header}>
                 
-                <Header.Content>
+                <Header.Content style={{fontSize: 24}}>
                   Get Group Rates for Weddings, Sports Teams, Meetings or any events!
-                  <Header.Subheader>
+                  <Header.Subheader style={{fontSize: 18}}>
                     Our Sales Team will contact you within 24 hours.
                   </Header.Subheader>
                 </Header.Content>

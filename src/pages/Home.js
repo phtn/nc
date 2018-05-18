@@ -247,7 +247,7 @@ const Home = observer (
           </Grid>
           
           <div style={{padding: 10, position: 'absolute', top: layout.height - 200, backgroundColor: 'rgba(0,0,0,0.7)', width: '100%', height: 100}}>
-            <Button fluid color='red' as='a' href=''>BOOK NOW</Button>
+            <Button fluid color='red' as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>BOOK NOW</Button>
           </div>
 
 
@@ -511,8 +511,8 @@ const Home = observer (
                   this.handleDown(0)
                   this.setOffset(0)
                 }} 
-                image={Logo} title='GROUP RESERVATIONS' 
-                sub='WEDDINGS &middot; CONFERENCES &middot; SPORTS TEAMS' 
+                image={Logo} title='Group Reservations' 
+                sub='WEDDINGS &middot; CONFERENCES &middot; TEAMS' 
                 details='T 215.862.5221'
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
@@ -536,8 +536,8 @@ const Home = observer (
                   this.handleDown(0)
                   this.setOffset(0)
                 }} 
-                image={Logo} title='EVENTS & LIVE PERFORMANCES' 
-                sub='THE RRAZZ ROOM &middot; BOOZY BINGO &middot; KARAOKE NIGHTS' 
+                image={Logo} title='Events & Shows' 
+                sub='THE RRAZZ ROOM &middot; KARAOKE NIGHTS' 
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 
@@ -560,8 +560,8 @@ const Home = observer (
                   this.setOffset(0)
                 }} 
                 image={Logo} 
-                title='DISCOVER NEW HOPE & LAMBERTVILLE' 
-                sub='MAIN ST &middot; PEDDLERS VILLAGE &middot; LAMBERTVILLE STATION' 
+                title='Discover New Hope' 
+                sub='MAIN ST &middot; PEDDLERS VILLAGE'
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>    
 

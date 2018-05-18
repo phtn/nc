@@ -49,7 +49,7 @@ const settings = {
 
 export default props => (
   <div>
-    <Rewards />
+    
     <div style={Object.assign({margin: `${props.topMargin}px 0px 20px 0px`}, styles.container)}>
       
       
@@ -154,7 +154,7 @@ export default props => (
         
       </Slider>
     </div>
-
+    <Rewards />
     <div style={{marginTop: 0}}>
       <Menu fluid inverted widths={5}>
 
