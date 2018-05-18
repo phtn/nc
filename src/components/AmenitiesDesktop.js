@@ -53,6 +53,12 @@ const styles = {
     top: 140,
     left: 750,
     width: 450,
+  },
+  clarionButton: {
+    backgroundColor: 'rgb(153,27,50)',
+    color: '#eee',
+    fontSize: 16,
+    letterSpacing: 1
   }
 }
 
@@ -104,7 +110,7 @@ const AmenitiesDesktop = observer (
                 <Item.Image size='big' src={Pool} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
                 <Item.Content>
-                  <Item.Header style={styles.header}>Summer is here!</Item.Header>
+                  <Item.Header style={styles.header}>Bar & Pool</Item.Header>
                   
 
                   <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; </Item.Meta>
@@ -119,7 +125,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Live Music</Menu.Item>
                       <Menu.Item>Free Towels</Menu.Item>
                       <Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>ANNUAL POOL MEMBERSHIP</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -155,7 +161,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Just beside the Pool</Menu.Item>
                       <Menu.Item>Great space for Gatherings</Menu.Item>
                       <Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -177,7 +183,7 @@ const AmenitiesDesktop = observer (
                 <Item.Image size='big' src={Lounge} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
                 <Item.Content>
-                  <Item.Header style={styles.header}>Hangout at our Lounge Area</Item.Header>
+                  <Item.Header style={styles.header}>The Lounge</Item.Header>
                   
 
                   
@@ -192,7 +198,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Elegant Design perfect for Meet & Greet</Menu.Item>
                       <Menu.Item>Perfect for Family Gatherings</Menu.Item>
                       <Menu.Item>Private Parties</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -230,7 +236,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Topshelf Liqour</Menu.Item>
                       <Menu.Item>Karaoke Nights with DJ Dwayne</Menu.Item>
                       <Menu.Item>Can be arranged for Private Parties</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -251,7 +257,7 @@ const AmenitiesDesktop = observer (
                 <Item.Image size='big' src={Lobby} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
                 <Item.Content>
-                  <Item.Header style={styles.header}>Elegantly Designed Lobby</Item.Header>
+                  <Item.Header style={styles.header}>The Lobby</Item.Header>
                   
 
                   
@@ -265,7 +271,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>24/7 Guest Services</Menu.Item>
                       <Menu.Item>Comfortable Lounge Area</Menu.Item>
                       <Menu.Item>Check-In: 3PM | Check-Out: 11AM</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -286,7 +292,7 @@ const AmenitiesDesktop = observer (
                 <Item.Image size='big' src={BC} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
                 <Item.Content>
-                  <Item.Header style={styles.header}>BUSINESS CENTER</Item.Header>
+                  <Item.Header style={styles.header}>Business Center</Item.Header>
                   
 
                   
@@ -300,7 +306,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Print from your Room</Menu.Item>
                       <Menu.Item>Executive Seats</Menu.Item>
                       <Menu.Item>Open 24/7</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -321,7 +327,7 @@ const AmenitiesDesktop = observer (
                 <Item.Image size='big' src={Fitness} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
                 <Item.Content>
-                  <Item.Header style={styles.header}>Stay fit!</Item.Header>
+                  <Item.Header style={styles.header}>Fitness Center</Item.Header>
                   
 
                   <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; Free for Hotel Guests</Item.Meta>
@@ -335,7 +341,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Steppers</Menu.Item>
                       <Menu.Item>Peddleton</Menu.Item>
                       <Menu.Item>Dumbells</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -362,13 +368,13 @@ const AmenitiesDesktop = observer (
                   <Item.Extra>
                     <Menu vertical fluid>
                       <Menu.Item>
-                        <Button disabled fluid as='a' href=''><Icon name='universal access' />Conference CENTER</Button>
+                        <Button disabled fluid as='a' href=''><Icon name='universal access' />CONFERENCE CENTER</Button>
                       </Menu.Item>
                       <Menu.Item>Great for Meetings</Menu.Item>
                       <Menu.Item>Up to 20 People</Menu.Item>
                       <Menu.Item>High Speed Internet</Menu.Item>
                       <Menu.Item>Projector & White Screen</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221

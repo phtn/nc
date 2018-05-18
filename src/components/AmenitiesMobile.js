@@ -54,6 +54,12 @@ const styles = {
     top: 140,
     left: 750,
     width: 450,
+  },
+  clarionButton: {
+    backgroundColor: 'rgb(153,27,50)',
+    color: '#eee',
+    fontSize: 16,
+    letterSpacing: 1
   }
 }
 
@@ -118,7 +124,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Live Music</Menu.Item>
                       <Menu.Item>Free Towels</Menu.Item>
                       <Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>ANNUAL POOL MEMBERSHIP</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -151,7 +157,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Lounge Area</Menu.Item>
                       <Menu.Item>Great space for Gatherings</Menu.Item>
                       <Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -184,7 +190,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Elegant Design perfect for Meet & Greet</Menu.Item>
                       <Menu.Item>Perfect for Family Gatherings</Menu.Item>
                       <Menu.Item>Private Parties</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -216,7 +222,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Modern Designed Bar</Menu.Item>
                       <Menu.Item>Premium Craft Beer</Menu.Item>
                       <Menu.Item>Saturday Karaoke Nights</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -246,7 +252,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>24/7 Guest Services</Menu.Item>
                       <Menu.Item>Comfortable Lounge Area</Menu.Item>
                       <Menu.Item>Check-In: 3PM | Check-Out: 11AM</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -279,7 +285,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Print from your Room</Menu.Item>
                       <Menu.Item>Executive Seats</Menu.Item>
                       <Menu.Item>Open 24/7</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -310,7 +316,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>Treadmills (2)</Menu.Item>
                       <Menu.Item>Steppers</Menu.Item>
                       <Menu.Item>Dumbells</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221
@@ -340,7 +346,7 @@ const AmenitiesDesktop = observer (
                       <Menu.Item>20 People Meeting Room</Menu.Item>
                       <Menu.Item>High Speed Internet</Menu.Item>
                       <Menu.Item>Projector & White Screen</Menu.Item>
-                      <Button animated='fade' color='red' fluid>
+                      <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
                           CALL 215 - 862 - 5221

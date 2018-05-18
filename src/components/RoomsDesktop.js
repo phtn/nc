@@ -50,6 +50,10 @@ const styles = {
     position: 'absolute',
     margin: 10,
     cursor: 'pointer'
+  },
+  clarionButton: {
+    backgroundColor: 'rgb(153,27,50)',
+    color: '#fff'
   }
 }
 
@@ -72,7 +76,7 @@ const RoomDesc = props => (
     
 
     <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+      <Button  style={styles.clarionButton} fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
     </Menu.Item>
   </div>
 )
@@ -90,7 +94,7 @@ const RoomAmenities = props => (
     <Menu.Item>Bedside Table Power Outlets</Menu.Item>
 
     <Menu.Item>
-      <Button  color='red' fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
+      <Button  style={styles.clarionButton} fluid as='a' href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'><Icon name='bed' />BOOK NOW</Button>
     </Menu.Item>
   </div>
 )
@@ -108,7 +112,7 @@ const StayInfo = props => (
 
     <Menu.Item>
       <Button 
-        color='red' 
+        style={styles.clarionButton} 
         // className='blink_fast'
         fluid as='a' 
         href='https://www.choicehotels.com/pennsylvania/new-hope/clarion-hotels/pa668'>

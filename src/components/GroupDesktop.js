@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import fire from '../database/Fire'
-import { Form, Segment, Radio, Menu, Container, Header, Icon, Divider, Grid } from 'semantic-ui-react'
-
+import { Form, Segment, Radio, Menu, Container, Header, Icon, Divider, Grid, Image } from 'semantic-ui-react'
+import Umbrella from '../assets/umbrella.svg'
+import Reception from '../assets/reception.svg'
+import BrandNew from '../assets/brandnew.svg'
+import PadLock from '../assets/padlock.svg'
 
 const styles = {
   container: {padding: '130px 0px 0px 0px'},
@@ -9,7 +12,7 @@ const styles = {
     height: 600,
     // backgroundColor: 'transparent',
     backgroundColor: 'rgba(0,0,0,0.5)',
-    padding: '0px 5px 0px 5px',
+    padding: '0px 50px 0px 100px',
   },
   tabs: {
     fontFamily: 'Playfair Display',
@@ -114,7 +117,7 @@ class Group extends Component {
   
   buttonSubmitSwitch(){
     if (!this.state.submitted){
-      return <Form.Button fluid color='red' className={this.state.submitClass} onClick={this.handleSubmit}>Submit</Form.Button>
+      return <Form.Button fluid style={{backgroundColor: 'rgb(153,27,50)', color: '#eee', fontSize: 16}} className={this.state.submitClass} onClick={this.handleSubmit}>Submit</Form.Button>
     } else {
       return <Form.Button positive fluid className='animated zoomIn submit_success'><Icon name='check' /> &nbsp;Submit Successful!</Form.Button>
     }
@@ -218,7 +221,7 @@ class Group extends Component {
               <Divider/>
               <Grid> 
                 <Grid.Row>
-                  <Grid.Column width={3}><Icon name='umbrella' size='huge' style={{color: '#fff'}}/></Grid.Column>
+                  <Grid.Column width={3}><Image src={Umbrella} size='tiny' style={{height: 50}}/></Grid.Column>
                   <Grid.Column width={9}>
                     <p style={{color: '#fff', fontSize: 28}}>We've got you covered.</p>
                     <p style={{color: '#fff', fontSize: 16, marginTop: '-30px', fontFamily: 'Roboto, sans-serif', fontWeight: 100}}>Best Rates Guaranteed!</p>
@@ -228,7 +231,7 @@ class Group extends Component {
 
               <Grid> 
                 <Grid.Row>
-                  <Grid.Column width={3}><Icon name='bell' size='huge' style={{color: '#fff'}}/></Grid.Column>
+                  <Grid.Column width={3}><Image src={Reception} size='tiny' style={{height: 50}}/></Grid.Column>
                   <Grid.Column width={9}>
                     <p style={{color: '#fff', fontSize: 28}}>24/7 Guest Services.</p>
                     <p style={{color: '#fff', fontSize: 16, marginTop: '-30px', fontFamily: 'Roboto, sans-serif', fontWeight: 100}}>Always ready to assist you.</p>
@@ -238,7 +241,7 @@ class Group extends Component {
 
               <Grid> 
                 <Grid.Row>
-                  <Grid.Column width={3}><Icon name='bed' size='huge' style={{color: '#fff'}}/></Grid.Column>
+                  <Grid.Column width={3}><Image src={BrandNew} size='tiny' style={{height: 50}}/></Grid.Column>
                   <Grid.Column width={9}>
                     <p style={{color: '#fff', fontSize: 28}}>All Brand New Rooms.</p>
                     <p style={{color: '#fff', fontSize: 16, marginTop: '-30px', fontFamily: 'Roboto, sans-serif', fontWeight: 100}}>Modern & Elegant Design.</p>
@@ -248,7 +251,7 @@ class Group extends Component {
 
               <Grid> 
                 <Grid.Row>
-                  <Grid.Column width={3}><Icon name='lock' size='huge' style={{color: '#fff'}}/></Grid.Column>
+                  <Grid.Column width={3}><Image src={PadLock} size='tiny' style={{height: 50}}/></Grid.Column>
                   <Grid.Column width={9}>
                     <p style={{color: '#fff', fontSize: 28}}>We Value your Privacy.</p>
                     <p style={{color: '#fff', fontSize: 16, marginTop: '-30px', fontFamily: 'Roboto, sans-serif', fontWeight: 100}}>We will never share your information to anyone.</p>

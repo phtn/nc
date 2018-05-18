@@ -52,6 +52,9 @@ const styles = {
   image: {
     maxHeight: 150,
     minHeight: 150
+  },
+  redIcon: {
+    color: 'rgb(153,27,50)'
   }
 }
 
@@ -74,7 +77,7 @@ const RoomSelectDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='bed' color='red'/>&nbsp; &nbsp;POPULAR CHOICE
+                      <Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;POPULAR CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -97,7 +100,7 @@ const RoomSelectDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='bed' color='red'/><Icon name='bed' color='red'/>&nbsp; &nbsp;FAMILY'S CHOICE
+                      <Icon name='bed' style={styles.redIcon}/><Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;FAMILY'S CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -120,7 +123,7 @@ const RoomSelectDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                    <Icon name='bed' color='red'/>&nbsp; &nbsp;COUPLE'S CHOICE
+                    <Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;COUPLE'S CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -143,7 +146,7 @@ const RoomSelectDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                    <Icon name='bed' color='red'/><Icon name='bed' color='red'/>&nbsp; &nbsp;BIG FAM CHOICE
+                    <Icon name='bed' style={styles.redIcon}/><Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;BIG FAM CHOICE
                     </span>
                   </Card.Meta>
                   <Card.Description>
@@ -166,7 +169,7 @@ const RoomSelectDesktop = observer (
                   </Card.Header>
                   <Card.Meta>
                     <span className='date'>
-                      <Icon name='bed' color='red'/><Icon name='bath' color='red'/>&nbsp; &nbsp;NEW FEATURE
+                      <Icon name='bed' style={styles.redIcon}/><Icon name='bath' style={styles.redIcon}/>&nbsp; &nbsp;NEW FEATURE
                     </span>
                   </Card.Meta>
                   <Card.Description>
