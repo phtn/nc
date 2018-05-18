@@ -26,7 +26,8 @@ const styles = {
   innerContainer: {
     height: 470,
     backgroundColor: 'rgba(238,238,238,0.0)',
-    padding: '10px 10px 0px 10px',
+    padding: '10px 20px 0px 20px',
+    margin: 5
   },
   header: {
     color: '#050f2c',
@@ -98,7 +99,7 @@ const AmenitiesDesktop = observer (
               
           <Slider {...settings} >
 
-            <div style={{padding: 10}}>
+            <div>
             <Item.Group>
               <Item>
                   
