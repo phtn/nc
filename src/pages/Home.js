@@ -11,7 +11,7 @@ import Bouquet from '../assets/board/bo1.jpg'
 import Discover from '../assets/images/disco2.jpg'
 import Mixer from '../assets/board/mixerboard.jpg'
 import Sea from '../assets/board/sea.jpg'
-import NatureText from '../assets/board/nature_text.jpg'
+// import NatureText from '../assets/board/nature_text.jpg'
 // main components
 import Header from '../components/Header'
 // import Navbar from '../components/Navbar'
@@ -63,10 +63,10 @@ const styles = {
     backgroundSize: `${layout.width}px ${layout.height}px`
   },
   bg2: {
-    backgroundImage: `url(${NatureText})`,
-    backgroundSize: `${layout.width}px ${layout.height}px`
+    // backgroundImage: `url(${NatureText})`,
+    // backgroundSize: `${layout.width}px ${layout.height}px`
     // backgroundRepeat: 'repeat',
-    // backgroundColor: '#003666'
+    // backgroundColor: '#fefefe'
   },
   bg3: {
     backgroundImage: `url(${Herbs})`,
@@ -458,7 +458,7 @@ const Home = observer (
             </Parallax.Layer>
             
             {/* Page 2 ROOMS & SUITES*/}
-            <Parallax.Layer offset={1} speed={0.5} style={styles.bg2}>
+            <Parallax.Layer offset={1} speed={0.5} style={styles.bg_1}>
               
               <Header 
                 home={()=> {
