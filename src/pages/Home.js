@@ -6,11 +6,12 @@ import '../animate.css'
 import Bridge from '../assets/board/erNH_40.jpg'
 import Herbs from '../assets/board/outdoor.jpg'
 import Logo from '../assets/clarion-logo.png'
-import Linen from '../assets/linen.png'
+// import Linen from '../assets/shattered.png'
 import Bouquet from '../assets/board/bo1.jpg'
 import Discover from '../assets/images/disco2.jpg'
 import Mixer from '../assets/board/mixerboard.jpg'
 import Sea from '../assets/board/sea.jpg'
+import NatureText from '../assets/board/nature_text.jpg'
 // main components
 import Header from '../components/Header'
 // import Navbar from '../components/Navbar'
@@ -62,9 +63,10 @@ const styles = {
     backgroundSize: `${layout.width}px ${layout.height}px`
   },
   bg2: {
-    backgroundImage: `url(${Linen})`,
-    backgroundRepeat: 'repeat',
-    backgroundColor: '#050f2c'
+    backgroundImage: `url(${NatureText})`,
+    backgroundSize: `${layout.width}px ${layout.height}px`
+    // backgroundRepeat: 'repeat',
+    // backgroundColor: '#003666'
   },
   bg3: {
     backgroundImage: `url(${Herbs})`,

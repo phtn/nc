@@ -24,12 +24,16 @@ const styles = {
     color: 'tomato',
     backgroundColor: 'rgba(0,0,0,0.7)',
 
+  },
+  clarionButton: {
+    backgroundColor: 'rgb(153,27,50)',
+    color: `rgb(250,226,173)`
   }
 }
 export default props => (
   <div style={styles.container}>
-    <Segment style={styles.segment} compact>
-      <Menu inverted secondary pointing style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
+    <Segment style={styles.segment}>
+      <Menu fluid inverted secondary pointing style={Object.assign({fontSize: props.menuLabelSize}, styles.menu)}>
         
         <Menu.Item name='resv' link active={false} onClick={props.rooms} > 
             <span style={styles.tabs}>ROOMS</span>
@@ -59,13 +63,7 @@ export default props => (
           <span style={styles.tabs}>MEET THE TEAM</span>
         </Menu.Item>
 
-        <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
-          <Icon name='facebook square'/>
-        </Menu.Item>
-
-        <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
-          <Icon name='instagram'/>
-        </Menu.Item>
+        
 
         
 
@@ -73,14 +71,21 @@ export default props => (
 
 
         <Menu.Menu position='right'>
-          <Menu.Item>
-            <Button primary as='a' href='https://www.google.com/maps/dir/6426+Lower+York+Road,+New+Hope,+PA+18938'><Icon name='map' /> &nbsp; Get Directions</Button>
+          <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+            <Icon name='facebook square'/>
           </Menu.Item>
+
+          <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+            <Icon name='instagram'/>
+          </Menu.Item>  
         </Menu.Menu>
 
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Button primary as='a' href='https://mail.google.com/mail/?view=cm&fs=1&to=clarionsalespa@gmail.com'><Icon name='mail' /> &nbsp; Contact Sales</Button>
+            <Button style={styles.clarionButton} as='a' href='https://www.google.com/maps/dir/6426+Lower+York+Road,+New+Hope,+PA+18938'><Icon name='map' /> &nbsp; Get Directions</Button>
+          </Menu.Item>
+          <Menu.Item>
+            <Button style={styles.clarionButton} as='a' href='https://mail.google.com/mail/?view=cm&fs=1&to=clarionsalespa@gmail.com'><Icon name='mail' /> &nbsp; Contact Support</Button>
           </Menu.Item>
         </Menu.Menu>
 

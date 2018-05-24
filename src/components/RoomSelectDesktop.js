@@ -47,7 +47,9 @@ const styles = {
     fontSize: 12
   },
   menu: {
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    border: '0px',
+    boxShadow: 'none'
   },
   image: {
     maxHeight: 150,
