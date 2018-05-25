@@ -118,7 +118,13 @@ const styles = {
 
 const Home = observer (
   class Homepage extends Component {
-
+    constructor(props){
+      super(props)
+      this.state = {
+        temperature: '',
+        weatherDesc: ''
+      }
+    }
     
 
     
@@ -134,6 +140,28 @@ const Home = observer (
         layout.resizedHeight(window.innerHeight)
         // console.log(window.innerHeight)
       })
+
+      this.getWeather()
+
+    }
+
+    getWeather(){
+      const APPID = '19087ff6101a2f698425053f2fa21143'
+      const CITY = '5203197'
+      const URL = `http://api.openweathermap.org/data/2.5/weather?id=${CITY}&APPID=${APPID}`
+
+      fetch(URL)
+        .then(response => response.json())
+        .then(data => {
+          let kTemp = data.main.temp
+          let temperature = Math.round(((kTemp - 273.15) * 1.8) + 32)
+          let weatherDesc = data.weather[0].description.toUpperCase()
+          this.setState({temperature, weatherDesc})
+          // console.log(data.main.temp, data.weather[0].description)
+          console.log(this.state.temperature, this.state.weatherDesc)
+        })
+        
+
     }
   
     componentWillUnmount(){
@@ -279,7 +307,9 @@ const Home = observer (
       if (width < 600){
         return null
       } else {
-        return <NavbarDesktop 
+        return <NavbarDesktop
+          temp={this.state.temperature}
+          wdesc={this.state.weatherDesc}
           rooms={()=>{
             this.handleDown(1)
             localStorage.setItem('offset',1)
@@ -292,6 +322,7 @@ const Home = observer (
           />
       }
     }
+    
     homeWidthDirectionsDisplay(width){
       if (width > 600){
         return 'none'
@@ -435,6 +466,9 @@ const Home = observer (
             
             {/* Page 1 HOME */}
             <Parallax.Layer offset={0} speed={0.5} style={this.selectHomeBG(layout.width)}>
+
+              
+
               <Header 
                 home={()=> {
                   this.handleDown(0)
@@ -444,6 +478,7 @@ const Home = observer (
                 sub='NEW HOPE - LAMBERTVILLE' 
                 details='T 215.862.5221' 
                 titleSize={this.homeWidthHeaderAdjuster(layout.width)}/>
+              
               
               {this.mobileMenu(layout.width)}
               

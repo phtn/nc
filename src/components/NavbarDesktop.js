@@ -8,7 +8,8 @@ const styles = {
     zIndex: 1
   },
   segment: {
-    background: 'transparent'
+    background: 'transparent',
+    marginTop: '-10px'
   },
   menu: {
     border: 'none',
@@ -18,6 +19,8 @@ const styles = {
     fontFamily: 'Playfair Display',
     // fontWeight: 100,
     color: `rgb(250,226,173)`,
+    fontSize: 15,
+    letterSpacing: 1
     
   },
   address: {
@@ -59,26 +62,32 @@ export default props => (
           <span style={styles.tabs}>DISCOVER</span>
         </Menu.Item>
 
-        <Menu.Item name='restaurant' active={false} link onClick={props.team}>
-          <span style={styles.tabs}>MEET THE TEAM</span>
-        </Menu.Item>
+        {/* // <Menu.Item name='restaurant' active={false} link onClick={props.team}>
+        //   <span style={styles.tabs}>MEET THE TEAM</span>
+        // </Menu.Item> */}
 
         
-
-        
-
-
-
 
         <Menu.Menu position='right'>
-          <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+          
+          <Menu.Item name='restaurant' active={false} link>
+            <p style={{lineHeight: '20px',color: 'rgb(250,226,173)', fontFamily: 'Roboto, sans-serif', fontWeight: 100, fontSize: 24}}>{props.temp}&deg;F <span style={{marginLeft: 10, fontSize: 16, fontFamily: 'Raleway, sans-serif', fontWeight: 600}}> {props.wdesc} </span></p>
+          </Menu.Item>
+
+        </Menu.Menu>
+
+
+
+
+        {/* <Menu.Menu position='right'>
+          <Menu.Item name='restaurant' active={false} link  href='https://www.facebook.com/clarion.newhope.1'>
             <Icon name='facebook square'/>
           </Menu.Item>
 
-          <Menu.Item name='restaurant' active={false} link onClick={props.team} href='https://www.facebook.com/clarion.newhope.1'>
+          <Menu.Item name='restaurant' active={false} link  href='https://www.facebook.com/clarion.newhope.1'>
             <Icon name='instagram'/>
           </Menu.Item>  
-        </Menu.Menu>
+        </Menu.Menu> */}
 
         <Menu.Menu position='right'>
           <Menu.Item>
