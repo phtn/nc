@@ -145,6 +145,7 @@ const Home = observer (
 
     }
 
+// 
     getWeather(){
       const APPID = '19087ff6101a2f698425053f2fa21143'
       const CITY = '5203197'
