@@ -49,13 +49,17 @@ body {
   -webkit-animation-duration: .3s;
   -webkit-animation-delay: .8s;
 }
-.gift_card {
+.gift_container {
   /* -webkit-animation-duration: .3s; */
   -webkit-animation-delay: 1s;
 }
-.meet_card {
+.gift_card {
   /* -webkit-animation-duration: .3s; */
   -webkit-animation-delay: 1.2s;
+}
+.meet_card {
+  /* -webkit-animation-duration: .3s; */
+  -webkit-animation-delay: 1.4s;
 }
 .submit_success {
   -webkit-animation-delay: .5s;

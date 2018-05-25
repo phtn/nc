@@ -37,7 +37,9 @@ const styles = {
 
   tabs: {
     fontFamily: 'Playfair Display',
+    fontSize: 16,
     color: `rgb(250,226,173)`,
+    letterSpacing: 1
   },
   address: {
     color: `#fff`,

@@ -37,7 +37,9 @@ const styles = {
   },
   tabs: {
     fontFamily: 'Playfair Display',
+    fontSize: 16,
     color: `rgb(250,226,173)`,
+    letterSpacing: 1
   },
   address: {
     color: `#eee`,
@@ -188,9 +190,9 @@ const RoomSelectDesktop = observer (
               
             </Menu>
 
-            <Menu widths={3}  borderless>
+            <Menu widths={3}  borderless className='animated fadeInUp gift_container'>
 
-            <Menu.Item>
+            <Menu.Item >
               <Card color='red' as='a' href='https://www.choicehotels.com/choice-privileges' className='animated fadeIn gift_card'>
                 <Image style={styles.image} src={Gift} />
                 <Card.Content>
