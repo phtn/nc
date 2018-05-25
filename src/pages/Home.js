@@ -149,7 +149,7 @@ const Home = observer (
     getWeather(){
       const APPID = '19087ff6101a2f698425053f2fa21143'
       const CITY = '5203197'
-      const URL = `https://api.openweathermap.org/data/2.5/weather?id=${CITY}&APPID=${APPID}`
+      const URL = `https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?id=${CITY}&APPID=${APPID}`
 
       fetch(URL)
         .then(response => response.json())
