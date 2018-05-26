@@ -4,13 +4,13 @@ import { Icon, Menu, Container, Image, Card } from 'semantic-ui-react'
 
 
 
-import King from '../assets/images/eNK1.png'
-import Doubles from '../assets/images/erNDD2.png'
-import KingSuite from '../assets/images/ROOM1.jpg'
-import JacuzziSuite from '../assets/images/erGSK2_40.jpg'
-import Rewards from '../assets/board/rewards.jpg'
+import King from '../assets/webp/king.webp'
+import Doubles from '../assets/webp/double.webp'
+import KingSuite from '../assets/webp/kingS.webp'
+import JacuzziSuite from '../assets/webp/jacuzzi.webp'
+import Rewards from '../assets/webp/rewards.webp'
 import Gift from '../assets/board/gift.svg'
-import Meet from '../assets/board/hands.jpg'
+import Meet from '../assets/webp/hands.webp'
 
 
 
@@ -74,7 +74,7 @@ const RoomSelectDesktop = observer (
               
               <Menu.Item link onClick={this.props.king}>
               <Card className='animated fadeIn room_one' raised>
-                <Image style={styles.image} src={King} />
+                <Image className='lazy' style={styles.image} src={King} />
                 <Card.Content>
                   <Card.Header>
                     Luxury King Bed
@@ -97,7 +97,7 @@ const RoomSelectDesktop = observer (
 
               <Menu.Item link onClick={this.props.doubles}>
               <Card className='animated fadeIn room_two' raised>
-                <Image style={styles.image} src={Doubles} />
+                <Image className='lazy' style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
                     2 Double Beds
@@ -120,7 +120,7 @@ const RoomSelectDesktop = observer (
 
               <Menu.Item link onClick={this.props.ksuite}>
               <Card className='animated fadeIn room_three' raised>
-                <Image style={styles.image} src={KingSuite} />
+                <Image className='lazy' style={styles.image} src={KingSuite} />
                 <Card.Content>
                   <Card.Header>
                     Luxury King Suite
@@ -143,7 +143,7 @@ const RoomSelectDesktop = observer (
 
               <Menu.Item link onClick={this.props.dsuite}>
               <Card className='animated fadeIn room_four' raised>
-                <Image style={styles.image} src={Doubles} />
+                <Image className='lazy' style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
                     2 Double Suite
@@ -166,7 +166,7 @@ const RoomSelectDesktop = observer (
 
               <Menu.Item link onClick={this.props.jsuite}>
               <Card className='animated fadeIn room_five' raised>
-                <Image style={styles.image} src={JacuzziSuite} />
+                <Image className='lazy' style={styles.image} src={JacuzziSuite} />
                 <Card.Content>
                   <Card.Header>
                    Grand Jacuzzi Suite
@@ -194,7 +194,7 @@ const RoomSelectDesktop = observer (
 
             <Menu.Item >
               <Card color='red' as='a' href='https://www.choicehotels.com/choice-privileges' className='animated fadeIn gift_card'>
-                <Image style={styles.image} src={Gift} />
+                <Image className='lazy' style={styles.image} src={Gift} />
                 <Card.Content>
                   <Card.Header>
                     Get a gift from us upon check-in!
@@ -217,7 +217,7 @@ const RoomSelectDesktop = observer (
               
               <Menu.Item>
               <Card color='red' as='a' href='https://www.choicehotels.com/clarion/meet-me-at-clarion' className='animated fadeIn meet_card'>
-                <Image style={styles.image} src={Meet} />
+                <Image className='lazy' style={styles.image} src={Meet} />
                 <Card.Content>
                   <Card.Header>
                     Meet Me at Clarion!

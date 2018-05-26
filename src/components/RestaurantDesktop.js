@@ -14,12 +14,12 @@ import 'slick-carousel/slick/slick-theme.css'
 // import Breakfast3 from '../assets/images/brk12.jpg'
 // import Breakfast4 from '../assets/images/brk13.jpg'
 
-import Chimi from '../assets/board/chimi.jpg'
-import Beans from '../assets/board/beans.jpg'
-import Shrimp from '../assets/board/shrimp.jpg'
-import Burger from '../assets/board/burger.jpg'
-import Humus1 from '../assets/board/humus1.jpg'
-import Humus2 from '../assets/board/humus2.jpg'
+import Chimi from '../assets/webp/chimi.webp'
+import Beans from '../assets/webp/beans.webp'
+import Shrimp from '../assets/webp/shrimp.webp'
+// import Burger from '../assets/webp/burger.jpg'
+import Humus from '../assets/webp/humus.webp'
+// import Humus2 from '../assets/board/humus2.jpg'
 
 
 const styles = {
@@ -151,7 +151,7 @@ const settings = {
 }
 
 
-const images = [Chimi, Shrimp, Beans, Burger, Humus1, Humus2]
+const images = [Chimi, Shrimp, Beans, Humus,]
 
 const RestaurantDesktop = observer (
   class RestaurantPage extends Component {

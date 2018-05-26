@@ -4,12 +4,11 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import Discover1 from '../assets/images/disco1.jpg'
-import Discover2 from '../assets/images/disco2.jpg'
+import Discover1 from '../assets/webp/discovery.webp'
 import Discover3 from '../assets/board/nh1.JPG'
 import Discover4 from '../assets/board/nh2.jpg'
 import Discover5 from '../assets/board/nh3.jpg'
-import Discover6 from '../assets/board/pv1.jpg'
+import Discover6 from '../assets/webp/pv.webp'
 
 import Chevron from '../assets/chevron.svg'
 import Lefty from '../assets/left.svg'
@@ -84,7 +83,6 @@ export default props => (
         <div style={{margin: '0 auto'}}>
           <Image.Group>
             <Image size='medium' src={Discover1} spaced style={{maxWidth: 600, maxHeight: 200}}/>
-            <Image size='medium' src={Discover2} spaced style={{maxWidth: 600, maxHeight: 200}}/>
             <Image size='medium' src={Discover3} spaced style={{maxWidth: 600, maxHeight: 200}}/>
             <Image size='medium' src={Discover4} spaced style={{maxWidth: 600, maxHeight: 200}}/>
             <Image size='medium' src={Discover5} spaced style={{maxWidth: 600, maxHeight: 200}}/>

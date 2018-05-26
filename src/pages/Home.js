@@ -3,21 +3,21 @@ import { Button, Icon, Grid, Image } from 'semantic-ui-react'
 import Parallax from 'react-springy-parallax'
 import Animated from 'animated/lib/targets/react-dom'
 import '../animate.css'
-import Bridge from '../assets/board/erNH_40.jpg'
-import Herbs from '../assets/board/outdoor.jpg'
+import Bridge from '../assets/webp/bridge_2.webp'
+import Herbs from '../assets/webp/outdoor.webp'
 import Logo from '../assets/clarion-logo.png'
 // import Linen from '../assets/shattered.png'
-import Bouquet from '../assets/board/bo1.jpg'
-import Discover from '../assets/images/disco2.jpg'
-import Mixer from '../assets/board/mixerboard.jpg'
-import Sea from '../assets/board/sea.jpg'
+import Bouquet from '../assets/webp/bouquet.webp'
+// import Discover from '../assets/images/disco2.jpg'
+import Mixer from '../assets/webp/mixer.webp'
+import Sea from '../assets/webp/sea.webp'
 // import NatureText from '../assets/board/nature_text.jpg'
 // main components
 import Header from '../components/Header'
 // import Navbar from '../components/Navbar'
 import NavbarDesktop from '../components/NavbarDesktop'
 // import BonfireDesktop from '../components/BonfireDesktop'
-import Bonfire from '../components/Bonfire'
+// import Bonfire from '../components/Bonfire'
 import AmenitiesDesktop from '../components/AmenitiesDesktop'
 import DiscoverDesktop from '../components/DiscoverDesktop'
 import EventsDesktop from '../components/EventsDesktop'
@@ -35,7 +35,7 @@ import DiscoverIcon from '../assets/discover.svg'
 import CallIcon from '../assets/call.svg'
 
 // mobile pages
-import Rooms from '../components/Rooms'
+// import Rooms from '../components/Rooms'
 import AmenitiesMobile from '../components/AmenitiesMobile'
 // import RoomsDesktop from '../components/RoomsDesktop'
 // import RoomSelectDesktop from '../components/RoomSelectDesktop'
@@ -81,10 +81,10 @@ const styles = {
     backgroundImage: `url(${Bouquet})`,
     backgroundSize: `${layout.width}px ${layout.height}px`
   },
-  bg6: {
-    backgroundImage: `url(${Discover})`,
-    backgroundSize: `${layout.width}px ${layout.height}px`
-  },
+  // bg6: {
+  //   backgroundImage: `url(${Discover})`,
+  //   backgroundSize: `${layout.width}px ${layout.height}px`
+  // },
   bg7: {
     backgroundImage: `url(${Mixer})`,
     backgroundSize: `${layout.width}px ${layout.height}px`
@@ -159,7 +159,7 @@ const Home = observer (
           let weatherDesc = data.weather[0].description.toUpperCase()
           this.setState({temperature, weatherDesc})
           // console.log(data.main.temp, data.weather[0].description)
-          console.log(this.state.temperature, this.state.weatherDesc)
+          // console.log(this.state.temperature, this.state.weatherDesc)
         })
         
 
@@ -188,7 +188,7 @@ const Home = observer (
       if (width > 2000){
         return styles.bg_1
       } else {
-        return styles.bg
+        return styles.bg_1
       }
     }
     homeWidthNavbarAdjuster(width){ // mobile
@@ -342,25 +342,26 @@ const Home = observer (
     }
     renderRoomComponent(width){
       if (width < 600){
-        return <Rooms 
-          topMargin={this.heightAdjuster(layout.height)}
-          rest={()=>{
-            this.handleDown(2)
-            this.storeItems(2)
-          }} 
-          amenities={()=>{
-            this.handleDown(3)
-            this.storeItems(3)
-          }} 
-          events={()=>{
-            this.handleDown(5)
-            this.storeItems(5)
-          }} 
-          discover={()=>{
-            this.handleDown(6)
-            this.storeItems(6)
-          }}
-          />
+        return null
+        // <Rooms 
+        //   topMargin={this.heightAdjuster(layout.height)}
+        //   rest={()=>{
+        //     this.handleDown(2)
+        //     this.storeItems(2)
+        //   }} 
+        //   amenities={()=>{
+        //     this.handleDown(3)
+        //     this.storeItems(3)
+        //   }} 
+        //   events={()=>{
+        //     this.handleDown(5)
+        //     this.storeItems(5)
+        //   }} 
+        //   discover={()=>{
+        //     this.handleDown(6)
+        //     this.storeItems(6)
+        //   }}
+        //   />
       } else {
           return states.getRoomComponent(
             ()=>{
@@ -394,12 +395,13 @@ const Home = observer (
 
     renderBonfireComponent(width){
       if (width < 600){
-        return <Bonfire 
-          rooms={()=>this.handleDown(1)} 
-          amenities={()=>this.handleDown(3)} 
-          events={()=>this.handleDown(5)} 
-          discover={()=>this.handleDown(6)}
-          />
+        return null 
+        // <Bonfire 
+        //   rooms={()=>this.handleDown(1)} 
+        //   amenities={()=>this.handleDown(3)} 
+        //   events={()=>this.handleDown(5)} 
+        //   discover={()=>this.handleDown(6)}
+        //   />
       } else {
         return <RestaurantDesktop 
           header='Bonfire Bar & Grill'
