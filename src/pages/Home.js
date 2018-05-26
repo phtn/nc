@@ -608,7 +608,7 @@ const Home = observer (
             </Parallax.Layer>
 
             {/* Page 6 DISCOVER*/}
-            <Parallax.Layer offset={6} speed={0.5} style={styles.bg}>
+            <Parallax.Layer offset={6} speed={0.5} style={styles.bg_1}>
               
               <Header 
                 home={()=> {
