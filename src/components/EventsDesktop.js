@@ -39,10 +39,10 @@ const styles = {
   },
   address: {
     color: `#eee`,
-    marginTop: 10,
+    marginTop: -5,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
-    fontSize: 12
+    fontSize: 16
   }
 }
 

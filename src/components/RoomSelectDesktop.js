@@ -17,7 +17,7 @@ import Meet from '../assets/webp/hands.webp'
 
 const styles = {
   container: {
-    padding: '130px 0px 0px 0px',
+    padding: '110px 0px 0px 0px',
   },
   innerContainer: {
     height: 470,
@@ -43,15 +43,16 @@ const styles = {
   },
   address: {
     color: `#eee`,
-    marginTop: 10,
+    marginTop: -5,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
-    fontSize: 12
+    fontSize: 16
   },
   menu: {
     backgroundColor: 'transparent',
     border: '0px',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    marginBottom: -20
   },
   image: {
     maxHeight: 150,
@@ -84,9 +85,7 @@ const RoomSelectDesktop = observer (
                       <Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;POPULAR CHOICE
                     </span>
                   </Card.Meta>
-                  <Card.Description>
-                    All Brand New! Read more...
-                  </Card.Description>
+                 
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name='user' />
@@ -107,9 +106,7 @@ const RoomSelectDesktop = observer (
                       <Icon name='bed' style={styles.redIcon}/><Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;FAMILY'S CHOICE
                     </span>
                   </Card.Meta>
-                  <Card.Description>
-                    All Brand New! Read more...
-                  </Card.Description>
+                  
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name='user' />
@@ -130,9 +127,7 @@ const RoomSelectDesktop = observer (
                     <Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;COUPLE'S CHOICE
                     </span>
                   </Card.Meta>
-                  <Card.Description>
-                    All Brand New! Read more...
-                  </Card.Description>
+                 
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name='user' />
@@ -153,9 +148,7 @@ const RoomSelectDesktop = observer (
                     <Icon name='bed' style={styles.redIcon}/><Icon name='bed' style={styles.redIcon}/>&nbsp; &nbsp;BIG FAM CHOICE
                     </span>
                   </Card.Meta>
-                  <Card.Description>
-                    All Brand New! Read more...
-                  </Card.Description>
+                 
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name='user' />
@@ -176,9 +169,7 @@ const RoomSelectDesktop = observer (
                       <Icon name='bed' style={styles.redIcon}/><Icon name='bath' style={styles.redIcon}/>&nbsp; &nbsp;NEW FEATURE
                     </span>
                   </Card.Meta>
-                  <Card.Description>
-                    Superior category of suites...
-                  </Card.Description>
+                 
                 </Card.Content>
                 <Card.Content extra>
                     <Icon name='user' />

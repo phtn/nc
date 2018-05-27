@@ -27,7 +27,7 @@ const styles = {
   },
   subtitle: {
     marginLeft: 90,
-    fontSize: 13,
+    fontSize: 16,
     position: 'absolute',
     top: 45,
     zIndex: 1,

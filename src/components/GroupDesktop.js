@@ -22,10 +22,10 @@ const styles = {
   },
   address: {
     color: `#eee`,
-    marginTop: 10,
+    marginTop: -5,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
-    fontSize: 12
+    fontSize: 16
   },
   header: {
     color: 'rgb(165, 20, 55)'
@@ -165,13 +165,11 @@ class Group extends Component {
           <Grid.Row>
             <Grid.Column width={8}>
             <Segment>
-            <Form>
-
+            <Form style={{fontSize: 16}}>
               <Header as='h2' style={styles.header}>
-                
-                <Header.Content style={{fontSize: 24}}>
+                <Header.Content style={{fontSize: 20}}>
                   Get Group Rates for Weddings, Sports Teams, Meetings or any events!
-                  <Header.Subheader style={{fontSize: 18}}>
+                  <Header.Subheader style={{fontSize: 16}}>
                     Our Sales Team will contact you within 24 hours.
                   </Header.Subheader>
                 </Header.Content>
@@ -205,12 +203,7 @@ class Group extends Component {
                 <Form.Field control={Radio} label='3 Nights' value='3' checked={this.state.numberOfNights === '3'} onChange={this.handleNumberOfNightsChange} />
                 <Form.Field control={Radio} label='3+ Nights' value='3+' checked={this.state.numberOfNights === '3+'} onChange={this.handleNumberOfNightsChange} />
               </Form.Group>
-              <Form.Input  label='Date of Arrival' placeholder='MM / DD / YEAR' onChange={this.handleArrivalDateChange}/>
-              {/* <Form.TextArea label='Special Requests' placeholder='Type your requests here...' /> */}
-
-              {/* <Message info icon='lock' header='We Value your Privacy.' content='We will never share your information to anyone.'/> */}
-                
-              {/* <Form.Button color='red' onClick={this.handleSubmit}>Submit</Form.Button> */}
+              <Form.Group inline><Form.Input   label='Date of Arrival' placeholder='MM / DD / YEAR' onChange={this.handleArrivalDateChange}/></Form.Group>
               
               {this.buttonSubmitSwitch()}
 

@@ -44,10 +44,10 @@ const styles = {
   },
   address: {
     color: `#333`,
-    marginTop: 10,
+    marginTop: -5,
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
-    fontSize: 12,
+    fontSize: 16,
     textShadow: '2px 2px 2px #eee'
   },
   menu: {
@@ -107,7 +107,7 @@ const AmenitiesDesktop = observer (
           <Slider {...settings} >
 
             <div style={{padding: 10, border: '1px solid red'}}>
-            <Item.Group>
+            <Item.Group style={{fontSize: 16}}>
               <Item>
                 <Item.Image size='big' src={Pool} style={{width: window.innerWidth*.666, marginLeft: 10}}/>
 
@@ -115,18 +115,18 @@ const AmenitiesDesktop = observer (
                   <Item.Header style={styles.header}>Bar & Pool</Item.Header>
                   
 
-                  <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; </Item.Meta>
-                  <Item.Meta><Icon name='clock'/> &nbsp; Open: 10AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
+                  <Item.Meta style={{fontSize: 16}}><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; </Item.Meta>
+                  <Item.Meta style={{fontSize: 16}}><Icon name='clock'/> &nbsp; Open: 10AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
                   <Item.Extra>
                     <Menu vertical fluid style={{marginRight: 10}}>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />OUTDOOR SWIMMING POOL</Button>
                       </Menu.Item>
-                      <Menu.Item>Cabana Full Bar</Menu.Item>
-                      <Menu.Item>Free WiFi</Menu.Item>
-                      <Menu.Item>Live Music</Menu.Item>
-                      <Menu.Item>Free Towels</Menu.Item>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Cabana Full Bar</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Free WiFi</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Live Music</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Free Towels</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>ANNUAL POOL MEMBERSHIP</Button.Content>
                         <Button.Content hidden>
@@ -155,14 +155,14 @@ const AmenitiesDesktop = observer (
                   
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />THE COURTYARD</Button>
                       </Menu.Item>
-                      <Menu.Item>Perfect area to relax with friends</Menu.Item>
-                      <Menu.Item>Private Parties</Menu.Item>
-                      <Menu.Item>Just beside the Pool</Menu.Item>
-                      <Menu.Item>Great space for Gatherings</Menu.Item>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Perfect area to relax with friends</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Private Parties</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Just beside the Pool</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Great space for Gatherings</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
@@ -191,15 +191,15 @@ const AmenitiesDesktop = observer (
                   
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />THE LOUNGE</Button>
                       </Menu.Item>
-                      <Menu.Item>Perfect place to hangout with friends</Menu.Item>
-                      <Menu.Item>Bar & Restaurant Open</Menu.Item>
-                      <Menu.Item>Very Spacious</Menu.Item>
-                      <Menu.Item>Elegant Design perfect for Meet & Greet</Menu.Item>
-                      <Menu.Item>Perfect for Family Gatherings</Menu.Item>
-                      <Menu.Item>Private Parties</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Perfect place to hangout with friends</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Bar & Restaurant Open</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Very Spacious</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Elegant Design perfect for Meet & Greet</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Perfect for Family Gatherings</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Private Parties</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
@@ -227,17 +227,17 @@ const AmenitiesDesktop = observer (
                   
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='cocktail' />THE BONFIRE BAR & GRILL</Button>
                       </Menu.Item>
-                      <Menu.Item>Perfect place to hangout with friends</Menu.Item>
-                      <Menu.Item>Famous for our Mexican Food Selections</Menu.Item>
-                      <Menu.Item>Modern Designed Bar</Menu.Item>
-                      <Menu.Item>Premium Craft Beer</Menu.Item>
-                      <Menu.Item>Imported Beer</Menu.Item>
-                      <Menu.Item>Topshelf Liqour</Menu.Item>
-                      <Menu.Item>Karaoke Nights with DJ Dwayne</Menu.Item>
-                      <Menu.Item>Can be arranged for Private Parties</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Perfect place to hangout with friends</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Famous for our Mexican Food Selections</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Modern Designed Bar</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Premium Craft Beer</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Imported Beer</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Topshelf Liqour</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Karaoke Nights with DJ Dwayne</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Can be arranged for Private Parties</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
@@ -265,14 +265,14 @@ const AmenitiesDesktop = observer (
                   
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />HOTEL LOBBY</Button>
                       </Menu.Item>
-                      <Menu.Item>A Space to Welcome you with style</Menu.Item>
-                      <Menu.Item>24/7 FREE Coffee</Menu.Item>
-                      <Menu.Item>24/7 Guest Services</Menu.Item>
-                      <Menu.Item>Comfortable Lounge Area</Menu.Item>
-                      <Menu.Item>Check-In: 3PM | Check-Out: 11AM</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>A Space to Welcome you with style</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>24/7 FREE Coffee</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>24/7 Guest Services</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Comfortable Lounge Area</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Check-In: 3PM | Check-Out: 11AM</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>RESERVATIONS</Button.Content>
                         <Button.Content hidden>
@@ -300,14 +300,14 @@ const AmenitiesDesktop = observer (
                   
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='desktop' />PROFESSIONAL BUSINESS CENTER</Button>
                       </Menu.Item>
-                      <Menu.Item>High Speed Internet</Menu.Item>
-                      <Menu.Item>Print Boarding Passes</Menu.Item>
-                      <Menu.Item>Print from your Room</Menu.Item>
-                      <Menu.Item>Executive Seats</Menu.Item>
-                      <Menu.Item>Open 24/7</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>High Speed Internet</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Print Boarding Passes</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Print from your Room</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Executive Seats</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Open 24/7</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
@@ -332,17 +332,17 @@ const AmenitiesDesktop = observer (
                   <Item.Header style={styles.header}>Fitness Center</Item.Header>
                   
 
-                  <Item.Meta><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; Free for Hotel Guests</Item.Meta>
-                  <Item.Meta><Icon name='clock'/> &nbsp; Open: 5AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
+                  <Item.Meta style={{fontSize: 16}}><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; Free for Hotel Guests</Item.Meta>
+                  <Item.Meta style={{fontSize: 16}}><Icon name='clock'/> &nbsp; Open: 5AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />FITNESS CENTER</Button>
                       </Menu.Item>
-                      <Menu.Item>Treadmills (2)</Menu.Item>
-                      <Menu.Item>Steppers</Menu.Item>
-                      <Menu.Item>Peddleton</Menu.Item>
-                      <Menu.Item>Dumbells</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Treadmills (2)</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Steppers</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Peddleton</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Dumbells</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>INQUIRE</Button.Content>
                         <Button.Content hidden>
@@ -369,13 +369,13 @@ const AmenitiesDesktop = observer (
 
                   <Item.Extra>
                     <Menu vertical fluid>
-                      <Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>
                         <Button disabled fluid as='a' href=''><Icon name='universal access' />CONFERENCE CENTER</Button>
                       </Menu.Item>
-                      <Menu.Item>Great for Meetings</Menu.Item>
-                      <Menu.Item>Up to 20 People</Menu.Item>
-                      <Menu.Item>High Speed Internet</Menu.Item>
-                      <Menu.Item>Projector & White Screen</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Great for Meetings</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Up to 20 People</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>High Speed Internet</Menu.Item>
+                      <Menu.Item style={{fontSize: 16}}>Projector & White Screen</Menu.Item>
                       <Button animated='fade' style={styles.clarionButton} fluid>
                         <Button.Content  visible>CHECK AVAILABILITY</Button.Content>
                         <Button.Content hidden>
