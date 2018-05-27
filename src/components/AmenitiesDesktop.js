@@ -115,7 +115,7 @@ const AmenitiesDesktop = observer (
                   <Item.Header style={styles.header}>Bar & Pool</Item.Header>
                   
 
-                  <Item.Meta style={{fontSize: 16}}><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 &nbsp;&middot;&nbsp; </Item.Meta>
+                  <Item.Meta style={{fontSize: 16}}><Icon name='user'/> &nbsp; Day Pass:&nbsp; $10 </Item.Meta>
                   <Item.Meta style={{fontSize: 16}}><Icon name='clock'/> &nbsp; Open: 10AM &nbsp;&middot;&nbsp; Close: 10PM</Item.Meta>
                   <Item.Extra>
                     <Menu vertical fluid style={{marginRight: 10}}>

@@ -162,7 +162,7 @@ const RoomDesktop = observer (
                     <Item.Image 
                       size='huge' 
                       src={this.props.image} 
-                      style={{marginLeft:10, width: window.innerWidth*.666 }} 
+                      style={{marginLeft:10, width: window.innerWidth*.600 }} 
                       className='animated fadeIn lazy'
                     />
 

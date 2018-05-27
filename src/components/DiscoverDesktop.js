@@ -88,9 +88,9 @@ export default props => (
             <Image size='medium' src={Discover5} spaced style={{maxWidth: 600, maxHeight: 200}}/>
             <Image size='medium' src={Discover6} spaced style={{maxWidth: 600, maxHeight: 200}}/>
           </Image.Group>
-          <Message positive style={{maxWidth: 918}}>
+          <Message inverted>
             <Message.Content>
-              <Message.Header>New Hope Bridge & Main Street &middot; Distance: 3.3 miles &middot; Drive: 5 minutes</Message.Header>
+              <Message.Header>New Hope Bridge & Main Street: &nbsp; Distance: 3.3 miles &middot; Drive: 5 minutes from the Hotel</Message.Header>
             </Message.Content>
           </Message>
         </div>

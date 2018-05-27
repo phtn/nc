@@ -23,7 +23,7 @@ const styles = {
     height: 470,
     backgroundColor: 'transparent',
     // backgroundColor: '#eee',
-    padding: '0px 50px 0px 50px',
+    padding: '0px 25px 0px 25px',
   },
   header: {
     fontSize: 26,
@@ -56,7 +56,8 @@ const styles = {
   },
   image: {
     maxHeight: 150,
-    minHeight: 150
+    minHeight: 150,
+    border: '0px'
   },
   redIcon: {
     color: 'rgb(153,27,50)'
@@ -71,10 +72,10 @@ const RoomSelectDesktop = observer (
       return(
         <div style={styles.container}>
           <div style={styles.innerContainer}>
-            <Menu widths={5} style={styles.menu} borderless>
+            <Menu widths={5} style={styles.menu} borderless >
               
-              <Menu.Item link onClick={this.props.king}>
-              <Card className='animated fadeIn room_one' raised>
+              <Menu.Item link onClick={this.props.king} style={{border: '0px solid red'}}>
+              <Card className='animated fadeIn room_one' raised style={{marginRight: 10}}>
                 <Image className='lazy' style={styles.image} src={King} />
                 <Card.Content>
                   <Card.Header>
@@ -95,7 +96,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.doubles}>
-              <Card className='animated fadeIn room_two' raised>
+              <Card className='animated fadeIn room_two' raised style={{marginRight: 10}}>
                 <Image className='lazy' style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -116,7 +117,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.ksuite}>
-              <Card className='animated fadeIn room_three' raised>
+              <Card className='animated fadeIn room_three' raised style={{marginRight: 10}}>
                 <Image className='lazy' style={styles.image} src={KingSuite} />
                 <Card.Content>
                   <Card.Header>
@@ -137,7 +138,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.dsuite}>
-              <Card className='animated fadeIn room_four' raised>
+              <Card className='animated fadeIn room_four' raised style={{marginRight: 10}}>
                 <Image className='lazy' style={styles.image} src={Doubles} />
                 <Card.Content>
                   <Card.Header>
@@ -158,7 +159,7 @@ const RoomSelectDesktop = observer (
               </Menu.Item>
 
               <Menu.Item link onClick={this.props.jsuite}>
-              <Card className='animated fadeIn room_five' raised>
+              <Card className='animated fadeIn room_five' raisedstyle={{marginLeft: 10}}>
                 <Image className='lazy' style={styles.image} src={JacuzziSuite} />
                 <Card.Content>
                   <Card.Header>

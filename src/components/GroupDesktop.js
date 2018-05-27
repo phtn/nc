@@ -28,7 +28,8 @@ const styles = {
     fontSize: 16
   },
   header: {
-    color: 'rgb(165, 20, 55)'
+    color: 'rgb(165, 20, 55)',
+    fontFamily: 'Raleway, sans-serif'
   }
 }
 
@@ -165,16 +166,15 @@ class Group extends Component {
           <Grid.Row>
             <Grid.Column width={8}>
             <Segment>
-            <Form style={{fontSize: 16}}>
+            <Form style={{fontSize: 16, fontFamily: 'Roboto, sans-serif'}}>
               <Header as='h2' style={styles.header}>
                 <Header.Content style={{fontSize: 20}}>
                   Get Group Rates for Weddings, Sports Teams, Meetings or any events!
-                  <Header.Subheader style={{fontSize: 16}}>
+                  <Header.Subheader style={{fontSize: 16, fontWeight: 'bolder'}}>
                     Our Sales Team will contact you within 24 hours.
                   </Header.Subheader>
                 </Header.Content>
               </Header>
-              <Divider/>
               <Form.Group widths='equal'>
                 <Form.Input label='Email' placeholder='Email Address' onChange={this.handleEmailChange}/>
                 <Form.Input fluid label='Contact Name' placeholder='Contact Name' onChange={this.handleNameChange}/>

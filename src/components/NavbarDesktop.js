@@ -29,8 +29,10 @@ const styles = {
 
   },
   clarionButton: {
-    backgroundColor: 'rgb(153,27,50)',
-    color: `rgb(250,226,173)`
+    // backgroundColor: 'rgb(153,27,50)',
+    backgroundColor: 'transparent',
+    color: `rgb(250,226,173)`,
+    // maxWidth: 150
   }
 }
 export default props => (
@@ -71,7 +73,7 @@ export default props => (
         <Menu.Menu position='right'>
           
           <Menu.Item name='weather' active={false} link>
-            <p style={{lineHeight: '20px',color: 'rgb(250,226,173)', fontFamily: 'Roboto, sans-serif', fontWeight: 100, fontSize: 24, maxWidth: '13ch', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{props.temp}&deg;F 
+            <p style={{lineHeight: '20px',color: 'rgb(250,226,173)', fontFamily: 'Roboto, sans-serif', fontWeight: 100, fontSize: 24, maxWidth: '24ch', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{props.temp}&deg;F 
               <span style={{marginLeft: 10, fontSize: 16, fontFamily: 'Raleway, sans-serif', fontWeight: 600, }}> {props.wdesc} </span></p>
           </Menu.Item>
 
@@ -92,10 +94,10 @@ export default props => (
 
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Button style={styles.clarionButton} as='a' href='https://www.google.com/maps/dir/6426+Lower+York+Road,+New+Hope,+PA+18938'><Icon name='map' /> &nbsp; Get Directions</Button>
+            <Button style={styles.clarionButton} as='a' href='https://www.google.com/maps/dir/6426+Lower+York+Road,+New+Hope,+PA+18938'><Icon name='map'/></Button>
           </Menu.Item>
           <Menu.Item>
-            <Button style={styles.clarionButton} as='a' href='https://mail.google.com/mail/?view=cm&fs=1&to=clarionsalespa@gmail.com'><Icon name='mail' /> &nbsp; Contact Support</Button>
+            <Button style={styles.clarionButton} as='a' href='https://mail.google.com/mail/?view=cm&fs=1&to=clarionsalespa@gmail.com'><Icon name='mail' /> </Button>
           </Menu.Item>
         </Menu.Menu>
 
