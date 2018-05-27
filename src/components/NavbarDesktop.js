@@ -70,8 +70,9 @@ export default props => (
 
         <Menu.Menu position='right'>
           
-          <Menu.Item name='restaurant' active={false} link>
-            <p style={{lineHeight: '20px',color: 'rgb(250,226,173)', fontFamily: 'Roboto, sans-serif', fontWeight: 100, fontSize: 24}}>{props.temp}&deg;F <span style={{marginLeft: 10, fontSize: 16, fontFamily: 'Raleway, sans-serif', fontWeight: 600}}> {props.wdesc} </span></p>
+          <Menu.Item name='weather' active={false} link>
+            <p style={{lineHeight: '20px',color: 'rgb(250,226,173)', fontFamily: 'Roboto, sans-serif', fontWeight: 100, fontSize: 24, maxWidth: '13ch', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{props.temp}&deg;F 
+              <span style={{marginLeft: 10, fontSize: 16, fontFamily: 'Raleway, sans-serif', fontWeight: 600, }}> {props.wdesc} </span></p>
           </Menu.Item>
 
         </Menu.Menu>
