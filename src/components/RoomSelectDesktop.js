@@ -4,13 +4,13 @@ import { Icon, Menu, Container, Image, Card } from 'semantic-ui-react'
 
 
 
-import King from '../assets/webp/king.webp'
-import Doubles from '../assets/webp/double.webp'
-import KingSuite from '../assets/webp/kingS.webp'
-import JacuzziSuite from '../assets/webp/jacuzzi.webp'
-import Rewards from '../assets/webp/rewards.webp'
+import King from '../assets/web/king.jpg'
+import Doubles from '../assets/web/double.jpg'
+import KingSuite from '../assets/web/kingS.jpg'
+import JacuzziSuite from '../assets/web/jacuzzi.jpg'
+import Rewards from '../assets/web/rewards.jpg'
 import Gift from '../assets/board/gift.svg'
-import Meet from '../assets/webp/hands.webp'
+import Meet from '../assets/web/hands.jpg'
 
 
 
